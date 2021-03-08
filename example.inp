@@ -1,0 +1,25 @@
+RUNNR  , 1                             
+EVTNR  , 1                             
+NSHOW  , 100
+PRMPAR , 14                            
+ESLOPE , -2.7                          
+ERANGE , 1.E3  1.E3                    
+THETAP , 20.  20.                      
+PHIP   , -180.  180.                   
+SEED   , 1   0   0                     
+SEED   , 2   0   0                     
+OBSLEV , 0                             
+MAGNET , 20.0  42.8                    
+HADFLG , 0  0  0  0  0  2              
+ECUTS  , 0.3  0.3  0.003  0.003        
+MUADDI , T                             
+MUMULT , T                             
+ELMFLG , T   T                         
+STEPFC , 1.0                           
+RADNKG , 4410.E2                        
+LONGI  , T  10.  T  T                  
+MAXPRT , 1                             
+DIRECT , /mnt/f/Dropbox/corsika_out/                            
+USER   , tian                           
+DEBUG  , F  6  F  1000000              
+EXIT   ,                                
