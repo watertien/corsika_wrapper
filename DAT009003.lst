@@ -1,0 +1,2117 @@
+
+ AAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA
+
+   OOO      OOO     OOOO       OOOO    OO   O      O      O  
+  O   O    O   O    O    O    O    O   OO   O    O       O O 
+ O        O     O   O     O   O        OO   O  O        O   O
+ O        O     O   O    O     OOOO    OO   OO         O     O
+ O        O     O   OOOO           O   OO   O  O       OOOOOOO
+  O   O    O   O    O   O     O    O   OO   O    O     O     O
+   OOO      OOO     O     O    OOOO    OO   O      O   O     O
+
+ COSMIC RAY SIMULATION FOR KASCADE
+
+ A PROGRAM TO SIMULATE EXTENSIVE AIR SHOWERS IN ATMOSPHERE
+
+ BASED ON A PROGRAM OF P.K.F. GRIEDER, UNIVERSITY BERN, SWITZERLAND
+ QGSJET MODEL ACCORDING TO N.N. KALMYKOV AND S.S. OSTAPCHENKO, MSU, MOSCOW, RUSSIA
+ HDPM MODEL ACCORDING TO J.N. CAPDEVIELLE, COLLEGE DE FRANCE, PARIS, FRANCE
+ GHEISHA ROUTINES ACCORDING TO H. FESEFELDT, RWTH AACHEN, GERMANY
+ EGS4 ACCORDING TO W.R. NELSON, H. HIRAYAMA, D.W.O. ROGERS, SLAC, STANFORD, USA
+ NKG FORMULAS FOR FAST SIMULATION OF EL.MAG. PARTICLES
+
+ REFERENCES: D. HECK, J.KNAPP, J.N. CAPDEVIELLE, G. SCHATZ, T. THOUW,
+             REPORT FZKA 6019 (1998)
+             D. HECK, REPORT FZKA 7254 (2006)
+             SEE ALSO WEB PAGE https://www.ikp.kit.edu/corsika/
+             KARLSRUHE INSTITUTE OF TECHNOLOGY (KIT)
+             INSTITUT FUER KERNPHYSIK
+             POSTFACH 3640
+             D-76021 KARLSRUHE
+             GERMANY
+
+ IN CASE OF PROBLEMS CONTACT:   Dr. Tanguy Pierog
+                      e-mail:   tanguy.pierog@kit.edu
+                         FAX:   (49) 721-608-24075 
+                       PHONE:   (49) 721-608-28134 
+   OR                       :   Dr. Dieter Heck 
+                      e-mail:   dieter.heck@partner.kit.edu
+                         FAX:   (49) 721-608-24075 
+                       PHONE:   (49) 721-608-23777 
+   AND SEND YOUR LIST-FILE BY E-MAIL
+
+ NUMBER OF VERSION :  7.6400
+ DATE   OF VERSION : DECEMBER  21, 2017
+
+ VERSION GENERATED FOR UNIX OR COMPATIBLE SYSTEMS
+ ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  (RECL IS DEFINED IN BYTES)
+  WITH TIMERC DATE ROUTINE
+ ZENITH ANGLE DEPENDENCE FOR FLAT DETECTOR ARRAY
+  
+ SLANT DEPTH FOR LONGITUDINAL DISTRIBUTIONS
+ ==========================================
+
+  
+ ========== USERS RUN DIRECTIVES FOR THIS SIMULATION ===========================
+
+ DATA CARDS FOR RUN STEERING ARE EXPECTED FROM STANDARD INPUT
+   
+RUNNR 9003
+EVTNR 1
+NSHOW 10000
+PRMPAR 14
+ESLOPE -2.7
+ERANGE 1.E3  1.E3
+THETAP 15 15
+PHIP -180.  180.
+OBSLEV 0
+MAGNET 20.0  42.8
+HADFLG 0  0  0  0  0  2
+ECUTS 0.3  0.3  0.003  0.003
+MUADDI T
+MUMULT T
+ELMFLG T   T
+STEPFC 1.0
+RADNKG 4410.E2
+LONGI T  20.  F  F
+MAXPRT 1
+DIRECT /home/tian/corsika_wrapper/
+USER tian
+DEBUG F  6  F  1000000
+SEED 17611 0 0
+SEED 39607 0 0
+EXIT
+
+ END OF DATACARD INPUT
+
+
+
+ ========== START OF RUN =======================================================
+
+ PRESENT TIME : 08.03.2021  23:05:19 UTC
+ RANDOM NUMBER GENERATOR AT BEGIN OF RUN :
+ SEQUENCE =  1  SEED =     17611  CALLS =         0  BILLIONS =         0
+ SEQUENCE =  2  SEED =     39607  CALLS =         0  BILLIONS =         0
+
+ PARTICLE OUTPUT TO FILE: /home/tian/corsika_wrapper/DAT009003                                                                                                                                                                                                                           
+
+
+ ========== INTERACTION MODELS =================================================
+ QGSJET TREATS HIGH ENERGY HADRONIC INTERACTIONS
+
+ QGSJET CROSS-SECTIONS ARE TAKEN
+ ====================================================
+ |                                                  |
+ |           QUARK GLUON STRING JET MODEL           |
+ |                                                  |
+ |         HADRONIC INTERACTION MONTE CARLO         |
+ |                        BY                        |
+ |        N.N. KALMYKOV AND S.S. OSTAPCHENKO        |
+ |                                                  |
+ |            e-mail: serg@eas.npi.msu.su           |
+ |                                                  |
+ | Publication to be cited when using this program: |
+ | N.N. Kalmykov & S.S. Ostapchenko, A.I. Pavlov    |
+ | Nucl. Phys. B (Proc. Suppl.) 52B (1997) 17       |
+ |                                                  |
+ | last modification:  Jan. 30, 2013  by T. Pierog  |
+ |               (version qgsjet01d.f)              |
+ ====================================================
+
+ NUCLEUS PROJECTILES FRAGMENT REALISTICALLY IN THE FIRST INTERACTION
+ FRAGMENTATION WITH EVAPORATION (PT AFTER JACEE)
+
+ GHEISHA TREATS LOW ENERGY HADRONIC INTERACTIONS
+ HIGH ENERGY INTERACTION MODEL USED ABOVE    80.000 GEV LAB ENERGY   OR
+                                             12.324 GEV CM  ENERGY
+ MUON/TAU MULTIPLE SCATTERING AFTER MOLIERE
+
+ ELECTROMAGNETIC COMPONENT SIMULATED WITH NKG
+
+
+ START EGS4  AIR SHOWER SUBROUTINE VERSION
+
+ ELECTROMAGNETIC COMPONENT SIMULATED WITH EGS4
+
+ DATASET EGSDAT6_3. AVAILABLE
+ DATA FOR MEDIUM #  1, WHICH IS: MEDIUM=AIR-NTP                 ,STERNCID=AIR-NTP                       
+ MIXT,RHO= 6.1250E-09,NE= 4,COMPOSITION IS :
+ ASYM=N ,Z= 7.,A=   14.007,PZ= 5.39228E-02,RHOZ= 7.55280E-01            
+ ASYM=O ,Z= 8.,A=   15.999,PZ= 1.44793E-02,RHOZ= 2.31660E-01            
+ ASYM=AR,Z=18.,A=   39.948,PZ= 3.20917E-04,RHOZ= 1.28200E-02            
+ ASYM=C ,Z= 6.,A=   12.011,PZ= 3.33024E-06,RHOZ= 4.00000E-05            
+ EGS SUCCESSFULLY 'HATCHED' FOR ONE MEDIUM.
+ ELECTRONS CAN BE CREATED AND ANY ELECTRON FOLLOWED DOWN TO
+                                             0.00300 GEV KINETIC ENERGY
+ GAMMAS CAN BE CREATED AND ANY GAMMA FOLLOWED DOWN TO
+                                             0.00300 GEV ENERGY
+ ELECTRON HISTORIES ARE TERMINATED AT        0.00351 GEV
+ GAMMA HISTORIES ARE TERMINATED AT           0.00300 GEV
+
+
+
+ ========== CONSTANTS AND PARAMETERS ===========================================
+
+ PHYSICAL CONSTANTS C(1) TO C(50)
+ 6.37131500E+08  6.00000000E+05  2.00000000E+06  0.00000000E+00  0.00000000E+00
+ 4.58059654E-02  5.73089633E-01  5.28304217E-02  2.50000000E+00  2.07000000E+00
+ 8.20000000E+00  1.00000000E-01  0.00000000E+00  0.00000000E+00  1.00002339E+00
+ 9.67266333E-03  1.00000008E+00  5.75170728E-04  0.00000000E+00  0.00000000E+00
+ 3.77000000E+01  1.53287300E-04  9.38641700E+00  2.00000000E-03  2.99792458E+10
+ 1.00000000E+00  5.40302306E-01  1.57000000E+00  7.96326711E-04  2.10000000E-02
+ 0.00000000E+00  0.00000000E+00  0.00000000E+00  2.00000000E+01  0.00000000E+00
+ 0.00000000E+00  0.00000000E+00  0.00000000E+00  0.00000000E+00  0.00000000E+00
+ 0.00000000E+00  0.00000000E+00  0.00000000E+00  0.00000000E+00  2.61909598E-01
+ 8.99834275E-01  0.00000000E+00  1.03899198E+00  2.71383371E-01  1.37035999E+02
+
+
+ CONSTANTS FOR KAONS CKA(1) TO CKA(80)
+ 0.00000000E+00  1.00000000E-01  0.00000000E+00  0.00000000E+00  0.00000000E+00
+ 0.00000000E+00  2.50000000E-01  5.00000000E-01  7.50000000E-01  1.00000000E+00
+ 5.00000000E-01  2.00000000E-01  9.26406662E-01  1.12407142E+00  1.49600000E+02
+ 1.49600000E+02  2.35531824E-01  2.06000000E-01  1.35000000E-01  2.22000000E-01
+ 5.00000000E-01  0.00000000E+00  6.35600000E-01  6.92762000E-01  8.74200000E-01
+ 6.78300000E-01  4.06900000E-01  2.44320607E+00  9.12400642E-01  0.00000000E+00
+ 0.00000000E+00  0.00000000E+00  0.00000000E+00  0.00000000E+00  1.00000000E+00
+ 1.00000000E+05  0.00000000E+00  0.00000000E+00  0.00000000E+00  0.00000000E+00
+ 0.00000000E+00  0.00000000E+00  0.00000000E+00  0.00000000E+00  0.00000000E+00
+ 0.00000000E+00  8.42300000E-01  8.98200000E-01  9.48900000E-01  9.82400000E-01
+-2.15400000E-01  1.20000000E-02 -1.01000000E-02  1.27000000E+00  6.38000000E-01
+ 5.70000000E-02  0.00000000E+00  1.84000000E+00  0.00000000E+00  1.00000000E+00
+ 6.78000000E-01  7.60000000E-02  9.90000000E-03  2.22000000E+00  2.98000000E-02
+ 0.00000000E+00  1.28800000E-02  2.96000000E-02  1.96000000E-02  1.19400000E-02
+ 2.82000000E-02  0.00000000E+00  1.31000000E-02  2.82000000E-02  1.38000000E-02
+ 1.24100000E-02  0.00000000E+00  0.00000000E+00  0.00000000E+00  0.00000000E+00
+
+
+ CONSTANTS FOR ETAS CETA(1) TO CETA(5)
+ 3.97200000E-01  7.26500000E-01  9.57500000E-01  9.00000000E-04  2.07000000E+00
+
+
+ CONSTANTS FOR STRANGE BARYONS CSTRBA(1) TO CSTRBA(11)
+ 0.00000000E+00  0.00000000E+00  0.00000000E+00  0.00000000E+00  6.40900000E-01
+ 5.16300000E-01  0.00000000E+00  0.00000000E+00  0.00000000E+00  6.78000000E-01
+ 9.14000000E-01
+
+
+ ========== ATMOSPHERE =========================================================
+
+  ( US STANDARD ATMOSPHERE PARAMETERIZED BY LINSLEY )
+  HEIGHT H IN KM GIVES THICKNESS OF ATMOSPHERE T IN G/CM**2
+ H =  -5.8...  4.0 KM ---> T = -1.86556E+02 + 1.2227E+03 * EXP( -H / 9.9419E+00)
+ H =   4.0... 10.0 KM ---> T = -9.49190E+01 + 1.1449E+03 * EXP( -H / 8.7815E+00)
+ H =  10.0... 40.0 KM ---> T =  6.12890E-01 + 1.3056E+03 * EXP( -H / 6.3614E+00)
+ H =  40.0...100.0 KM ---> T =  0.00000E+00 + 5.4018E+02 * EXP( -H / 7.7217E+00)
+ H = 100.0...112.8 KM ---> T =  1.12829E-02 - H / 1.0000E+04
+
+
+ ========== SHOWER PARAMETERS ==================================================
+ PRIMARY PARTICLE IDENTIFICATION IS           14
+ PRIMARY ENERGY IS FIXED AT            1.0000E+03 GEV
+ THETA OF INCIDENCE CHOSEN FROM      15.00...     15.00 DEGREES
+ ANGULAR THETA DEPENDENCE ACCORDING TO FLAT DETECTOR
+ PHI   OF INCIDENCE CHOSEN FROM    -180.00...    180.00 DEGREES
+ HEIGHT OF FIRST INTERACTION IS CHOSEN RANDOMLY
+ TARGET OF FIRST INTERACTION IS AT RANDOM
+ STARTING ALTITUDE AT     11282920.00 CM (=      0.00 G/CM**2)
+                  WHICH IS AT TOP OF ATMOSPHERE
+
+ OBSERVATION LEVEL # IN  CM    AND IN   G/CM**2 
+          1       0.00000000E+00       1.03610000E+03
+  
+ PARTICLES WITH LORENTZ FACTOR LARGER THAN     1.0000E+04 ARE PRINTED OUT
+ SHOWER PARTICLES ENERGY CUT :
+      FOR HADRONS   :      3.0000E-01 GEV
+      FOR MUONS     :      3.0000E-01 GEV
+      FOR ELECTRONS :      3.0000E-03 GEV
+      FOR GAMMAS    :      3.0000E-03 GEV
+
+
+ EARTH MAGNETIC FIELD STRENGTH IS    47.2423553      MICROTESLA
+      WITH INCLINATION ANGLE         64.9537964      DEGREES
+
+ ADDITIONAL INFORMATION ON MUON ORIGIN IS WRITTEN TO PARTICLE DATA FILE
+
+ NUMBER OF SHOWERS TO GENERATE =       10000
+
+
+
+ ========== SHOWER NO          1 ===============================================
+
+ PRESENT TIME : 08.03.2021  23:05:20 UTC
+ AND RANDOM NUMBER GENERATOR AT BEGIN OF EVENT :       1
+ SEQUENCE =  1  SEED =     17611  CALLS =         0  BILLIONS =         0
+ SEQUENCE =  2  SEED =     39607  CALLS =         0  BILLIONS =         0
+ PRIMARY ANGLES ARE: THETA =  0.2618 RAD, PHI =  1.1752 RAD
+
+ LONGITUDINAL SHOWER DEVELOPMENT:
+ SHOWER IS SAMPLED IN NSTEP=   54 SLANT STEPS OF THSTEP=  20.0 G/CM**2
+    STEP     HEIGHT [CM] SLANT DEPTH [G/CM**2] SLANT DISTANCE [CM]
+       I     HLONG(I)                 THCKRL(I)            RLONG(I)
+       0 11282920.000000              0.000000            0.000000
+       1  2700802.299561             20.000000      8884862.032741
+       2  2249524.374150             40.000000      9352059.319663
+       3  1988181.838180             60.000000      9622621.022081
+       4  1803477.350479             80.000000      9813841.178613
+       5  1660509.779730            100.000000      9961852.099180
+       6  1543850.522224            120.000000     10082626.649700
+       7  1445305.746076            140.000000     10184647.709150
+       8  1359998.749893            160.000000     10272964.010320
+       9  1284790.532602            180.000000     10350825.286253
+      10  1217541.176297            200.000000     10420446.942984
+      11  1156726.239018            220.000000     10483407.198962
+      12  1101221.239673            240.000000     10540870.202677
+      13  1050172.926970            260.000000     10593719.304869
+      14  1002918.504765            280.000000     10642640.682596
+      15   957734.675671            300.000000     10689418.424597
+      16   914707.518908            320.000000     10733963.415105
+      17   873690.470275            340.000000     10776427.388546
+      18   834504.069266            360.000000     10816996.136106
+      19   796991.864984            380.000000     10855831.627674
+      20   761016.643249            400.000000     10893075.917821
+      21   726457.396665            420.000000     10928854.282623
+      22   693206.868693            440.000000     10963277.762218
+      23   661169.546006            460.000000     10996445.239280
+      24   630260.004368            480.000000     11028445.151486
+      25   600401.535885            500.000000     11059356.912689
+      26   571525.002069            520.000000     11089252.100322
+      27   543567.869551            540.000000     11118195.453690
+      28   516473.394631            560.000000     11146245.718195
+      29   490189.929905            580.000000     11173456.363165
+      30   464670.331679            600.000000     11199876.195342
+      31   439871.451089            620.000000     11225549.885718
+      32   415753.695123            640.000000     11250518.423994
+      33   392235.208325            660.000000     11274866.553175
+      34   369197.599074            680.000000     11298716.841286
+      35   346681.757036            700.000000     11322026.956231
+      36   324664.570210            720.000000     11344820.825311
+      37   303124.429022            740.000000     11367120.820406
+      38   282041.098857            760.000000     11388947.889929
+      39   261395.605831            780.000000     11410321.677092
+      40   241170.134184            800.000000     11431260.626126
+      41   221347.933904            820.000000     11451782.077918
+      42   201913.237384            840.000000     11471902.356299
+      43   182851.184062            860.000000     11491636.846053
+      44   164147.752163            880.000000     11511000.063591
+      45   145789.696730            900.000000     11530005.721099
+      46   127764.493288            920.000000     11548666.784869
+      47   110060.286514            940.000000     11566995.528435
+      48    92665.843402            960.000000     11585003.581061
+      49    75570.510454            980.000000     11602701.972058
+      50    58764.174494           1000.000000     11620101.171358
+      51    42237.226731           1020.000000     11637211.126711
+      52    25980.529771           1040.000000     11654041.297846
+      53     9985.387275           1060.000000     11670600.687875
+      54    -5756.483980           1080.000000     11686897.872220
+      55  -616450.708234           2160.000000     11680938.321473
+      FIT TO CHARGED PARTICLE LONG. DISTRIBUTION   DISABLED
+
+
+ TRACKING STARTS AT MARGIN OF ATMOSPHERE
+ PRIMARY PARAMETERS AT FIRST INTERACTION POINT
+   1.400E+01  1.066E+03  9.659E-01  9.975E-02  2.388E-01  2.472E+06  0.000E+00  0.000E+00  0.000E+00
+
+                    TYPE       GAMMA    COSTHETA      PHIX      PHIY      HEIGHT      TIME       X-CM       Y-CM       GEN/CHI    ALEVEL E ON STACK
+
+
+ NO MORE SECONDARIES FOUND ON STACK
+         375 PARTICLES WRITTEN TO STACK
+         375 PARTICLES READ FROM STACK
+           0 BLOCKS MAXIMUM STACK FILE SIZE
+           0 SHIFTS TO EXTERNAL STACK
+          26 PARTICLES WRITTEN TO MPATAP
+
+
+ ENERGY - MULTIPLICITY MATRIX OF SHOWER NO          1
+ ENERGY RUNS VERTICALLY, MULTIPLICITY HORIZONTALLY
+
+              1         2         3         4         5       6       7       8     9    10    11    12    13   ENERGY RANGE (GEV)
+
+   1          9         0         0         0         0       0       0       0     0     0     0     0     0    1.0E-01   2.2E-01
+   2         15         1         2         1         0       0       0       0     0     0     0     0     0    2.2E-01   4.6E-01
+   3         20         2         3         0         0       0       0       0     0     0     0     0     0    4.6E-01   1.0E+00
+   4         23         0         3         2         0       0       0       0     0     0     0     0     0    1.0E+00   2.2E+00
+   5         24         0         4         2         0       0       0       0     0     0     0     0     0    2.2E+00   4.6E+00
+   6         22         0         2         1         0       0       0       0     0     0     0     0     0    4.6E+00   1.0E+01
+   7         12         0         0         0         0       0       0       0     0     0     0     0     0    1.0E+01   2.2E+01
+   8         10         0         2         0         0       0       0       0     0     0     0     0     0    2.2E+01   4.6E+01
+   9          3         0         0         1         0       0       0       0     0     0     0     0     0    4.6E+01   1.0E+02
+  10          1         0         0         0         0       0       0       0     0     0     0     0     0    1.0E+02   2.2E+02
+  11          0         0         0         0         2       0       0       0     0     0     0     0     0    2.2E+02   4.6E+02
+  12          0         0         0         0         1       0       0       0     0     0     0     0     0    4.6E+02   1.0E+03
+  13          0         0         0         0         0       0       0       0     0     0     0     0     0    1.0E+03   2.2E+03
+  14          0         0         0         0         0       0       0       0     0     0     0     0     0    2.2E+03   4.6E+03
+  15          0         0         0         0         0       0       0       0     0     0     0     0     0    4.6E+03   1.0E+04
+  16          0         0         0         0         0       0       0       0     0     0     0     0     0    1.0E+04   2.2E+04
+  17          0         0         0         0         0       0       0       0     0     0     0     0     0    2.2E+04   4.6E+04
+  18          0         0         0         0         0       0       0       0     0     0     0     0     0    4.6E+04   1.0E+05
+  19          0         0         0         0         0       0       0       0     0     0     0     0     0    1.0E+05   2.2E+05
+  20          0         0         0         0         0       0       0       0     0     0     0     0     0    2.2E+05   4.6E+05
+  21          0         0         0         0         0       0       0       0     0     0     0     0     0    4.6E+05   1.0E+06
+  22          0         0         0         0         0       0       0       0     0     0     0     0     0    1.0E+06   2.2E+06
+  23          0         0         0         0         0       0       0       0     0     0     0     0     0    2.2E+06   4.6E+06
+  24          0         0         0         0         0       0       0       0     0     0     0     0     0    4.6E+06   1.0E+07
+  25          0         0         0         0         0       0       0       0     0     0     0     0     0    1.0E+07   2.2E+07
+  26          0         0         0         0         0       0       0       0     0     0     0     0     0    2.2E+07   4.6E+07
+  27          0         0         0         0         0       0       0       0     0     0     0     0     0    4.6E+07   1.0E+08
+  28          0         0         0         0         0       0       0       0     0     0     0     0     0    1.0E+08   2.2E+08
+  29          0         0         0         0         0       0       0       0     0     0     0     0     0    2.2E+08   4.6E+08
+  30          0         0         0         0         0       0       0       0     0     0     0     0     0    4.6E+08   1.0E+09
+  31          0         0         0         0         0       0       0       0     0     0     0     0     0    1.0E+09   2.2E+09
+  32          0         0         0         0         0       0       0       0     0     0     0     0     0    2.2E+09   4.6E+09
+  33          0         0         0         0         0       0       0       0     0     0     0     0     0    4.6E+09   1.0E+10
+  34          0         0         0         0         0       0       0       0     0     0     0     0     0    1.0E+10   2.2E+10
+  35          0         0         0         0         0       0       0       0     0     0     0     0     0    2.2E+10   4.6E+10
+  36          0         0         0         0         0       0       0       0     0     0     0     0     0    4.6E+10   1.0E+11
+  37          0         0         0         0         0       0       0       0     0     0     0     0     0    1.0E+11   2.2E+11
+  38          0         0         0         0         0       0       0       0     0     0     0     0     0    2.2E+11   4.6E+11
+  39          0         0         0         0         0       0       0       0     0     0     0     0     0    4.6E+11   1.0E+12
+
+ MULT.        1         3         5        11        22      47     101     216   465  1001  2155  4642 10001    LOWER BIN LIMIT
+ RANGE        2         4        10        21        46     100     215     464  1000  2154  4641 10000 21544    UPPER BIN LIMIT
+
+
+ ENERGY - ELASTICITY MATRIX OF SHOWER NO          1
+ ENERGY RUNS VERTICALLY, ELASTICITY HORIZONTALLY
+
+              1        2        3        4        5        6        7        8         9        10   MEAN EL.   ENERGY RANGE (GEV)
+
+    1         0        0        0        0        0        0        0        0         0         0   0.000E+00   1.0E-01   2.2E-01
+    2         0        0        0        0        0        0        0        3         2         0   7.794E-01   2.2E-01   4.6E-01
+    3         0        0        0        0        0        0        0        4         0         0   7.196E-01   4.6E-01   1.0E+00
+    4         0        0        0        0        0        1        0        1         1         0   7.563E-01   1.0E+00   2.2E+00
+    5         0        0        0        0        0        2        2        1         1         0   6.630E-01   2.2E+00   4.6E+00
+    6         0        0        0        0        0        1        1        1         0         0   6.486E-01   4.6E+00   1.0E+01
+    7         0        1        0        0        0        0        0        0         0         0   1.333E-01   1.0E+01   2.2E+01
+    8         0        0        0        0        1        0        0        1         0         0   5.764E-01   2.2E+01   4.6E+01
+    9         0        0        0        0        1        0        0        0         0         0   4.900E-01   4.6E+01   1.0E+02
+   10         0        0        0        0        0        0        0        0         0         0   0.000E+00   1.0E+02   2.2E+02
+   11         0        0        2        0        0        0        0        0         0         0   2.396E-01   2.2E+02   4.6E+02
+   12         0        0        0        1        0        0        0        0         0         0   3.349E-01   4.6E+02   1.0E+03
+   13         0        0        0        0        0        0        0        0         0         0   0.000E+00   1.0E+03   2.2E+03
+   14         0        0        0        0        0        0        0        0         0         0   0.000E+00   2.2E+03   4.6E+03
+   15         0        0        0        0        0        0        0        0         0         0   0.000E+00   4.6E+03   1.0E+04
+   16         0        0        0        0        0        0        0        0         0         0   0.000E+00   1.0E+04   2.2E+04
+   17         0        0        0        0        0        0        0        0         0         0   0.000E+00   2.2E+04   4.6E+04
+   18         0        0        0        0        0        0        0        0         0         0   0.000E+00   4.6E+04   1.0E+05
+   19         0        0        0        0        0        0        0        0         0         0   0.000E+00   1.0E+05   2.2E+05
+   20         0        0        0        0        0        0        0        0         0         0   0.000E+00   2.2E+05   4.6E+05
+   21         0        0        0        0        0        0        0        0         0         0   0.000E+00   4.6E+05   1.0E+06
+   22         0        0        0        0        0        0        0        0         0         0   0.000E+00   1.0E+06   2.2E+06
+   23         0        0        0        0        0        0        0        0         0         0   0.000E+00   2.2E+06   4.6E+06
+   24         0        0        0        0        0        0        0        0         0         0   0.000E+00   4.6E+06   1.0E+07
+   25         0        0        0        0        0        0        0        0         0         0   0.000E+00   1.0E+07   2.2E+07
+   26         0        0        0        0        0        0        0        0         0         0   0.000E+00   2.2E+07   4.6E+07
+   27         0        0        0        0        0        0        0        0         0         0   0.000E+00   4.6E+07   1.0E+08
+   28         0        0        0        0        0        0        0        0         0         0   0.000E+00   1.0E+08   2.2E+08
+   29         0        0        0        0        0        0        0        0         0         0   0.000E+00   2.2E+08   4.6E+08
+   30         0        0        0        0        0        0        0        0         0         0   0.000E+00   4.6E+08   1.0E+09
+   31         0        0        0        0        0        0        0        0         0         0   0.000E+00   1.0E+09   2.2E+09
+   32         0        0        0        0        0        0        0        0         0         0   0.000E+00   2.2E+09   4.6E+09
+   33         0        0        0        0        0        0        0        0         0         0   0.000E+00   4.6E+09   1.0E+10
+   34         0        0        0        0        0        0        0        0         0         0   0.000E+00   1.0E+10   2.2E+10
+   35         0        0        0        0        0        0        0        0         0         0   0.000E+00   2.2E+10   4.6E+10
+   36         0        0        0        0        0        0        0        0         0         0   0.000E+00   4.6E+10   1.0E+11
+   37         0        0        0        0        0        0        0        0         0         0   0.000E+00   1.0E+11   2.2E+11
+   38         0        0        0        0        0        0        0        0         0         0   0.000E+00   2.2E+11   4.6E+11
+   39         0        0        0        0        0        0        0        0         0         0   0.000E+00   4.6E+11   1.0E+12
+
+ ELA.      0.00     0.10     0.20     0.30     0.40     0.50     0.60     0.70      0.80      0.90     LOWER BIN LIMIT
+ RANGE     0.10     0.20     0.30     0.40     0.50     0.60     0.70     0.80      0.90      1.00     UPPER BIN LIMIT
+
+
+ INTERACTIONS PER KINETIC ENERGY INTERVAL OF SHOWER NO          1
+
+
+   BIN    LOWER LIMIT    UPPER LIMIT     NUCLEON       PIONS      KAONS  S.BARYONS      TOTAL
+             IN GEV         IN GEV        EVENTS      EVENTS     EVENTS     EVENTS  
+
+     1     0.0000E+00     1.0000E-01           0          8          0          0          8
+     2     1.0000E-01     2.1544E-01           0          1          0          0          1
+     3     2.1544E-01     4.6416E-01           7         12          0          0         19
+     4     4.6416E-01     1.0000E+00           8         17          0          0         25
+     5     1.0000E+00     2.1544E+00           6         21          1          0         28
+     6     2.1544E+00     4.6416E+00           5         22          3          0         30
+     7     4.6416E+00     1.0000E+01           5         18          2          0         25
+     8     1.0000E+01     2.1544E+01           0         11          1          0         12
+     9     2.1544E+01     4.6416E+01           2          8          2          0         12
+    10     4.6416E+01     1.0000E+02           1          1          2          0          4
+    11     1.0000E+02     2.1544E+02           0          0          1          0          1
+    12     2.1544E+02     4.6416E+02           1          1          0          0          2
+    13     4.6416E+02     1.0000E+03           1          0          0          0          1
+    14     1.0000E+03     2.1544E+03           0          0          0          0          0
+    15     2.1544E+03     4.6416E+03           0          0          0          0          0
+    16     4.6416E+03     1.0000E+04           0          0          0          0          0
+    17     1.0000E+04     2.1544E+04           0          0          0          0          0
+    18     2.1544E+04     4.6416E+04           0          0          0          0          0
+    19     4.6416E+04     1.0000E+05           0          0          0          0          0
+    20     1.0000E+05     2.1544E+05           0          0          0          0          0
+    21     2.1544E+05     4.6416E+05           0          0          0          0          0
+    22     4.6416E+05     1.0000E+06           0          0          0          0          0
+    23     1.0000E+06     2.1544E+06           0          0          0          0          0
+    24     2.1544E+06     4.6416E+06           0          0          0          0          0
+    25     4.6416E+06     1.0000E+07           0          0          0          0          0
+    26     1.0000E+07     2.1544E+07           0          0          0          0          0
+    27     2.1544E+07     4.6416E+07           0          0          0          0          0
+    28     4.6416E+07     1.0000E+08           0          0          0          0          0
+    29     1.0000E+08     2.1544E+08           0          0          0          0          0
+    30     2.1544E+08     4.6416E+08           0          0          0          0          0
+    31     4.6416E+08     1.0000E+09           0          0          0          0          0
+    32     1.0000E+09     2.1544E+09           0          0          0          0          0
+    33     2.1544E+09     4.6416E+09           0          0          0          0          0
+    34     4.6416E+09     1.0000E+10           0          0          0          0          0
+    35     1.0000E+10     2.1544E+10           0          0          0          0          0
+    36     2.1544E+10     4.6416E+10           0          0          0          0          0
+    37     4.6416E+10     1.0000E+11           0          0          0          0          0
+    38     1.0000E+11     2.1544E+11           0          0          0          0          0
+    39     2.1544E+11     4.6416E+11           0          0          0          0          0
+    40     4.6416E+11     1.0000E+12           0          0          0          0          0
+
+
+ INTERACTION LENGTH STATISTICS:     1 BIN CORRESPONDS TO 10 G/CM**2 OR 100M FOR MUONS
+
+  BIN      LAMBDA NU   LAMBDA PI   LAMBDA KA   LAMBDA HY   LAMBDA MU   LAMBDA NUCLEUS
+
+    1           8         117          12           0           0           0
+    2           5           2           0           0           1           0
+    3           5           1           0           0           2           0
+    4           5           0           0           0           0           0
+    5           3           0           0           0           0           0
+    6           1           0           0           0           2           0
+    7           1           0           0           0           0           0
+    8           0           0           0           0           0           0
+    9           0           0           0           0           0           0
+   10           2           0           0           0           0           0
+   11           2           0           0           0           2           0
+   12           2           0           0           0           0           0
+   13           0           0           0           0           0           0
+   14           1           0           0           0           0           0
+   15           0           0           0           0           0           0
+   16           0           0           0           0           1           0
+   17           1           0           0           0           0           0
+   18           0           0           0           0           1           0
+   19           1           0           0           0           1           0
+   20           1           0           0           0           0           0
+   21           0           0           0           0           0           0
+   22           0           0           0           0           1           0
+   23           0           0           0           0           0           0
+   24           0           0           0           0           0           0
+   25           0           0           0           0           1           0
+   26           0           0           0           0           0           0
+   27           0           0           0           0           0           0
+   28           0           0           0           0           0           0
+   29           0           0           0           0           0           0
+   30           0           0           0           0           1           0
+   31           0           0           0           0           0           0
+   32           0           0           0           0           1           0
+   33           0           0           0           0           2           0
+   34           0           0           0           0           0           0
+   35           0           0           0           0           1           0
+   36           0           0           0           0           0           0
+   37           0           0           0           0           1           0
+   38           0           0           0           0           1           0
+   39           0           0           0           0           0           0
+   40           0           0           0           0           1           0
+   41           0           0           0           0           0           0
+   42           0           0           0           0           0           0
+   43           0           0           0           0           0           0
+   44           0           0           0           0           0           0
+   45           0           0           0           0           0           0
+   46           0           0           0           0           0           0
+   47           0           0           0           0           0           0
+   48           0           0           0           0           1           0
+   49           0           0           0           0           0           0
+   50           0           0           0           0           0           0
+   51           0           0           0           0           2           0
+   52           0           0           0           0           0           0
+   53           0           0           0           0           1           0
+   54           0           0           0           0           1           0
+   55           0           0           0           0           0           0
+   56           0           0           0           0           1           0
+   57           0           0           0           0           0           0
+   58           0           0           0           0           1           0
+   59           0           0           0           0           0           0
+   60           0           0           0           0           1           0
+   61           0           0           0           0           0           0
+   62           0           0           0           0           0           0
+   63           0           0           0           0           0           0
+   64           0           0           0           0           0           0
+   65           0           0           0           0           0           0
+   66           0           0           0           0           0           0
+   67           0           0           0           0           0           0
+   68           0           0           0           0           0           0
+   69           0           0           0           0           0           0
+   70           0           0           0           0           0           0
+   71           0           0           0           0           0           0
+   72           0           0           0           0           0           0
+   73           0           0           0           0           1           0
+   74           0           0           0           0           0           0
+   75           0           0           0           0           0           0
+   76           0           0           0           0           1           0
+   77           0           0           0           0           0           0
+   78           0           0           0           0           0           0
+   79           0           0           0           0           0           0
+   80           0           0           0           0           0           0
+   81           0           0           0           0           0           0
+   82           0           0           0           0           0           0
+   83           0           0           0           0           0           0
+   84           0           0           0           0           0           0
+   85           0           0           0           0           0           0
+   86           0           0           0           0           1           0
+   87           0           0           0           0           2           0
+   88           0           0           0           0           1           0
+   89           0           0           0           0           0           0
+   90           0           0           0           0           0           0
+   91           0           0           0           0           0           0
+   92           0           0           0           0           0           0
+   93           0           0           0           0           0           0
+   94           0           0           0           0           0           0
+   95           0           0           0           0           0           0
+   96           0           0           0           0           0           0
+   97           0           0           0           0           0           0
+   98           0           0           0           0           0           0
+   99           0           0           0           0           0           0
+  100           0           0           0           0           0           0
+  101           0           0           0           0           0           0
+  102           0           0           0           0           0           0
+  103           0           0           0           0           0           0
+  104           0           0           0           0           0           0
+  105           0           0           0           0           0           0
+  106           0           0           0           0           0           0
+  107           0           0           0           0           0           0
+  108           0           0           0           0           0           0
+  109           0           0           0           0           0           0
+  110           0           0           0           0           0           0
+  111           0           0           0           0           0           0
+  112           0           0           0           0           0           0
+  113           0           0           0           0           0           0
+  114           0           0           0           0           0           0
+  115           0           0           0           0           0           0
+  116           0           0           0           0           0           0
+  117           0           0           0           0           0           0
+  118           0           0           0           0           0           0
+  119           0           0           0           0           0           0
+  120           0           0           0           0           0           0
+  121           0           0           0           0           0           0
+  122           0           0           0           0           0           0
+  123           0           0           0           0          40           0
+  124          38         120          12           0          74           0
+
+ WORDS WRITTEN TO PARTICLE DATA FILE UP TO NOW =           0
+
+ PARTICLES AT DETECTOR LEVEL:
+ FOR LEVEL                     1
+ HEIGHT IN CM            0.000E+00
+ HEIGHT IN G/CM**2       1.036E+03
+ NO OF PROTONS      =            0.
+ NO OF ANTIPROTONS  =            0.
+ NO OF NEUTRONS     =            0.
+ NO OF ANTINEUTRONS =            0.
+ NO OF GAMMAS       =  5.000000E+00
+ NO OF POSITRONS    =  0.000000E+00
+ NO OF ELECTRONS    =  0.000000E+00
+ NO OF MU +         =           10.
+ NO OF MU -         =           11.
+ NO OF PI 0         =            0.
+ NO OF PI +         =            0.
+ NO OF PI -         =            0.
+ NO OF K0L          =            0.
+ NO OF K0S          =            0.
+ NO OF K +          =            0.
+ NO OF K -          =            0.
+ NO OF STR. BARYONS =            0.
+ NO OF DEUTERONS    =            0.
+ NO OF TRITONS      =            0.
+ NO OF 3HELIUM      =            0.
+ NO OF ALPHAS       =            0.
+ NO OF OTHER PARTIC.=            0.
+
+ NO OF DECAYED MUONS=           44.
+ NO OF ELIMIN. MUONS=            7.
+
+ NO OF NUCLEONS  PRODUCED IN FIRST HADR. INTERACTION =         2
+ NO OF PIONS     PRODUCED IN FIRST HADR. INTERACTION =        18
+ NO OF ETAS      PRODUCED IN FIRST HADR. INTERACTION =         0
+ NO OF KAONS     PRODUCED IN FIRST HADR. INTERACTION =         4
+ NO OF S.BARYONS PRODUCED IN FIRST HADR. INTERACTION =         0
+ NO OF RHO MESNS PRODUCED IN FIRST HADR. INTERACTION =         0
+ NO OF OTH. HADR.PRODUCED IN FIRST HADR. INTERACTION =         0
+ TOTAL MULTIPLICITY       OF FIRST HADR. INTERACTION =        24
+ ELASTICITY               OF FIRST HADR. INTERACTION =    0.3349
+ VERTICAL DEPTH (G/CM**2) OF FIRST HADR. INTERACTION =   27.3953
+ VERTICAL ALTITUDE (CM)   OF FIRST HADR. INTERACTION = 2472477.6
+ CROSS-SECTION MILLIBARN  OF FIRST HADR. INTERACTION =  289.4510
+ TARGET MASS NUMBER       OF FIRST HADR. INTERACTION =   14.0000
+
+
+ ---------- NKG - OUTPUT OF SHOWER NO          1 --------------------------------
+ ELECTRON/GAMMA THRESHOLD AT    0.00300 /   0.00300 GEV
+
+ LEVEL  THICKNESS        HEIGHT     ELECT. NUMBER   PSEUDO-
+  NO.     G/CM**2            CM                         AGE
+    1        100.      1638317.           167.465     0.732
+    2        200.      1195418.           328.257     1.035
+    3        300.       934705.           230.502     1.290
+    4        400.       736494.           105.361     1.464
+    5        500.       574886.            37.061     1.614
+    6        600.       438447.            17.897     1.372
+    7        700.       319568.            16.394     1.178
+    8        800.       213313.            10.147     1.387
+    9        900.       117326.             3.634     1.638
+   10       1036.            0.             0.747     1.946
+
+ RADIAL BIN  DISTANCE(CM)  LOCAL AGE  AT LEVEL NO.   1 AT HEIGHT:        0. CM
+          1         384.       2.103
+          2         888.       2.205
+          3        2055.       2.340
+          4        4755.       2.459
+          5       11005.       2.272
+          6       25471.       2.306
+          7       58950.       2.450
+          8      136436.       2.982
+          9      315772.      -0.927
+
+ LATERAL ELECTRON DENSITY (/CM**2)    AT LEVEL NO.   1 AT HEIGHT:        0. CM
+ -----------------------------------------------------------------------------
+  DIST (CM)        CZX            CZXY           CZY            CZYX     
+   -441000.    1.17776E-14    2.08822E-14    4.24175E-14    7.31375E-15
+   -190544.    2.45537E-12    3.91533E-13    6.93434E-14    4.79803E-14
+    -82329.    3.02213E-13    9.66843E-13    2.05637E-13    1.35872E-13
+    -35572.    2.71279E-12    5.08369E-13    3.08208E-13    6.52775E-13
+    -15370.    5.75398E-12    1.57056E-12    7.73375E-13    4.26101E-12
+     -6641.    1.29714E-11    3.41425E-12    1.70373E-12    1.05404E-11
+     -2869.    6.02793E-12    3.86514E-12    2.60160E-12    6.80325E-12
+     -1240.    4.58370E-12    3.80667E-12    3.14693E-12    4.79608E-12
+      -536.    4.02413E-12    3.72782E-12    3.41885E-12    4.08974E-12
+      -231.    3.80131E-12    3.68070E-12    3.54281E-12    3.82601E-12
+         0.    0.00000E+00    0.00000E+00    0.00000E+00    0.00000E+00
+       231.    3.48219E-12    3.59174E-12    3.73585E-12    3.46368E-12
+       536.    3.28393E-12    3.51918E-12    3.86068E-12    3.25063E-12
+      1240.    2.86474E-12    3.28872E-12    4.07075E-12    2.82686E-12
+      2869.    2.13364E-12    2.64253E-12    3.99581E-12    2.12286E-12
+      6641.    1.24246E-12    1.63059E-12    3.07938E-12    1.25784E-12
+     15370.    5.50080E-13    7.02428E-13    1.30636E-12    5.66808E-13
+     35572.    2.30666E-13    2.54806E-13    4.81191E-13    2.38934E-13
+     82329.    2.24653E-13    1.40080E-13    1.10655E-13    1.52310E-13
+    190544.    1.42329E-10    1.95701E-13    9.73260E-14    1.10396E-13
+    441000.    1.88005E-14    1.37017E-14    9.79546E-15    1.07475E-14
+  
+
+ ---------- LONGITUDINAL PARTICLE DISTRIBUTION IN SLANT STEPS OF   20. G/CM**2 --------------------------------------------
+  DEPTH         GAMMAS     POSITRONS     ELECTRONS         MU+         MU-     HADRONS     CHARGED     NUCLEI   CHERENKOV
+   20.0             0.            0.            0.          0.          0.          1.            1.         0. 0.00000E+00
+   40.0            13.            1.            1.          9.          8.          2.           21.         0. 0.00000E+00
+   60.0            97.           25.           34.         27.         25.          8.          115.         0. 0.00000E+00
+   80.0           266.           41.           65.         25.         20.          7.          153.         0. 0.00000E+00
+  100.0           424.           60.           87.         24.         20.          9.          194.         0. 0.00000E+00
+  120.0           544.           80.           87.         23.         19.          9.          213.         0. 0.00000E+00
+  140.0           713.          101.          127.         21.         21.          6.          272.         0. 0.00000E+00
+  160.0           929.          138.          184.         21.         22.          6.          368.         0. 0.00000E+00
+  180.0          1144.          145.          188.         18.         22.          5.          375.         0. 0.00000E+00
+  200.0          1232.          138.          194.         18.         21.          5.          373.         0. 0.00000E+00
+  220.0          1319.          151.          204.         18.         21.          5.          396.         0. 0.00000E+00
+  240.0          1315.          131.          184.         18.         21.          3.          355.         0. 0.00000E+00
+  260.0          1315.          119.          175.         18.         21.          2.          333.         0. 0.00000E+00
+  280.0          1239.          101.          147.         18.         21.          2.          287.         0. 0.00000E+00
+  300.0          1112.           89.          133.         18.         20.          2.          261.         0. 0.00000E+00
+  320.0          1027.           77.          144.         17.         19.          2.          258.         0. 0.00000E+00
+  340.0           955.           54.           99.         17.         18.          2.          189.         0. 0.00000E+00
+  360.0           797.           42.           84.         17.         18.          2.          162.         0. 0.00000E+00
+  380.0           675.           52.           58.         17.         18.          2.          146.         0. 0.00000E+00
+  400.0           561.           38.           65.         16.         16.          2.          136.         0. 0.00000E+00
+  420.0           471.           32.           50.         17.         16.          2.          116.         0. 0.00000E+00
+  440.0           406.           24.           50.         17.         12.          1.          104.         0. 0.00000E+00
+  460.0           339.           19.           32.         17.         12.          1.           81.         0. 0.00000E+00
+  480.0           269.            7.           26.         17.         12.          1.           63.         0. 0.00000E+00
+  500.0           221.           14.           17.         17.         12.          1.           61.         0. 0.00000E+00
+  520.0           176.            6.           16.         17.         12.          0.           51.         0. 0.00000E+00
+  540.0           144.            5.           15.         17.         12.          0.           49.         0. 0.00000E+00
+  560.0           107.            5.           11.         16.         12.          0.           44.         0. 0.00000E+00
+  580.0            94.            5.            6.         15.         12.          0.           38.         0. 0.00000E+00
+  600.0            87.           10.            8.         15.         12.          0.           45.         0. 0.00000E+00
+  620.0            78.           16.           16.         14.         11.          0.           57.         0. 0.00000E+00
+  640.0            71.           12.           12.         14.         11.          0.           49.         0. 0.00000E+00
+  660.0            68.            6.            6.         14.         11.          0.           37.         0. 0.00000E+00
+  680.0            68.            5.            9.         14.         11.          0.           39.         0. 0.00000E+00
+  700.0            55.            7.            6.         14.         11.          0.           38.         0. 0.00000E+00
+  720.0            51.            5.            9.         12.         11.          0.           37.         0. 0.00000E+00
+  740.0            55.            7.            3.         12.         11.          0.           33.         0. 0.00000E+00
+  760.0            55.            6.            6.         12.         11.          0.           35.         0. 0.00000E+00
+  780.0            52.            6.            5.         12.         11.          0.           34.         0. 0.00000E+00
+  800.0            53.            6.            2.         12.         11.          0.           31.         0. 0.00000E+00
+  820.0            52.            2.            2.         12.         11.          0.           27.         0. 0.00000E+00
+  840.0            40.            4.            4.         11.         11.          0.           30.         0. 0.00000E+00
+  860.0            53.            4.            5.         11.         11.          0.           31.         0. 0.00000E+00
+  880.0            47.            1.            6.         11.         11.          0.           29.         0. 0.00000E+00
+  900.0            39.            2.            2.         11.         11.          0.           26.         0. 0.00000E+00
+  920.0            30.            2.            6.         10.         11.          0.           29.         0. 0.00000E+00
+  940.0            26.            2.            2.         10.         11.          0.           25.         0. 0.00000E+00
+  960.0            23.            0.            3.         10.         11.          0.           24.         0. 0.00000E+00
+  980.0            18.            1.            2.         10.         11.          0.           24.         0. 0.00000E+00
+ 1000.0            14.            1.            0.         10.         11.          0.           22.         0. 0.00000E+00
+ 1020.0            11.            2.            0.         10.         11.          0.           23.         0. 0.00000E+00
+ 1040.0            12.            2.            0.         10.         11.          0.           23.         0. 0.00000E+00
+ 1060.0             8.            0.            0.          9.         11.          0.           20.         0. 0.00000E+00
+ 1080.0             7.            0.            0.          5.         10.          0.           15.         0. 0.00000E+00
+ 2160.0             3.            0.            0.          0.          2.          0.            2.         0. 0.00000E+00
+
+ ---------- LONGITUDINAL ENERGY DISTRIBUTION [GEV] IN SLANT STEPS OF   20. G/CM**2 ----------------------------------------
+  DEPTH      GAMMAS    POSITRONS    ELECTRONS          MU+          MU-      HADRONS      CHARGED       NUCLEI          SUM
+   20.0  0.00000E+00  0.00000E+00  0.00000E+00  0.00000E+00  0.00000E+00  9.99933E+02  9.99933E+02  0.00000E+00  9.99933E+02
+   40.0  5.66805E+01  4.36267E+00  6.18366E-01  1.91179E+02  9.12845E+01  5.61486E+02  8.48931E+02  0.00000E+00  9.05611E+02
+   60.0  1.60925E+02  1.65090E+01  3.58367E+01  2.75074E+02  2.05132E+02  6.83715E+01  5.86559E+02  0.00000E+00  7.61848E+02
+   80.0  1.64433E+02  2.31366E+01  2.86678E+01  2.78783E+02  1.90384E+02  4.65637E+01  5.51806E+02  0.00000E+00  7.31967E+02
+  100.0  1.56039E+02  2.24009E+01  4.06399E+01  2.77064E+02  1.81096E+02  4.02999E+01  5.37247E+02  0.00000E+00  7.17540E+02
+  120.0  1.22167E+02  4.14916E+01  4.67469E+01  2.75467E+02  1.90377E+02  2.64652E+01  5.61353E+02  0.00000E+00  7.02715E+02
+  140.0  1.05774E+02  5.03753E+01  4.18764E+01  2.73104E+02  1.92016E+02  1.80370E+01  5.61190E+02  0.00000E+00  6.81184E+02
+  160.0  9.39459E+01  5.26746E+01  3.80296E+01  2.72047E+02  1.91993E+02  1.46608E+01  5.60165E+02  0.00000E+00  6.63351E+02
+  180.0  9.82458E+01  4.08805E+01  2.77230E+01  2.63771E+02  1.90928E+02  1.28950E+01  5.26957E+02  0.00000E+00  6.34442E+02
+  200.0  9.66338E+01  3.05038E+01  2.17689E+01  2.62851E+02  1.87981E+02  1.28136E+01  5.06679E+02  0.00000E+00  6.12552E+02
+  220.0  9.12177E+01  2.31375E+01  1.59565E+01  2.61932E+02  1.86963E+02  1.27322E+01  4.91481E+02  0.00000E+00  5.91939E+02
+  240.0  7.71181E+01  1.81482E+01  1.72203E+01  2.61014E+02  1.85947E+02  9.24643E+00  4.83700E+02  0.00000E+00  5.68694E+02
+  260.0  6.24601E+01  1.58568E+01  1.68721E+01  2.60098E+02  1.84936E+02  7.87591E+00  4.77762E+02  0.00000E+00  5.48098E+02
+  280.0  5.51099E+01  1.19979E+01  1.25774E+01  2.59186E+02  1.83929E+02  7.87591E+00  4.67690E+02  0.00000E+00  5.30676E+02
+  300.0  4.79811E+01  9.19382E+00  9.65672E+00  2.58273E+02  1.81777E+02  6.17891E+00  4.63704E+02  0.00000E+00  5.13060E+02
+  320.0  4.11083E+01  6.51578E+00  7.66139E+00  2.53944E+02  1.80425E+02  6.14347E+00  4.53315E+02  0.00000E+00  4.95798E+02
+  340.0  3.75956E+01  3.60184E+00  3.62770E+00  2.53080E+02  1.78026E+02  6.10803E+00  4.43068E+02  0.00000E+00  4.82039E+02
+  360.0  2.81653E+01  3.53673E+00  4.80585E+00  2.52217E+02  1.77147E+02  6.07259E+00  4.42403E+02  0.00000E+00  4.71944E+02
+  380.0  2.49010E+01  2.23545E+00  2.36969E+00  2.51354E+02  1.76269E+02  6.03714E+00  4.36890E+02  0.00000E+00  4.63167E+02
+  400.0  1.92180E+01  2.26887E+00  2.56862E+00  2.49551E+02  1.67692E+02  6.00170E+00  4.26707E+02  0.00000E+00  4.47300E+02
+  420.0  1.45100E+01  1.67628E+00  2.59618E+00  2.49550E+02  1.66913E+02  4.02366E+00  4.23280E+02  0.00000E+00  4.39270E+02
+  440.0  1.21016E+01  8.73636E-01  2.99753E+00  2.48694E+02  1.62388E+02  2.50433E+00  4.17458E+02  0.00000E+00  4.29559E+02
+  460.0  1.02373E+01  5.45386E-01  1.33603E+00  2.47839E+02  1.61772E+02  2.46434E+00  4.13956E+02  0.00000E+00  4.24193E+02
+  480.0  8.90957E+00  2.96987E-01  5.20558E-01  2.46985E+02  1.61156E+02  2.42434E+00  4.11382E+02  0.00000E+00  4.20292E+02
+  500.0  4.68958E+00  2.04660E+00  1.18368E+00  2.46131E+02  1.60541E+02  1.52226E+00  4.11424E+02  0.00000E+00  4.16114E+02
+  520.0  3.82307E+00  1.35548E+00  1.16593E+00  2.45279E+02  1.59926E+02  0.00000E+00  4.07726E+02  0.00000E+00  4.11549E+02
+  540.0  3.51203E+00  1.10427E+00  3.44709E-01  2.44427E+02  1.59312E+02  0.00000E+00  4.05189E+02  0.00000E+00  4.08701E+02
+  560.0  3.34039E+00  2.87896E+00  3.35900E-01  2.40415E+02  1.58700E+02  0.00000E+00  4.02330E+02  0.00000E+00  4.05670E+02
+  580.0  3.63282E+00  4.36904E+00  2.34450E-01  2.33770E+02  1.58088E+02  0.00000E+00  3.96462E+02  0.00000E+00  4.00094E+02
+  600.0  3.13288E+00  3.94151E+00  4.16625E-01  2.33020E+02  1.57478E+02  0.00000E+00  3.94856E+02  0.00000E+00  3.97989E+02
+  620.0  3.04349E+00  2.99003E+00  5.08563E-01  2.31807E+02  1.56487E+02  0.00000E+00  3.91793E+02  0.00000E+00  3.94837E+02
+  640.0  2.59788E+00  2.35901E+00  2.84583E-01  2.31096E+02  1.55912E+02  0.00000E+00  3.89652E+02  0.00000E+00  3.92249E+02
+  660.0  2.37699E+00  1.66920E+00  1.27116E-01  2.30385E+02  1.55337E+02  0.00000E+00  3.87519E+02  0.00000E+00  3.89896E+02
+  680.0  1.65104E+00  1.32965E+00  4.31014E-01  2.29676E+02  1.54763E+02  0.00000E+00  3.86199E+02  0.00000E+00  3.87850E+02
+  700.0  1.38000E+00  1.05811E+00  2.05334E-01  2.28967E+02  1.54189E+02  0.00000E+00  3.84419E+02  0.00000E+00  3.85799E+02
+  720.0  2.03229E+00  3.81108E+00  1.68028E-01  2.22107E+02  1.53615E+02  0.00000E+00  3.79701E+02  0.00000E+00  3.81733E+02
+  740.0  3.08662E+00  2.15179E+00  4.24663E-02  2.21487E+02  1.53042E+02  0.00000E+00  3.76723E+02  0.00000E+00  3.79810E+02
+  760.0  2.88491E+00  1.55803E+00  1.28302E-01  2.20867E+02  1.52470E+02  0.00000E+00  3.75023E+02  0.00000E+00  3.77908E+02
+  780.0  2.60040E+00  1.19266E+00  1.88190E-01  2.20249E+02  1.51897E+02  0.00000E+00  3.73527E+02  0.00000E+00  3.76127E+02
+  800.0  3.09091E+00  1.78154E-01  5.29961E-02  2.19670E+02  1.51325E+02  0.00000E+00  3.71226E+02  0.00000E+00  3.74317E+02
+  820.0  2.57213E+00  2.14184E-02  2.73545E-01  2.19100E+02  1.50754E+02  0.00000E+00  3.70149E+02  0.00000E+00  3.72721E+02
+  840.0  1.88050E+00  3.96705E-01  4.29805E-01  2.18060E+02  1.50183E+02  0.00000E+00  3.69070E+02  0.00000E+00  3.70950E+02
+  860.0  1.71227E+00  2.13964E-01  2.33942E-01  2.17534E+02  1.49613E+02  0.00000E+00  3.67595E+02  0.00000E+00  3.69307E+02
+  880.0  1.59620E+00  6.78523E-02  1.11071E-01  2.17009E+02  1.49043E+02  0.00000E+00  3.66231E+02  0.00000E+00  3.67827E+02
+  900.0  7.56183E-01  5.83365E-01  1.25877E-02  2.16484E+02  1.48474E+02  0.00000E+00  3.65554E+02  0.00000E+00  3.66310E+02
+  920.0  8.02013E-01  2.52100E-01  4.68415E-02  2.15558E+02  1.47905E+02  0.00000E+00  3.63762E+02  0.00000E+00  3.64564E+02
+  940.0  8.03066E-01  5.32373E-02  7.24062E-02  2.15076E+02  1.47336E+02  0.00000E+00  3.62538E+02  0.00000E+00  3.63341E+02
+  960.0  7.17326E-01  0.00000E+00  3.54239E-02  2.14594E+02  1.46768E+02  0.00000E+00  3.61398E+02  0.00000E+00  3.62116E+02
+  980.0  5.12990E-01  7.27328E-02  1.39362E-02  2.14113E+02  1.46201E+02  0.00000E+00  3.60401E+02  0.00000E+00  3.60914E+02
+ 1000.0  4.94944E-01  2.46332E-02  0.00000E+00  2.13632E+02  1.45634E+02  0.00000E+00  3.59291E+02  0.00000E+00  3.59785E+02
+ 1020.0  2.87735E-01  1.26671E-01  0.00000E+00  2.13152E+02  1.45067E+02  0.00000E+00  3.58345E+02  0.00000E+00  3.58633E+02
+ 1040.0  2.04947E-01  6.12937E-02  0.00000E+00  2.12709E+02  1.44507E+02  0.00000E+00  3.57277E+02  0.00000E+00  3.57482E+02
+ 1060.0  1.48114E-01  0.00000E+00  0.00000E+00  2.11219E+02  1.44022E+02  0.00000E+00  3.55241E+02  0.00000E+00  3.55390E+02
+ 1080.0  1.04337E-01  0.00000E+00  0.00000E+00  1.81845E+02  1.31319E+02  0.00000E+00  3.13165E+02  0.00000E+00  3.13269E+02
+ 2160.0  3.96430E-02  0.00000E+00  0.00000E+00  0.00000E+00  1.68110E+01  0.00000E+00  1.68110E+01  0.00000E+00  1.68507E+01
+
+ ---------- LONGITUDINAL ENERGY DEPOSIT [GEV] IN SLANT STEPS OF   20. G/CM**2 ---------------------------------------------
+  DEPTH     GAMMA            EM IONIZ        EM CUT    MU IONIZ      MU CUT  HADR IONIZ    HADR CUT   NEUTRINO          SUM
+    10.0            0.0           0.0           0.0         0.0         0.0         0.1         0.0         0.0          0.1
+    30.0            0.0           0.0           0.0         0.4         0.0         0.2         0.2        93.0         93.9
+    50.0            0.2           1.3           0.1         2.2         0.8         0.4         2.1       138.8        145.8
+    70.0            0.1           4.3           0.4         2.3         0.3         0.1         0.7        22.4         30.7
+    90.0            0.1           6.2           0.6         2.2         0.0         0.1         0.1         5.0         14.3
+   110.0            0.2           8.1           1.1         2.1         0.1         0.1         0.8         2.2         14.7
+   130.0            0.2           9.4           1.2         2.1         0.0         0.1         2.6         2.8         18.5
+   150.0            0.3          13.0           1.5         2.1         0.0         0.1         0.4         0.3         17.6
+   170.0            0.4          16.8           2.2         2.0         0.0         0.1         0.4         5.4         27.5
+   190.0            0.5          15.8           2.4         2.0         0.0         0.1         0.0         1.2         21.9
+   210.0            0.5          15.8           2.3         1.9         0.0         0.1         0.0         0.0         20.6
+   230.0            0.6          15.0           2.6         1.9         0.0         0.1         0.8         0.1         21.1
+   250.0            0.6          14.4           2.5         1.9         0.0         0.0         0.2         0.0         19.6
+   270.0            0.5          12.7           2.3         1.9         0.0         0.0         0.0         0.0         17.4
+   290.0            0.5          11.1           2.2         1.9         0.5         0.0         0.7         0.7         17.6
+   310.0            0.4          10.1           2.0         1.8         0.0         0.0         0.0         2.5         16.9
+   330.0            0.3           8.5           1.8         1.8         0.0         0.0         0.0         1.4         13.8
+   350.0            0.3           6.4           1.5         1.7         0.0         0.0         0.0         0.0         10.1
+   370.0            0.3           5.4           1.3         1.7         0.0         0.0         0.0         0.0          8.8
+   390.0            0.3           5.1           1.2         1.6         0.0         0.0         0.0         7.7         15.9
+   410.0            0.2           4.1           1.0         1.6         0.1         0.0         0.8         0.1          8.0
+   430.0            0.2           3.3           0.8         1.6         0.0         0.0         0.4         2.1          8.3
+   450.0            0.1           3.0           0.7         1.5         0.0         0.0         0.0         0.0          5.4
+   470.0            0.1           1.7           0.5         1.5         0.0         0.0         0.0         0.0          3.9
+   490.0            0.1           1.4           0.4         1.5         0.0         0.0         0.4         0.3          4.0
+   510.0            0.1           1.1           0.4         1.5         0.0         0.0         0.4         0.2          3.6
+   530.0            0.1           1.0           0.3         1.5         0.0         0.0         0.0         0.0          2.8
+   550.0            0.1           0.6           0.3         1.4         0.0         0.0         0.0         0.6          3.0
+   570.0            0.0           0.7           0.2         1.4         0.0         0.0         0.0         3.3          5.6
+   590.0            0.0           0.6           0.1         1.4         0.1         0.0         0.0         0.0          2.2
+   610.0            0.0           0.9           0.2         1.3         0.0         0.0         0.0         0.3          2.7
+   630.0            0.0           1.1           0.2         1.3         0.0         0.0         0.0         0.0          2.6
+   650.0            0.0           0.8           0.2         1.3         0.0         0.0         0.0         0.0          2.4
+   670.0            0.0           0.6           0.1         1.3         0.0         0.0         0.0         0.0          2.0
+   690.0            0.0           0.6           0.2         1.3         0.0         0.0         0.0         0.0          2.1
+   710.0            0.0           0.5           0.1         1.2         0.0         0.0         0.0         2.2          4.1
+   730.0            0.0           0.6           0.1         1.2         0.0         0.0         0.0         0.0          1.9
+   750.0            0.0           0.6           0.1         1.2         0.0         0.0         0.0         0.0          1.9
+   770.0            0.0           0.5           0.1         1.2         0.0         0.0         0.0         0.0          1.8
+   790.0            0.0           0.6           0.1         1.2         0.0         0.0         0.0         0.0          1.8
+   810.0            0.0           0.4           0.1         1.1         0.0         0.0         0.0         0.0          1.6
+   830.0            0.0           0.3           0.1         1.1         0.0         0.0         0.0         0.3          1.8
+   850.0            0.0           0.5           0.1         1.1         0.0         0.0         0.0         0.0          1.6
+   870.0            0.0           0.3           0.1         1.1         0.0         0.0         0.0         0.0          1.5
+   890.0            0.0           0.3           0.1         1.1         0.1         0.0         0.0         0.0          1.7
+   910.0            0.0           0.2           0.1         1.1         0.0         0.0         0.0         0.0          1.3
+   930.0            0.0           0.1           0.0         1.1         0.0         0.0         0.0         0.0          1.2
+   950.0            0.0           0.1           0.0         1.0         0.0         0.0         0.0         0.0          1.2
+   970.0            0.0           0.1           0.0         1.0         0.0         0.0         0.0         0.0          1.2
+   990.0            0.0           0.1           0.0         1.0         0.0         0.0         0.0         0.0          1.1
+  1010.0            0.0           0.1           0.0         1.0         0.0         0.0         0.0         0.0          1.2
+  1030.0            0.0           0.1           0.0         1.0         0.0         0.0         0.0         0.0          1.2
+  1050.0            0.0           0.1           0.0         0.9         0.0         0.0         0.0         0.0          1.0
+  1070.0            0.1           0.0           0.0         0.6       354.9         0.0         0.0         0.0        355.6
+  1620.0  1.3240957E-03 3.9120560E-02 1.2931491E-02 2.49751E-01 0.00000E+00 0.00000E+00 0.00000E+00 0.00000E+00 3.031275E-01
+                             LONGITUDINAL ENERGY SUM [GEV] 
+          0.6966367E+01 0.2063779E+03 0.3317490E+02 0.77505E+02 0.35695E+03 0.19943E+01 0.85620E+01 0.29184E+03
+                    0.8           0.0           2.7         0.0         0.0         0.0         2.4         1.2
+                      ENERGY SUM =   9.9035721E+02 GEV
+
+   END OF SHOWER NO          1
+ PRESENT TIME : 08.03.2021  23:05:40 UTC
+ AND RANDOM NUMBER GENERATOR AT BEGIN OF EVENT :     101
+ SEQUENCE =  1  SEED =     17611  CALLS =   1861478  BILLIONS =         0
+ SEQUENCE =  2  SEED =     39607  CALLS = 196136157  BILLIONS =         0
+ PRIMARY ANGLES ARE: THETA =  0.2618 RAD, PHI =  0.4541 RAD
+ PRESENT TIME : 08.03.2021  23:06:00 UTC
+ AND RANDOM NUMBER GENERATOR AT BEGIN OF EVENT :     201
+ SEQUENCE =  1  SEED =     17611  CALLS =   3734943  BILLIONS =         0
+ SEQUENCE =  2  SEED =     39607  CALLS = 388830220  BILLIONS =         0
+ PRIMARY ANGLES ARE: THETA =  0.2618 RAD, PHI = -1.4751 RAD
+ PRESENT TIME : 08.03.2021  23:06:20 UTC
+ AND RANDOM NUMBER GENERATOR AT BEGIN OF EVENT :     301
+ SEQUENCE =  1  SEED =     17611  CALLS =   5703224  BILLIONS =         0
+ SEQUENCE =  2  SEED =     39607  CALLS = 586072838  BILLIONS =         0
+ PRIMARY ANGLES ARE: THETA =  0.2618 RAD, PHI =  0.0616 RAD
+ PRESENT TIME : 08.03.2021  23:06:41 UTC
+ AND RANDOM NUMBER GENERATOR AT BEGIN OF EVENT :     401
+ SEQUENCE =  1  SEED =     17611  CALLS =   7649661  BILLIONS =         0
+ SEQUENCE =  2  SEED =     39607  CALLS = 780684547  BILLIONS =         0
+ PRIMARY ANGLES ARE: THETA =  0.2618 RAD, PHI =  1.4768 RAD
+ PRESENT TIME : 08.03.2021  23:07:01 UTC
+ AND RANDOM NUMBER GENERATOR AT BEGIN OF EVENT :     501
+ SEQUENCE =  1  SEED =     17611  CALLS =   9600146  BILLIONS =         0
+ SEQUENCE =  2  SEED =     39607  CALLS = 975802156  BILLIONS =         0
+ PRIMARY ANGLES ARE: THETA =  0.2618 RAD, PHI =  3.0866 RAD
+ PRESENT TIME : 08.03.2021  23:07:21 UTC
+ AND RANDOM NUMBER GENERATOR AT BEGIN OF EVENT :     601
+ SEQUENCE =  1  SEED =     17611  CALLS =  11461288  BILLIONS =         0
+ SEQUENCE =  2  SEED =     39607  CALLS = 171108723  BILLIONS =         1
+ PRIMARY ANGLES ARE: THETA =  0.2618 RAD, PHI = -2.9880 RAD
+ PRESENT TIME : 08.03.2021  23:07:41 UTC
+ AND RANDOM NUMBER GENERATOR AT BEGIN OF EVENT :     701
+ SEQUENCE =  1  SEED =     17611  CALLS =  13376955  BILLIONS =         0
+ SEQUENCE =  2  SEED =     39607  CALLS = 361559772  BILLIONS =         1
+ PRIMARY ANGLES ARE: THETA =  0.2618 RAD, PHI =  1.8455 RAD
+ PRESENT TIME : 08.03.2021  23:08:00 UTC
+ AND RANDOM NUMBER GENERATOR AT BEGIN OF EVENT :     801
+ SEQUENCE =  1  SEED =     17611  CALLS =  15182661  BILLIONS =         0
+ SEQUENCE =  2  SEED =     39607  CALLS = 546223959  BILLIONS =         1
+ PRIMARY ANGLES ARE: THETA =  0.2618 RAD, PHI = -1.9285 RAD
+ PRESENT TIME : 08.03.2021  23:08:19 UTC
+ AND RANDOM NUMBER GENERATOR AT BEGIN OF EVENT :     901
+ SEQUENCE =  1  SEED =     17611  CALLS =  17093691  BILLIONS =         0
+ SEQUENCE =  2  SEED =     39607  CALLS = 729286502  BILLIONS =         1
+ PRIMARY ANGLES ARE: THETA =  0.2618 RAD, PHI =  3.0647 RAD
+ PRESENT TIME : 08.03.2021  23:08:39 UTC
+ AND RANDOM NUMBER GENERATOR AT BEGIN OF EVENT :    1001
+ SEQUENCE =  1  SEED =     17611  CALLS =  19117061  BILLIONS =         0
+ SEQUENCE =  2  SEED =     39607  CALLS = 919791718  BILLIONS =         1
+ PRIMARY ANGLES ARE: THETA =  0.2618 RAD, PHI = -2.7779 RAD
+ PRESENT TIME : 08.03.2021  23:08:59 UTC
+ AND RANDOM NUMBER GENERATOR AT BEGIN OF EVENT :    1101
+ SEQUENCE =  1  SEED =     17611  CALLS =  21112844  BILLIONS =         0
+ SEQUENCE =  2  SEED =     39607  CALLS = 111547760  BILLIONS =         2
+ PRIMARY ANGLES ARE: THETA =  0.2618 RAD, PHI = -0.6028 RAD
+ PRESENT TIME : 08.03.2021  23:09:18 UTC
+ AND RANDOM NUMBER GENERATOR AT BEGIN OF EVENT :    1201
+ SEQUENCE =  1  SEED =     17611  CALLS =  23148217  BILLIONS =         0
+ SEQUENCE =  2  SEED =     39607  CALLS = 297790399  BILLIONS =         2
+ PRIMARY ANGLES ARE: THETA =  0.2618 RAD, PHI = -1.8511 RAD
+ PRESENT TIME : 08.03.2021  23:09:38 UTC
+ AND RANDOM NUMBER GENERATOR AT BEGIN OF EVENT :    1301
+ SEQUENCE =  1  SEED =     17611  CALLS =  25169714  BILLIONS =         0
+ SEQUENCE =  2  SEED =     39607  CALLS = 487398364  BILLIONS =         2
+ PRIMARY ANGLES ARE: THETA =  0.2618 RAD, PHI =  2.2096 RAD
+ PRESENT TIME : 08.03.2021  23:09:58 UTC
+ AND RANDOM NUMBER GENERATOR AT BEGIN OF EVENT :    1401
+ SEQUENCE =  1  SEED =     17611  CALLS =  27085639  BILLIONS =         0
+ SEQUENCE =  2  SEED =     39607  CALLS = 673810869  BILLIONS =         2
+ PRIMARY ANGLES ARE: THETA =  0.2618 RAD, PHI = -0.8234 RAD
+ PRESENT TIME : 08.03.2021  23:10:17 UTC
+ AND RANDOM NUMBER GENERATOR AT BEGIN OF EVENT :    1501
+ SEQUENCE =  1  SEED =     17611  CALLS =  28840196  BILLIONS =         0
+ SEQUENCE =  2  SEED =     39607  CALLS = 863721473  BILLIONS =         2
+ PRIMARY ANGLES ARE: THETA =  0.2618 RAD, PHI = -1.3572 RAD
+ PRESENT TIME : 08.03.2021  23:10:37 UTC
+ AND RANDOM NUMBER GENERATOR AT BEGIN OF EVENT :    1601
+ SEQUENCE =  1  SEED =     17611  CALLS =  30792817  BILLIONS =         0
+ SEQUENCE =  2  SEED =     39607  CALLS =  53105060  BILLIONS =         3
+ PRIMARY ANGLES ARE: THETA =  0.2618 RAD, PHI = -1.8653 RAD
+ PRESENT TIME : 08.03.2021  23:10:57 UTC
+ AND RANDOM NUMBER GENERATOR AT BEGIN OF EVENT :    1701
+ SEQUENCE =  1  SEED =     17611  CALLS =  32755292  BILLIONS =         0
+ SEQUENCE =  2  SEED =     39607  CALLS = 248987531  BILLIONS =         3
+ PRIMARY ANGLES ARE: THETA =  0.2618 RAD, PHI =  0.8063 RAD
+ PRESENT TIME : 08.03.2021  23:11:17 UTC
+ AND RANDOM NUMBER GENERATOR AT BEGIN OF EVENT :    1801
+ SEQUENCE =  1  SEED =     17611  CALLS =  34710835  BILLIONS =         0
+ SEQUENCE =  2  SEED =     39607  CALLS = 435421081  BILLIONS =         3
+ PRIMARY ANGLES ARE: THETA =  0.2618 RAD, PHI =  0.0100 RAD
+ PRESENT TIME : 08.03.2021  23:11:36 UTC
+ AND RANDOM NUMBER GENERATOR AT BEGIN OF EVENT :    1901
+ SEQUENCE =  1  SEED =     17611  CALLS =  36711368  BILLIONS =         0
+ SEQUENCE =  2  SEED =     39607  CALLS = 617563058  BILLIONS =         3
+ PRIMARY ANGLES ARE: THETA =  0.2618 RAD, PHI =  2.2467 RAD
+ PRESENT TIME : 08.03.2021  23:11:55 UTC
+ AND RANDOM NUMBER GENERATOR AT BEGIN OF EVENT :    2001
+ SEQUENCE =  1  SEED =     17611  CALLS =  38564624  BILLIONS =         0
+ SEQUENCE =  2  SEED =     39607  CALLS = 807590632  BILLIONS =         3
+ PRIMARY ANGLES ARE: THETA =  0.2618 RAD, PHI =  0.9821 RAD
+ PRESENT TIME : 08.03.2021  23:12:16 UTC
+ AND RANDOM NUMBER GENERATOR AT BEGIN OF EVENT :    2101
+ SEQUENCE =  1  SEED =     17611  CALLS =  40496631  BILLIONS =         0
+ SEQUENCE =  2  SEED =     39607  CALLS =   1335056  BILLIONS =         4
+ PRIMARY ANGLES ARE: THETA =  0.2618 RAD, PHI = -0.9004 RAD
+ PRESENT TIME : 08.03.2021  23:12:36 UTC
+ AND RANDOM NUMBER GENERATOR AT BEGIN OF EVENT :    2201
+ SEQUENCE =  1  SEED =     17611  CALLS =  42425590  BILLIONS =         0
+ SEQUENCE =  2  SEED =     39607  CALLS = 194043258  BILLIONS =         4
+ PRIMARY ANGLES ARE: THETA =  0.2618 RAD, PHI = -2.1415 RAD
+ PRESENT TIME : 08.03.2021  23:12:56 UTC
+ AND RANDOM NUMBER GENERATOR AT BEGIN OF EVENT :    2301
+ SEQUENCE =  1  SEED =     17611  CALLS =  44111340  BILLIONS =         0
+ SEQUENCE =  2  SEED =     39607  CALLS = 389151011  BILLIONS =         4
+ PRIMARY ANGLES ARE: THETA =  0.2618 RAD, PHI = -2.8590 RAD
+ PRESENT TIME : 08.03.2021  23:13:16 UTC
+ AND RANDOM NUMBER GENERATOR AT BEGIN OF EVENT :    2401
+ SEQUENCE =  1  SEED =     17611  CALLS =  45903075  BILLIONS =         0
+ SEQUENCE =  2  SEED =     39607  CALLS = 578158356  BILLIONS =         4
+ PRIMARY ANGLES ARE: THETA =  0.2618 RAD, PHI = -0.8632 RAD
+ PRESENT TIME : 08.03.2021  23:13:36 UTC
+ AND RANDOM NUMBER GENERATOR AT BEGIN OF EVENT :    2501
+ SEQUENCE =  1  SEED =     17611  CALLS =  47765671  BILLIONS =         0
+ SEQUENCE =  2  SEED =     39607  CALLS = 779844539  BILLIONS =         4
+ PRIMARY ANGLES ARE: THETA =  0.2618 RAD, PHI =  2.5160 RAD
+ PRESENT TIME : 08.03.2021  23:13:57 UTC
+ AND RANDOM NUMBER GENERATOR AT BEGIN OF EVENT :    2601
+ SEQUENCE =  1  SEED =     17611  CALLS =  49679814  BILLIONS =         0
+ SEQUENCE =  2  SEED =     39607  CALLS = 980214933  BILLIONS =         4
+ PRIMARY ANGLES ARE: THETA =  0.2618 RAD, PHI =  1.8572 RAD
+ PRESENT TIME : 08.03.2021  23:14:17 UTC
+ AND RANDOM NUMBER GENERATOR AT BEGIN OF EVENT :    2701
+ SEQUENCE =  1  SEED =     17611  CALLS =  51545364  BILLIONS =         0
+ SEQUENCE =  2  SEED =     39607  CALLS = 168489268  BILLIONS =         5
+ PRIMARY ANGLES ARE: THETA =  0.2618 RAD, PHI = -2.3201 RAD
+ PRESENT TIME : 08.03.2021  23:14:38 UTC
+ AND RANDOM NUMBER GENERATOR AT BEGIN OF EVENT :    2801
+ SEQUENCE =  1  SEED =     17611  CALLS =  53385516  BILLIONS =         0
+ SEQUENCE =  2  SEED =     39607  CALLS = 371014701  BILLIONS =         5
+ PRIMARY ANGLES ARE: THETA =  0.2618 RAD, PHI = -2.5427 RAD
+ PRESENT TIME : 08.03.2021  23:14:59 UTC
+ AND RANDOM NUMBER GENERATOR AT BEGIN OF EVENT :    2901
+ SEQUENCE =  1  SEED =     17611  CALLS =  55240907  BILLIONS =         0
+ SEQUENCE =  2  SEED =     39607  CALLS = 571166751  BILLIONS =         5
+ PRIMARY ANGLES ARE: THETA =  0.2618 RAD, PHI =  1.3633 RAD
+ PRESENT TIME : 08.03.2021  23:15:19 UTC
+ AND RANDOM NUMBER GENERATOR AT BEGIN OF EVENT :    3001
+ SEQUENCE =  1  SEED =     17611  CALLS =  57163496  BILLIONS =         0
+ SEQUENCE =  2  SEED =     39607  CALLS = 766937347  BILLIONS =         5
+ PRIMARY ANGLES ARE: THETA =  0.2618 RAD, PHI =  2.4408 RAD
+ PRESENT TIME : 08.03.2021  23:15:39 UTC
+ AND RANDOM NUMBER GENERATOR AT BEGIN OF EVENT :    3101
+ SEQUENCE =  1  SEED =     17611  CALLS =  59235947  BILLIONS =         0
+ SEQUENCE =  2  SEED =     39607  CALLS = 961712850  BILLIONS =         5
+ PRIMARY ANGLES ARE: THETA =  0.2618 RAD, PHI =  0.3335 RAD
+ PRESENT TIME : 08.03.2021  23:15:58 UTC
+ AND RANDOM NUMBER GENERATOR AT BEGIN OF EVENT :    3201
+ SEQUENCE =  1  SEED =     17611  CALLS =  61146757  BILLIONS =         0
+ SEQUENCE =  2  SEED =     39607  CALLS = 146169894  BILLIONS =         6
+ PRIMARY ANGLES ARE: THETA =  0.2618 RAD, PHI =  2.0747 RAD
+ PRESENT TIME : 08.03.2021  23:16:17 UTC
+ AND RANDOM NUMBER GENERATOR AT BEGIN OF EVENT :    3301
+ SEQUENCE =  1  SEED =     17611  CALLS =  63144591  BILLIONS =         0
+ SEQUENCE =  2  SEED =     39607  CALLS = 328994397  BILLIONS =         6
+ PRIMARY ANGLES ARE: THETA =  0.2618 RAD, PHI = -0.3944 RAD
+ PRESENT TIME : 08.03.2021  23:16:37 UTC
+ AND RANDOM NUMBER GENERATOR AT BEGIN OF EVENT :    3401
+ SEQUENCE =  1  SEED =     17611  CALLS =  65034607  BILLIONS =         0
+ SEQUENCE =  2  SEED =     39607  CALLS = 521463171  BILLIONS =         6
+ PRIMARY ANGLES ARE: THETA =  0.2618 RAD, PHI = -0.6205 RAD
+ PRESENT TIME : 08.03.2021  23:16:58 UTC
+ AND RANDOM NUMBER GENERATOR AT BEGIN OF EVENT :    3501
+ SEQUENCE =  1  SEED =     17611  CALLS =  66894597  BILLIONS =         0
+ SEQUENCE =  2  SEED =     39607  CALLS = 716017710  BILLIONS =         6
+ PRIMARY ANGLES ARE: THETA =  0.2618 RAD, PHI =  1.7824 RAD
+ PRESENT TIME : 08.03.2021  23:17:17 UTC
+ AND RANDOM NUMBER GENERATOR AT BEGIN OF EVENT :    3601
+ SEQUENCE =  1  SEED =     17611  CALLS =  68879419  BILLIONS =         0
+ SEQUENCE =  2  SEED =     39607  CALLS = 905684898  BILLIONS =         6
+ PRIMARY ANGLES ARE: THETA =  0.2618 RAD, PHI =  1.2386 RAD
+ PRESENT TIME : 08.03.2021  23:17:37 UTC
+ AND RANDOM NUMBER GENERATOR AT BEGIN OF EVENT :    3701
+ SEQUENCE =  1  SEED =     17611  CALLS =  70838612  BILLIONS =         0
+ SEQUENCE =  2  SEED =     39607  CALLS =  97331716  BILLIONS =         7
+ PRIMARY ANGLES ARE: THETA =  0.2618 RAD, PHI =  2.1197 RAD
+ PRESENT TIME : 08.03.2021  23:17:57 UTC
+ AND RANDOM NUMBER GENERATOR AT BEGIN OF EVENT :    3801
+ SEQUENCE =  1  SEED =     17611  CALLS =  72763732  BILLIONS =         0
+ SEQUENCE =  2  SEED =     39607  CALLS = 290422225  BILLIONS =         7
+ PRIMARY ANGLES ARE: THETA =  0.2618 RAD, PHI = -1.0054 RAD
+ PRESENT TIME : 08.03.2021  23:18:17 UTC
+ AND RANDOM NUMBER GENERATOR AT BEGIN OF EVENT :    3901
+ SEQUENCE =  1  SEED =     17611  CALLS =  74668300  BILLIONS =         0
+ SEQUENCE =  2  SEED =     39607  CALLS = 474852105  BILLIONS =         7
+ PRIMARY ANGLES ARE: THETA =  0.2618 RAD, PHI =  2.3674 RAD
+ PRESENT TIME : 08.03.2021  23:18:38 UTC
+ AND RANDOM NUMBER GENERATOR AT BEGIN OF EVENT :    4001
+ SEQUENCE =  1  SEED =     17611  CALLS =  76525805  BILLIONS =         0
+ SEQUENCE =  2  SEED =     39607  CALLS = 676424682  BILLIONS =         7
+ PRIMARY ANGLES ARE: THETA =  0.2618 RAD, PHI =  2.3843 RAD
+ PRESENT TIME : 08.03.2021  23:18:57 UTC
+ AND RANDOM NUMBER GENERATOR AT BEGIN OF EVENT :    4101
+ SEQUENCE =  1  SEED =     17611  CALLS =  78541396  BILLIONS =         0
+ SEQUENCE =  2  SEED =     39607  CALLS = 866524668  BILLIONS =         7
+ PRIMARY ANGLES ARE: THETA =  0.2618 RAD, PHI = -2.1534 RAD
+ PRESENT TIME : 08.03.2021  23:19:16 UTC
+ AND RANDOM NUMBER GENERATOR AT BEGIN OF EVENT :    4201
+ SEQUENCE =  1  SEED =     17611  CALLS =  80363417  BILLIONS =         0
+ SEQUENCE =  2  SEED =     39607  CALLS =  47039305  BILLIONS =         8
+ PRIMARY ANGLES ARE: THETA =  0.2618 RAD, PHI = -0.8093 RAD
+ PRESENT TIME : 08.03.2021  23:19:36 UTC
+ AND RANDOM NUMBER GENERATOR AT BEGIN OF EVENT :    4301
+ SEQUENCE =  1  SEED =     17611  CALLS =  82279464  BILLIONS =         0
+ SEQUENCE =  2  SEED =     39607  CALLS = 236794012  BILLIONS =         8
+ PRIMARY ANGLES ARE: THETA =  0.2618 RAD, PHI =  0.6357 RAD
+ PRESENT TIME : 08.03.2021  23:19:57 UTC
+ AND RANDOM NUMBER GENERATOR AT BEGIN OF EVENT :    4401
+ SEQUENCE =  1  SEED =     17611  CALLS =  84200008  BILLIONS =         0
+ SEQUENCE =  2  SEED =     39607  CALLS = 436264024  BILLIONS =         8
+ PRIMARY ANGLES ARE: THETA =  0.2618 RAD, PHI = -1.5512 RAD
+ PRESENT TIME : 08.03.2021  23:20:17 UTC
+ AND RANDOM NUMBER GENERATOR AT BEGIN OF EVENT :    4501
+ SEQUENCE =  1  SEED =     17611  CALLS =  86031654  BILLIONS =         0
+ SEQUENCE =  2  SEED =     39607  CALLS = 629054313  BILLIONS =         8
+ PRIMARY ANGLES ARE: THETA =  0.2618 RAD, PHI =  3.0672 RAD
+ PRESENT TIME : 08.03.2021  23:20:36 UTC
+ AND RANDOM NUMBER GENERATOR AT BEGIN OF EVENT :    4601
+ SEQUENCE =  1  SEED =     17611  CALLS =  87977765  BILLIONS =         0
+ SEQUENCE =  2  SEED =     39607  CALLS = 815450441  BILLIONS =         8
+ PRIMARY ANGLES ARE: THETA =  0.2618 RAD, PHI =  1.4024 RAD
+ PRESENT TIME : 08.03.2021  23:20:55 UTC
+ AND RANDOM NUMBER GENERATOR AT BEGIN OF EVENT :    4701
+ SEQUENCE =  1  SEED =     17611  CALLS =  89863222  BILLIONS =         0
+ SEQUENCE =  2  SEED =     39607  CALLS = 998728609  BILLIONS =         8
+ PRIMARY ANGLES ARE: THETA =  0.2618 RAD, PHI =  1.1683 RAD
+ PRESENT TIME : 08.03.2021  23:21:16 UTC
+ AND RANDOM NUMBER GENERATOR AT BEGIN OF EVENT :    4801
+ SEQUENCE =  1  SEED =     17611  CALLS =  91624490  BILLIONS =         0
+ SEQUENCE =  2  SEED =     39607  CALLS = 199311065  BILLIONS =         9
+ PRIMARY ANGLES ARE: THETA =  0.2618 RAD, PHI =  2.7681 RAD
+ PRESENT TIME : 08.03.2021  23:21:36 UTC
+ AND RANDOM NUMBER GENERATOR AT BEGIN OF EVENT :    4901
+ SEQUENCE =  1  SEED =     17611  CALLS =  93451119  BILLIONS =         0
+ SEQUENCE =  2  SEED =     39607  CALLS = 392365280  BILLIONS =         9
+ PRIMARY ANGLES ARE: THETA =  0.2618 RAD, PHI = -1.3423 RAD
+ PRESENT TIME : 08.03.2021  23:21:56 UTC
+ AND RANDOM NUMBER GENERATOR AT BEGIN OF EVENT :    5001
+ SEQUENCE =  1  SEED =     17611  CALLS =  95441834  BILLIONS =         0
+ SEQUENCE =  2  SEED =     39607  CALLS = 587361573  BILLIONS =         9
+ PRIMARY ANGLES ARE: THETA =  0.2618 RAD, PHI = -2.9681 RAD
+ PRESENT TIME : 08.03.2021  23:22:16 UTC
+ AND RANDOM NUMBER GENERATOR AT BEGIN OF EVENT :    5101
+ SEQUENCE =  1  SEED =     17611  CALLS =  97433170  BILLIONS =         0
+ SEQUENCE =  2  SEED =     39607  CALLS = 774489735  BILLIONS =         9
+ PRIMARY ANGLES ARE: THETA =  0.2618 RAD, PHI =  0.3058 RAD
+ PRESENT TIME : 08.03.2021  23:22:36 UTC
+ AND RANDOM NUMBER GENERATOR AT BEGIN OF EVENT :    5201
+ SEQUENCE =  1  SEED =     17611  CALLS =  99366720  BILLIONS =         0
+ SEQUENCE =  2  SEED =     39607  CALLS = 966142691  BILLIONS =         9
+ PRIMARY ANGLES ARE: THETA =  0.2618 RAD, PHI =  0.1795 RAD
+ PRESENT TIME : 08.03.2021  23:22:55 UTC
+ AND RANDOM NUMBER GENERATOR AT BEGIN OF EVENT :    5301
+ SEQUENCE =  1  SEED =     17611  CALLS = 101246855  BILLIONS =         0
+ SEQUENCE =  2  SEED =     39607  CALLS = 150527982  BILLIONS =        10
+ PRIMARY ANGLES ARE: THETA =  0.2618 RAD, PHI =  2.2265 RAD
+ PRESENT TIME : 08.03.2021  23:23:14 UTC
+ AND RANDOM NUMBER GENERATOR AT BEGIN OF EVENT :    5401
+ SEQUENCE =  1  SEED =     17611  CALLS = 103266720  BILLIONS =         0
+ SEQUENCE =  2  SEED =     39607  CALLS = 333919957  BILLIONS =        10
+ PRIMARY ANGLES ARE: THETA =  0.2618 RAD, PHI =  1.2765 RAD
+ PRESENT TIME : 08.03.2021  23:23:33 UTC
+ AND RANDOM NUMBER GENERATOR AT BEGIN OF EVENT :    5501
+ SEQUENCE =  1  SEED =     17611  CALLS = 105115834  BILLIONS =         0
+ SEQUENCE =  2  SEED =     39607  CALLS = 518655196  BILLIONS =        10
+ PRIMARY ANGLES ARE: THETA =  0.2618 RAD, PHI =  1.9655 RAD
+ PRESENT TIME : 08.03.2021  23:23:53 UTC
+ AND RANDOM NUMBER GENERATOR AT BEGIN OF EVENT :    5601
+ SEQUENCE =  1  SEED =     17611  CALLS = 106985924  BILLIONS =         0
+ SEQUENCE =  2  SEED =     39607  CALLS = 714390758  BILLIONS =        10
+ PRIMARY ANGLES ARE: THETA =  0.2618 RAD, PHI =  1.7905 RAD
+ PRESENT TIME : 08.03.2021  23:24:13 UTC
+ AND RANDOM NUMBER GENERATOR AT BEGIN OF EVENT :    5701
+ SEQUENCE =  1  SEED =     17611  CALLS = 108785365  BILLIONS =         0
+ SEQUENCE =  2  SEED =     39607  CALLS = 900982621  BILLIONS =        10
+ PRIMARY ANGLES ARE: THETA =  0.2618 RAD, PHI = -3.0341 RAD
+ PRESENT TIME : 08.03.2021  23:24:32 UTC
+ AND RANDOM NUMBER GENERATOR AT BEGIN OF EVENT :    5801
+ SEQUENCE =  1  SEED =     17611  CALLS = 110569957  BILLIONS =         0
+ SEQUENCE =  2  SEED =     39607  CALLS =  87433708  BILLIONS =        11
+ PRIMARY ANGLES ARE: THETA =  0.2618 RAD, PHI = -2.1967 RAD
+ PRESENT TIME : 08.03.2021  23:24:52 UTC
+ AND RANDOM NUMBER GENERATOR AT BEGIN OF EVENT :    5901
+ SEQUENCE =  1  SEED =     17611  CALLS = 112404389  BILLIONS =         0
+ SEQUENCE =  2  SEED =     39607  CALLS = 279959672  BILLIONS =        11
+ PRIMARY ANGLES ARE: THETA =  0.2618 RAD, PHI =  2.2738 RAD
+ PRESENT TIME : 08.03.2021  23:25:12 UTC
+ AND RANDOM NUMBER GENERATOR AT BEGIN OF EVENT :    6001
+ SEQUENCE =  1  SEED =     17611  CALLS = 114263377  BILLIONS =         0
+ SEQUENCE =  2  SEED =     39607  CALLS = 470063910  BILLIONS =        11
+ PRIMARY ANGLES ARE: THETA =  0.2618 RAD, PHI = -1.8060 RAD
+ PRESENT TIME : 08.03.2021  23:25:32 UTC
+ AND RANDOM NUMBER GENERATOR AT BEGIN OF EVENT :    6101
+ SEQUENCE =  1  SEED =     17611  CALLS = 116164312  BILLIONS =         0
+ SEQUENCE =  2  SEED =     39607  CALLS = 661721821  BILLIONS =        11
+ PRIMARY ANGLES ARE: THETA =  0.2618 RAD, PHI = -2.1604 RAD
+ PRESENT TIME : 08.03.2021  23:25:52 UTC
+ AND RANDOM NUMBER GENERATOR AT BEGIN OF EVENT :    6201
+ SEQUENCE =  1  SEED =     17611  CALLS = 118067883  BILLIONS =         0
+ SEQUENCE =  2  SEED =     39607  CALLS = 852891893  BILLIONS =        11
+ PRIMARY ANGLES ARE: THETA =  0.2618 RAD, PHI =  0.1418 RAD
+ PRESENT TIME : 08.03.2021  23:26:11 UTC
+ AND RANDOM NUMBER GENERATOR AT BEGIN OF EVENT :    6301
+ SEQUENCE =  1  SEED =     17611  CALLS = 119957956  BILLIONS =         0
+ SEQUENCE =  2  SEED =     39607  CALLS =  34622828  BILLIONS =        12
+ PRIMARY ANGLES ARE: THETA =  0.2618 RAD, PHI = -2.7135 RAD
+ PRESENT TIME : 08.03.2021  23:26:30 UTC
+ AND RANDOM NUMBER GENERATOR AT BEGIN OF EVENT :    6401
+ SEQUENCE =  1  SEED =     17611  CALLS = 121937838  BILLIONS =         0
+ SEQUENCE =  2  SEED =     39607  CALLS = 218952413  BILLIONS =        12
+ PRIMARY ANGLES ARE: THETA =  0.2618 RAD, PHI =  0.6303 RAD
+ PRESENT TIME : 08.03.2021  23:26:49 UTC
+ AND RANDOM NUMBER GENERATOR AT BEGIN OF EVENT :    6501
+ SEQUENCE =  1  SEED =     17611  CALLS = 123845053  BILLIONS =         0
+ SEQUENCE =  2  SEED =     39607  CALLS = 407859244  BILLIONS =        12
+ PRIMARY ANGLES ARE: THETA =  0.2618 RAD, PHI =  2.5124 RAD
+ PRESENT TIME : 08.03.2021  23:27:09 UTC
+ AND RANDOM NUMBER GENERATOR AT BEGIN OF EVENT :    6601
+ SEQUENCE =  1  SEED =     17611  CALLS = 125616800  BILLIONS =         0
+ SEQUENCE =  2  SEED =     39607  CALLS = 594724202  BILLIONS =        12
+ PRIMARY ANGLES ARE: THETA =  0.2618 RAD, PHI = -1.5436 RAD
+ PRESENT TIME : 08.03.2021  23:27:29 UTC
+ AND RANDOM NUMBER GENERATOR AT BEGIN OF EVENT :    6701
+ SEQUENCE =  1  SEED =     17611  CALLS = 127560092  BILLIONS =         0
+ SEQUENCE =  2  SEED =     39607  CALLS = 787318603  BILLIONS =        12
+ PRIMARY ANGLES ARE: THETA =  0.2618 RAD, PHI =  1.2142 RAD
+ PRESENT TIME : 08.03.2021  23:27:49 UTC
+ AND RANDOM NUMBER GENERATOR AT BEGIN OF EVENT :    6801
+ SEQUENCE =  1  SEED =     17611  CALLS = 129499583  BILLIONS =         0
+ SEQUENCE =  2  SEED =     39607  CALLS = 978441873  BILLIONS =        12
+ PRIMARY ANGLES ARE: THETA =  0.2618 RAD, PHI = -0.2493 RAD
+ PRESENT TIME : 08.03.2021  23:28:09 UTC
+ AND RANDOM NUMBER GENERATOR AT BEGIN OF EVENT :    6901
+ SEQUENCE =  1  SEED =     17611  CALLS = 131421139  BILLIONS =         0
+ SEQUENCE =  2  SEED =     39607  CALLS = 176784316  BILLIONS =        13
+ PRIMARY ANGLES ARE: THETA =  0.2618 RAD, PHI =  1.6655 RAD
+ PRESENT TIME : 08.03.2021  23:28:29 UTC
+ AND RANDOM NUMBER GENERATOR AT BEGIN OF EVENT :    7001
+ SEQUENCE =  1  SEED =     17611  CALLS = 133412312  BILLIONS =         0
+ SEQUENCE =  2  SEED =     39607  CALLS = 366678243  BILLIONS =        13
+ PRIMARY ANGLES ARE: THETA =  0.2618 RAD, PHI = -1.1722 RAD
+ PRESENT TIME : 08.03.2021  23:28:49 UTC
+ AND RANDOM NUMBER GENERATOR AT BEGIN OF EVENT :    7101
+ SEQUENCE =  1  SEED =     17611  CALLS = 135440818  BILLIONS =         0
+ SEQUENCE =  2  SEED =     39607  CALLS = 554869125  BILLIONS =        13
+ PRIMARY ANGLES ARE: THETA =  0.2618 RAD, PHI =  0.2976 RAD
+ PRESENT TIME : 08.03.2021  23:29:08 UTC
+ AND RANDOM NUMBER GENERATOR AT BEGIN OF EVENT :    7201
+ SEQUENCE =  1  SEED =     17611  CALLS = 137339956  BILLIONS =         0
+ SEQUENCE =  2  SEED =     39607  CALLS = 746116460  BILLIONS =        13
+ PRIMARY ANGLES ARE: THETA =  0.2618 RAD, PHI =  1.6245 RAD
+ PRESENT TIME : 08.03.2021  23:29:29 UTC
+ AND RANDOM NUMBER GENERATOR AT BEGIN OF EVENT :    7301
+ SEQUENCE =  1  SEED =     17611  CALLS = 139122717  BILLIONS =         0
+ SEQUENCE =  2  SEED =     39607  CALLS = 941236628  BILLIONS =        13
+ PRIMARY ANGLES ARE: THETA =  0.2618 RAD, PHI =  0.3034 RAD
+ PRESENT TIME : 08.03.2021  23:29:48 UTC
+ AND RANDOM NUMBER GENERATOR AT BEGIN OF EVENT :    7401
+ SEQUENCE =  1  SEED =     17611  CALLS = 141055386  BILLIONS =         0
+ SEQUENCE =  2  SEED =     39607  CALLS = 128032828  BILLIONS =        14
+ PRIMARY ANGLES ARE: THETA =  0.2618 RAD, PHI =  1.3081 RAD
+ PRESENT TIME : 08.03.2021  23:30:08 UTC
+ AND RANDOM NUMBER GENERATOR AT BEGIN OF EVENT :    7501
+ SEQUENCE =  1  SEED =     17611  CALLS = 142921494  BILLIONS =         0
+ SEQUENCE =  2  SEED =     39607  CALLS = 314682617  BILLIONS =        14
+ PRIMARY ANGLES ARE: THETA =  0.2618 RAD, PHI = -0.4443 RAD
+ PRESENT TIME : 08.03.2021  23:30:27 UTC
+ AND RANDOM NUMBER GENERATOR AT BEGIN OF EVENT :    7601
+ SEQUENCE =  1  SEED =     17611  CALLS = 144658040  BILLIONS =         0
+ SEQUENCE =  2  SEED =     39607  CALLS = 503773109  BILLIONS =        14
+ PRIMARY ANGLES ARE: THETA =  0.2618 RAD, PHI = -0.5443 RAD
+ PRESENT TIME : 08.03.2021  23:30:48 UTC
+ AND RANDOM NUMBER GENERATOR AT BEGIN OF EVENT :    7701
+ SEQUENCE =  1  SEED =     17611  CALLS = 146651002  BILLIONS =         0
+ SEQUENCE =  2  SEED =     39607  CALLS = 701697941  BILLIONS =        14
+ PRIMARY ANGLES ARE: THETA =  0.2618 RAD, PHI = -1.4956 RAD
+ PRESENT TIME : 08.03.2021  23:31:07 UTC
+ AND RANDOM NUMBER GENERATOR AT BEGIN OF EVENT :    7801
+ SEQUENCE =  1  SEED =     17611  CALLS = 148437224  BILLIONS =         0
+ SEQUENCE =  2  SEED =     39607  CALLS = 887252174  BILLIONS =        14
+ PRIMARY ANGLES ARE: THETA =  0.2618 RAD, PHI =  2.5082 RAD
+ PRESENT TIME : 08.03.2021  23:31:27 UTC
+ AND RANDOM NUMBER GENERATOR AT BEGIN OF EVENT :    7901
+ SEQUENCE =  1  SEED =     17611  CALLS = 150372259  BILLIONS =         0
+ SEQUENCE =  2  SEED =     39607  CALLS =  74479735  BILLIONS =        15
+ PRIMARY ANGLES ARE: THETA =  0.2618 RAD, PHI =  2.1416 RAD
+ PRESENT TIME : 08.03.2021  23:31:46 UTC
+ AND RANDOM NUMBER GENERATOR AT BEGIN OF EVENT :    8001
+ SEQUENCE =  1  SEED =     17611  CALLS = 152385173  BILLIONS =         0
+ SEQUENCE =  2  SEED =     39607  CALLS = 260334792  BILLIONS =        15
+ PRIMARY ANGLES ARE: THETA =  0.2618 RAD, PHI =  2.2469 RAD
+ PRESENT TIME : 08.03.2021  23:32:06 UTC
+ AND RANDOM NUMBER GENERATOR AT BEGIN OF EVENT :    8101
+ SEQUENCE =  1  SEED =     17611  CALLS = 154274756  BILLIONS =         0
+ SEQUENCE =  2  SEED =     39607  CALLS = 454454728  BILLIONS =        15
+ PRIMARY ANGLES ARE: THETA =  0.2618 RAD, PHI =  2.5976 RAD
+ PRESENT TIME : 08.03.2021  23:32:25 UTC
+ AND RANDOM NUMBER GENERATOR AT BEGIN OF EVENT :    8201
+ SEQUENCE =  1  SEED =     17611  CALLS = 156139768  BILLIONS =         0
+ SEQUENCE =  2  SEED =     39607  CALLS = 637447820  BILLIONS =        15
+ PRIMARY ANGLES ARE: THETA =  0.2618 RAD, PHI =  1.5017 RAD
+ PRESENT TIME : 08.03.2021  23:32:45 UTC
+ AND RANDOM NUMBER GENERATOR AT BEGIN OF EVENT :    8301
+ SEQUENCE =  1  SEED =     17611  CALLS = 157927387  BILLIONS =         0
+ SEQUENCE =  2  SEED =     39607  CALLS = 825655478  BILLIONS =        15
+ PRIMARY ANGLES ARE: THETA =  0.2618 RAD, PHI =  2.1841 RAD
+ PRESENT TIME : 08.03.2021  23:33:05 UTC
+ AND RANDOM NUMBER GENERATOR AT BEGIN OF EVENT :    8401
+ SEQUENCE =  1  SEED =     17611  CALLS = 159685353  BILLIONS =         0
+ SEQUENCE =  2  SEED =     39607  CALLS =  17593485  BILLIONS =        16
+ PRIMARY ANGLES ARE: THETA =  0.2618 RAD, PHI = -1.9645 RAD
+ PRESENT TIME : 08.03.2021  23:33:24 UTC
+ AND RANDOM NUMBER GENERATOR AT BEGIN OF EVENT :    8501
+ SEQUENCE =  1  SEED =     17611  CALLS = 161605715  BILLIONS =         0
+ SEQUENCE =  2  SEED =     39607  CALLS = 205474003  BILLIONS =        16
+ PRIMARY ANGLES ARE: THETA =  0.2618 RAD, PHI =  0.1832 RAD
+ PRESENT TIME : 08.03.2021  23:33:44 UTC
+ AND RANDOM NUMBER GENERATOR AT BEGIN OF EVENT :    8601
+ SEQUENCE =  1  SEED =     17611  CALLS = 163661396  BILLIONS =         0
+ SEQUENCE =  2  SEED =     39607  CALLS = 398469730  BILLIONS =        16
+ PRIMARY ANGLES ARE: THETA =  0.2618 RAD, PHI =  0.0931 RAD
+ PRESENT TIME : 08.03.2021  23:34:04 UTC
+ AND RANDOM NUMBER GENERATOR AT BEGIN OF EVENT :    8701
+ SEQUENCE =  1  SEED =     17611  CALLS = 165646556  BILLIONS =         0
+ SEQUENCE =  2  SEED =     39607  CALLS = 593501762  BILLIONS =        16
+ PRIMARY ANGLES ARE: THETA =  0.2618 RAD, PHI =  2.5968 RAD
+ PRESENT TIME : 08.03.2021  23:34:24 UTC
+ AND RANDOM NUMBER GENERATOR AT BEGIN OF EVENT :    8801
+ SEQUENCE =  1  SEED =     17611  CALLS = 167566762  BILLIONS =         0
+ SEQUENCE =  2  SEED =     39607  CALLS = 779137675  BILLIONS =        16
+ PRIMARY ANGLES ARE: THETA =  0.2618 RAD, PHI =  1.0494 RAD
+ PRESENT TIME : 08.03.2021  23:34:44 UTC
+ AND RANDOM NUMBER GENERATOR AT BEGIN OF EVENT :    8901
+ SEQUENCE =  1  SEED =     17611  CALLS = 169376826  BILLIONS =         0
+ SEQUENCE =  2  SEED =     39607  CALLS = 974005069  BILLIONS =        16
+ PRIMARY ANGLES ARE: THETA =  0.2618 RAD, PHI =  0.5011 RAD
+ PRESENT TIME : 08.03.2021  23:35:05 UTC
+ AND RANDOM NUMBER GENERATOR AT BEGIN OF EVENT :    9001
+ SEQUENCE =  1  SEED =     17611  CALLS = 171183654  BILLIONS =         0
+ SEQUENCE =  2  SEED =     39607  CALLS = 173877477  BILLIONS =        17
+ PRIMARY ANGLES ARE: THETA =  0.2618 RAD, PHI = -1.7343 RAD
+ PRESENT TIME : 08.03.2021  23:35:24 UTC
+ AND RANDOM NUMBER GENERATOR AT BEGIN OF EVENT :    9101
+ SEQUENCE =  1  SEED =     17611  CALLS = 173188054  BILLIONS =         0
+ SEQUENCE =  2  SEED =     39607  CALLS = 358433089  BILLIONS =        17
+ PRIMARY ANGLES ARE: THETA =  0.2618 RAD, PHI =  2.1969 RAD
+ PRESENT TIME : 08.03.2021  23:35:44 UTC
+ AND RANDOM NUMBER GENERATOR AT BEGIN OF EVENT :    9201
+ SEQUENCE =  1  SEED =     17611  CALLS = 175080061  BILLIONS =         0
+ SEQUENCE =  2  SEED =     39607  CALLS = 549992430  BILLIONS =        17
+ PRIMARY ANGLES ARE: THETA =  0.2618 RAD, PHI = -1.4815 RAD
+ PRESENT TIME : 08.03.2021  23:36:03 UTC
+ AND RANDOM NUMBER GENERATOR AT BEGIN OF EVENT :    9301
+ SEQUENCE =  1  SEED =     17611  CALLS = 176878752  BILLIONS =         0
+ SEQUENCE =  2  SEED =     39607  CALLS = 733963334  BILLIONS =        17
+ PRIMARY ANGLES ARE: THETA =  0.2618 RAD, PHI = -0.6851 RAD
+ PRESENT TIME : 08.03.2021  23:36:23 UTC
+ AND RANDOM NUMBER GENERATOR AT BEGIN OF EVENT :    9401
+ SEQUENCE =  1  SEED =     17611  CALLS = 178772023  BILLIONS =         0
+ SEQUENCE =  2  SEED =     39607  CALLS = 927814994  BILLIONS =        17
+ PRIMARY ANGLES ARE: THETA =  0.2618 RAD, PHI =  1.6435 RAD
+ PRESENT TIME : 08.03.2021  23:36:44 UTC
+ AND RANDOM NUMBER GENERATOR AT BEGIN OF EVENT :    9501
+ SEQUENCE =  1  SEED =     17611  CALLS = 180750505  BILLIONS =         0
+ SEQUENCE =  2  SEED =     39607  CALLS = 126602541  BILLIONS =        18
+ PRIMARY ANGLES ARE: THETA =  0.2618 RAD, PHI = -0.6276 RAD
+ PRESENT TIME : 08.03.2021  23:37:04 UTC
+ AND RANDOM NUMBER GENERATOR AT BEGIN OF EVENT :    9601
+ SEQUENCE =  1  SEED =     17611  CALLS = 182676770  BILLIONS =         0
+ SEQUENCE =  2  SEED =     39607  CALLS = 316685322  BILLIONS =        18
+ PRIMARY ANGLES ARE: THETA =  0.2618 RAD, PHI =  2.8030 RAD
+ PRESENT TIME : 08.03.2021  23:37:24 UTC
+ AND RANDOM NUMBER GENERATOR AT BEGIN OF EVENT :    9701
+ SEQUENCE =  1  SEED =     17611  CALLS = 184544890  BILLIONS =         0
+ SEQUENCE =  2  SEED =     39607  CALLS = 518427771  BILLIONS =        18
+ PRIMARY ANGLES ARE: THETA =  0.2618 RAD, PHI =  1.2467 RAD
+ PRESENT TIME : 08.03.2021  23:37:44 UTC
+ AND RANDOM NUMBER GENERATOR AT BEGIN OF EVENT :    9801
+ SEQUENCE =  1  SEED =     17611  CALLS = 186372930  BILLIONS =         0
+ SEQUENCE =  2  SEED =     39607  CALLS = 704197825  BILLIONS =        18
+ PRIMARY ANGLES ARE: THETA =  0.2618 RAD, PHI =  0.6554 RAD
+ PRESENT TIME : 08.03.2021  23:38:03 UTC
+ AND RANDOM NUMBER GENERATOR AT BEGIN OF EVENT :    9901
+ SEQUENCE =  1  SEED =     17611  CALLS = 188379585  BILLIONS =         0
+ SEQUENCE =  2  SEED =     39607  CALLS = 885462139  BILLIONS =        18
+ PRIMARY ANGLES ARE: THETA =  0.2618 RAD, PHI = -0.3434 RAD
+  
+ PRESENT TIME : 08.03.2021  23:38:22 UTC
+ AND RANDOM NUMBER GENERATOR AT END OF EVENT :   10000
+ SEQUENCE =  1  SEED =     17611  CALLS = 190389660  BILLIONS =         0
+ SEQUENCE =  2  SEED =     39607  CALLS =  71653742  BILLIONS =        19
+
+
+ ========== RUN SUMMARY ========================================================
+
+ NUMBER OF GENERATED EVENTS =      10000
+ TOTAL TIME USED            =        1982.   SEC
+ TIME PER EVENT             =           0.20 SEC
+ TOTAL SPACE ON MPATAP USED =     21842730 WORDS
+ SPACE PER EVENT ON MPATAP  =         2184 WORDS
+ AVERAGE HEIGHT OF 1ST INT. =     79.133 +-    78.852 G/CM**2
+
+
+
+ ENERGY - MULTIPLICITY MATRIX FOR ALL SHOWERS
+ ENERGY RUNS VERTICALLY, MULTIPLICITY HORIZONTALLY
+
+                1         2         3         4         5       6       7       8     9    10    11    12    13 ENERGY RANGE [GEV]
+
+    1      161582         0         0         0         0       0       0       0     0     0     0     0     0  1.00E-01 2.15E-01
+    2      265618      8952     27257     13268         3       0       0       0     0     0     0     0     0  2.15E-01 4.64E-01
+    3      342978     11467     46959     28486        28       0       0       0     0     0     0     0     0  4.64E-01 1.00E+00
+    4      293252      5836     31283     21277        29       0       0       0     0     0     0     0     0  1.00E+00 2.15E+00
+    5      238135      3178     21122     20294        60       0       0       0     0     0     0     0     0  2.15E+00 4.64E+00
+    6      189431      4107     18961     14768       100       0       0       0     0     0     0     0     0  4.64E+00 1.00E+01
+    7      130130      3847     15492     12854       321       0       0       0     0     0     0     0     0  1.00E+01 2.15E+01
+    8       75772      1532      8585     14169      1700       3       0       0     0     0     0     0     0  2.15E+01 4.64E+01
+    9       34884       989      4334      9681      2410      26       0       0     0     0     0     0     0  4.64E+01 1.00E+02
+   10       11070       961      1029      5275      3700     212       0       0     0     0     0     0     0  1.00E+02 2.15E+02
+   11        2402       521       487      2532      2571     542       0       0     0     0     0     0     0  2.15E+02 4.64E+02
+   12         316      1156       803      4145      5626    2523      46       0     0     0     0     0     0  4.64E+02 1.00E+03
+   13           0         0         0         0         0       0       0       0     0     0     0     0     0  1.00E+03 2.15E+03
+   14           0         0         0         0         0       0       0       0     0     0     0     0     0  2.15E+03 4.64E+03
+   15           0         0         0         0         0       0       0       0     0     0     0     0     0  4.64E+03 1.00E+04
+   16           0         0         0         0         0       0       0       0     0     0     0     0     0  1.00E+04 2.15E+04
+   17           0         0         0         0         0       0       0       0     0     0     0     0     0  2.15E+04 4.64E+04
+   18           0         0         0         0         0       0       0       0     0     0     0     0     0  4.64E+04 1.00E+05
+   19           0         0         0         0         0       0       0       0     0     0     0     0     0  1.00E+05 2.15E+05
+   20           0         0         0         0         0       0       0       0     0     0     0     0     0  2.15E+05 4.64E+05
+   21           0         0         0         0         0       0       0       0     0     0     0     0     0  4.64E+05 1.00E+06
+   22           0         0         0         0         0       0       0       0     0     0     0     0     0  1.00E+06 2.15E+06
+   23           0         0         0         0         0       0       0       0     0     0     0     0     0  2.15E+06 4.64E+06
+   24           0         0         0         0         0       0       0       0     0     0     0     0     0  4.64E+06 1.00E+07
+   25           0         0         0         0         0       0       0       0     0     0     0     0     0  1.00E+07 2.15E+07
+   26           0         0         0         0         0       0       0       0     0     0     0     0     0  2.15E+07 4.64E+07
+   27           0         0         0         0         0       0       0       0     0     0     0     0     0  4.64E+07 1.00E+08
+   28           0         0         0         0         0       0       0       0     0     0     0     0     0  1.00E+08 2.15E+08
+   29           0         0         0         0         0       0       0       0     0     0     0     0     0  2.15E+08 4.64E+08
+   30           0         0         0         0         0       0       0       0     0     0     0     0     0  4.64E+08 1.00E+09
+   31           0         0         0         0         0       0       0       0     0     0     0     0     0  1.00E+09 2.15E+09
+   32           0         0         0         0         0       0       0       0     0     0     0     0     0  2.15E+09 4.64E+09
+   33           0         0         0         0         0       0       0       0     0     0     0     0     0  4.64E+09 1.00E+10
+   34           0         0         0         0         0       0       0       0     0     0     0     0     0  1.00E+10 2.15E+10
+   35           0         0         0         0         0       0       0       0     0     0     0     0     0  2.15E+10 4.64E+10
+   36           0         0         0         0         0       0       0       0     0     0     0     0     0  4.64E+10 1.00E+11
+   37           0         0         0         0         0       0       0       0     0     0     0     0     0  1.00E+11 2.15E+11
+   38           0         0         0         0         0       0       0       0     0     0     0     0     0  2.15E+11 4.64E+11
+   39           0         0         0         0         0       0       0       0     0     0     0     0     0  4.64E+11 1.00E+12
+
+ MULT.          1         3         5        11        22      47     101     216   465  1001  2155  4642 10001    LOWER BIN LIMIT
+ RANGE          2         4        10        21        46     100     215     464  1000  2154  4641 10000 21544    UPPER BIN LIMIT
+
+
+ ENERGY - ELASTICITY MATRIX FOR ALL SHOWERS
+ ENERGY RUNS VERTICALLY, ELASTICITY HORIZONTALLY
+
+             1        2        3        4        5        6        7         8         9        10   MEAN EL.  ENERGY RANGE [GEV]
+
+   1         0        0        0        0        0        0        0         0         0         0  0.000E+00  1.00E-01  2.15E-01
+   2         0        0        0        0        0        1        0     14137     25660      2307  8.218E-01  2.15E-01  4.64E-01
+   3         0        0        0        0        1     1256    25266     24200      1518      1527  7.046E-01  4.64E-01  1.00E+00
+   4         0        4        3       26      835     4727     7201      7194      6664      7734  7.596E-01  1.00E+00  2.15E+00
+   5        17      104      222     1170     4277     8387     9179      9440      6667      2500  6.702E-01  2.15E+00  4.64E+00
+   6        13      121     1944     5406     7914     7977     6814      5150      2959       533  5.582E-01  4.64E+00  1.00E+01
+   7        10      454     2781     5129     6297     5875     4932      3969      2944       832  5.446E-01  1.00E+01  2.15E+01
+   8        10      504     2561     4395     4720     4398     3724      2836      1970      1143  5.368E-01  2.15E+01  4.64E+01
+   9        39     1000     2354     2993     2807     2379     2008      1670      1330       967  5.116E-01  4.64E+01  1.00E+02
+  10       119     2046     2570     1926     1326      873      688       528       510       598  4.078E-01  1.00E+02  2.15E+02
+  11        97     1220     1422     1109      756      565      395       329       293       467  4.179E-01  2.15E+02  4.64E+02
+  12       212     2526     2977     2296     1639     1175      910       713       662      1190  4.307E-01  4.64E+02  1.00E+03
+  13         0        0        0        0        0        0        0         0         0         0  0.000E+00  1.00E+03  2.15E+03
+  14         0        0        0        0        0        0        0         0         0         0  0.000E+00  2.15E+03  4.64E+03
+  15         0        0        0        0        0        0        0         0         0         0  0.000E+00  4.64E+03  1.00E+04
+  16         0        0        0        0        0        0        0         0         0         0  0.000E+00  1.00E+04  2.15E+04
+  17         0        0        0        0        0        0        0         0         0         0  0.000E+00  2.15E+04  4.64E+04
+  18         0        0        0        0        0        0        0         0         0         0  0.000E+00  4.64E+04  1.00E+05
+  19         0        0        0        0        0        0        0         0         0         0  0.000E+00  1.00E+05  2.15E+05
+  20         0        0        0        0        0        0        0         0         0         0  0.000E+00  2.15E+05  4.64E+05
+  21         0        0        0        0        0        0        0         0         0         0  0.000E+00  4.64E+05  1.00E+06
+  22         0        0        0        0        0        0        0         0         0         0  0.000E+00  1.00E+06  2.15E+06
+  23         0        0        0        0        0        0        0         0         0         0  0.000E+00  2.15E+06  4.64E+06
+  24         0        0        0        0        0        0        0         0         0         0  0.000E+00  4.64E+06  1.00E+07
+  25         0        0        0        0        0        0        0         0         0         0  0.000E+00  1.00E+07  2.15E+07
+  26         0        0        0        0        0        0        0         0         0         0  0.000E+00  2.15E+07  4.64E+07
+  27         0        0        0        0        0        0        0         0         0         0  0.000E+00  4.64E+07  1.00E+08
+  28         0        0        0        0        0        0        0         0         0         0  0.000E+00  1.00E+08  2.15E+08
+  29         0        0        0        0        0        0        0         0         0         0  0.000E+00  2.15E+08  4.64E+08
+  30         0        0        0        0        0        0        0         0         0         0  0.000E+00  4.64E+08  1.00E+09
+  31         0        0        0        0        0        0        0         0         0         0  0.000E+00  1.00E+09  2.15E+09
+  32         0        0        0        0        0        0        0         0         0         0  0.000E+00  2.15E+09  4.64E+09
+  33         0        0        0        0        0        0        0         0         0         0  0.000E+00  4.64E+09  1.00E+10
+  34         0        0        0        0        0        0        0         0         0         0  0.000E+00  1.00E+10  2.15E+10
+  35         0        0        0        0        0        0        0         0         0         0  0.000E+00  2.15E+10  4.64E+10
+  36         0        0        0        0        0        0        0         0         0         0  0.000E+00  4.64E+10  1.00E+11
+  37         0        0        0        0        0        0        0         0         0         0  0.000E+00  1.00E+11  2.15E+11
+  38         0        0        0        0        0        0        0         0         0         0  0.000E+00  2.15E+11  4.64E+11
+  39         0        0        0        0        0        0        0         0         0         0  0.000E+00  4.64E+11  1.00E+12
+
+ ELA.     0.00     0.10     0.20     0.30     0.40     0.50     0.60      0.70      0.80      0.90     LOWER BIN LIMIT
+ RANGE    0.10     0.20     0.30     0.40     0.50     0.60     0.70      0.80      0.90      1.00     UPPER BIN LIMIT
+
+
+ INTERACTIONS PER KINETIC ENERGY INTERVAL FOR ALL SHOWERS
+
+   BIN    LOWER LIMIT    UPPER LIMIT      NUCLEON        PIONS         KAONS     S.BARYONS          TOTAL
+            IN GEV         IN GEV          EVENTS       EVENTS        EVENTS        EVENTS    
+
+
+     1     0.0000E+00     1.0000E-01            0.        79797.            0.            0.         79797.
+     2     1.0000E-01     2.1544E-01            0.        81785.            0.            0.         81785.
+     3     2.1544E-01     4.6416E-01       113219.       197998.         2499.         1381.        315097.
+     4     4.6416E-01     1.0000E+00       143515.       276243.         7360.         2787.        429905.
+     5     1.0000E+00     2.1544E+00        81685.       255425.        11674.         2863.        351647.
+     6     2.1544E+00     4.6416E+00        50590.       215658.        13750.         2791.        282789.
+     7     4.6416E+00     1.0000E+01        37204.       174072.        13601.         2490.        227367.
+     8     1.0000E+01     2.1544E+01        26584.       123011.        10998.         2051.        162644.
+     9     2.1544E+01     4.6416E+01        17954.        74725.         7628.         1454.        101761.
+    10     4.6416E+01     1.0000E+02        10725.        36644.         4161.          794.         52324.
+    11     1.0000E+02     2.1544E+02         6764.        13124.         1791.          568.         22247.
+    12     2.1544E+02     4.6416E+02         5409.         2813.          395.          438.          9055.
+    13     4.6416E+02     1.0000E+03        14217.          157.           16.          225.         14615.
+    14     1.0000E+03     2.1544E+03            0.            0.            0.            0.             0.
+    15     2.1544E+03     4.6416E+03            0.            0.            0.            0.             0.
+    16     4.6416E+03     1.0000E+04            0.            0.            0.            0.             0.
+    17     1.0000E+04     2.1544E+04            0.            0.            0.            0.             0.
+    18     2.1544E+04     4.6416E+04            0.            0.            0.            0.             0.
+    19     4.6416E+04     1.0000E+05            0.            0.            0.            0.             0.
+    20     1.0000E+05     2.1544E+05            0.            0.            0.            0.             0.
+    21     2.1544E+05     4.6416E+05            0.            0.            0.            0.             0.
+    22     4.6416E+05     1.0000E+06            0.            0.            0.            0.             0.
+    23     1.0000E+06     2.1544E+06            0.            0.            0.            0.             0.
+    24     2.1544E+06     4.6416E+06            0.            0.            0.            0.             0.
+    25     4.6416E+06     1.0000E+07            0.            0.            0.            0.             0.
+    26     1.0000E+07     2.1544E+07            0.            0.            0.            0.             0.
+    27     2.1544E+07     4.6416E+07            0.            0.            0.            0.             0.
+    28     4.6416E+07     1.0000E+08            0.            0.            0.            0.             0.
+    29     1.0000E+08     2.1544E+08            0.            0.            0.            0.             0.
+    30     2.1544E+08     4.6416E+08            0.            0.            0.            0.             0.
+    31     4.6416E+08     1.0000E+09            0.            0.            0.            0.             0.
+    32     1.0000E+09     2.1544E+09            0.            0.            0.            0.             0.
+    33     2.1544E+09     4.6416E+09            0.            0.            0.            0.             0.
+    34     4.6416E+09     1.0000E+10            0.            0.            0.            0.             0.
+    35     1.0000E+10     2.1544E+10            0.            0.            0.            0.             0.
+    36     2.1544E+10     4.6416E+10            0.            0.            0.            0.             0.
+    37     4.6416E+10     1.0000E+11            0.            0.            0.            0.             0.
+    38     1.0000E+11     2.1544E+11            0.            0.            0.            0.             0.
+    39     2.1544E+11     4.6416E+11            0.            0.            0.            0.             0.
+    40     4.6416E+11     1.0000E+12            0.            0.            0.            0.             0.
+
+ AVERAGE NUMBER OF PARTICLES PER EVENT :
+ FROM LEVEL NUMBER                    1
+ HEIGHT IN CM                     0.000E+00
+ HEIGHT IN G/CM**2                1.036E+03
+ NO OF PROTONS      =           0.1 +-          0.4 
+ NO OF ANTIPROTONS  =           0.0 +-          0.0 
+ NO OF NEUTRONS     =           0.2 +-          0.5 
+ NO OF ANTINEUTRONS =           0.0 +-          0.0 
+ NO OF GAMMAS       =  4.917090E+01 +- 1.236936E+02 
+ NO OF POSITRONS    =  3.567800E+00 +- 1.012540E+01 
+ NO OF ELECTRONS    =  5.531500E+00 +- 1.526559E+01 
+ NO OF MU +         =          10.1 +-          3.9 
+ NO OF MU -         =           9.6 +-          3.8 
+ NO OF PI 0         =           0.0 +-          0.0 
+ NO OF PI +         =           0.0 +-          0.2 
+ NO OF PI -         =           0.0 +-          0.1 
+ NO OF K0L          =           0.0 +-          0.0 
+ NO OF K0S          =           0.0 +-          0.0 
+ NO OF K +          =           0.0 +-          0.0 
+ NO OF K -          =           0.0 +-          0.0 
+ NO OF STR. BARYONS =           0.0 +-          0.0 
+ NO OF DEUTERONS    =           0.0 +-          0.0 
+ NO OF TRITONS      =           0.0 +-          0.0 
+ NO OF 3HELIUM      =           0.0 +-          0.0 
+ NO OF ALPHAS       =           0.0 +-          0.0 
+ NO OF OTHER PART.  =           0.0 +-          0.0 
+
+ NO OF DECAYED MUON =          39.3 +-
+ NO OF ELIMIN. MUON =          13.6 +-
+
+ ========== NKG - AVERAGE VALUES OF ALL SHOWERS ===============================
+ ELECTRON/GAMMA THRESHOLDS AT    0.00300 /   0.00300 GEV
+
+ LEVEL  THICKNESS   HEIGHT         <EL NR>        DEV<EL>   <LOG(EL NR)>  DEV<LOG(E)>   <PS-AGE>  DEV<AGE>
+  NO.   (G/CM**2)     (M) 
+    1      100.   16383.17             80.           103.        1.13293     1.04510       0.447     0.394
+    2      200.   11954.18            290.           202.        2.10287     0.88676       0.777     0.321
+    3      300.    9347.05            394.           191.        2.44720     0.58267       1.028     0.258
+    4      400.    7364.94            338.           168.        2.44294     0.38775       1.218     0.213
+    5      500.    5748.86            226.           153.        2.24508     0.33978       1.360     0.189
+    6      600.    4384.47            130.           125.        1.93580     0.40836       1.463     0.181
+    7      700.    3195.68             70.            93.        1.57496     0.47898       1.528     0.184
+    8      800.    2133.13             36.            64.        1.21270     0.52973       1.553     0.216
+    9      900.    1173.26             19.            41.        0.88514     0.56924       1.553     0.263
+   10     1036.       0.00              9.            26.        0.50623     0.64908       1.556     0.318
+
+ RADIAL BIN  DISTANCE(CM)  LOCAL AGE AT LEVEL NO.   1 AT HEIGHT:        0. CM
+         1         384.       2.078
+         2         888.       2.232
+         3        2055.       2.211
+         4        4755.       2.132
+         5       11005.       1.702
+         6       25471.       1.845
+         7       58950.       1.826
+         8      136436.       1.417
+         9      315772.       0.774
+
+ AVERAGE ELECTRON DENSITY (/CM**2)  FOR LEVEL NO.   1 AT HEIGHT:        0. CM
+ ============================================================================
+  DIST (CM)       DLAX          DLAXY           DLAY           DLAYX
+   -441000.    4.17011E-14    3.75850E-14    8.73452E-14    3.15779E-14
+   -190544.    2.32077E-12    1.97537E-12    3.10992E-12    4.63488E-12
+    -82329.    2.37056E-11    4.33263E-11    4.03238E-11    2.33994E-11
+    -35572.    2.37773E-10    2.92523E-10    2.87988E-10    2.27654E-10
+    -15370.    1.27293E-09    3.33719E-09    2.72991E-09    9.14048E-10
+     -6641.    5.98914E-09    1.28215E-08    2.53284E-08    3.56433E-09
+     -2869.    1.08327E-08    2.29340E-08    2.73280E-08    6.65719E-09
+     -1240.    1.27675E-08    1.88090E-08    2.15864E-08    1.08875E-08
+      -536.    1.34178E-08    1.52397E-08    1.66314E-08    1.19411E-08
+      -231.    1.32596E-08    1.54582E-08    1.52579E-08    1.38103E-08
+         0.    0.00000E+00    0.00000E+00    0.00000E+00    0.00000E+00
+       231.    1.28203E-08    1.26028E-08    1.35134E-08    1.37879E-08
+       536.    1.23318E-08    1.14990E-08    1.22343E-08    1.56532E-08
+      1240.    1.16921E-08    9.64728E-09    9.99367E-09    2.18423E-08
+      2869.    8.83902E-09    7.10975E-09    6.59136E-09    1.85806E-08
+      6641.    4.68616E-09    2.98118E-09    2.79905E-09    1.25025E-08
+     15370.    1.34253E-09    1.13118E-09    9.39652E-10    1.62366E-09
+     35572.    4.17509E-10    1.83155E-10    2.73001E-10    3.23174E-10
+     82329.    3.28305E-11    6.53128E-11    4.14041E-11    3.33592E-11
+    190544.    1.98101E-12    1.56260E-12    1.93189E-12    1.79865E-12
+    441000.    3.32251E-14    3.92147E-14    3.25564E-14    9.08945E-14
+  
+
+ AVERAGE LONGITUDINAL PARTICLE DISTRIBUTION IN SLANT STEPS OF   20. G/CM**2 
+ =====================================================================================================================================
+ DEPTH        GAMMAS                  POSITRONS                  ELECTRONS                     MU+                      MU-  
+
+     0. 0.0000E+00+- 0.0000E+00           0.+-          0.            0.+-          0.         0.+-         0.         0.+-         0.
+    20. 8.5927E+00+- 2.3305E+01           2.+-          5.            2.+-          6.         1.+-         3.         1.+-         3.
+    40. 2.9099E+01+- 5.9255E+01           5.+-         11.            7.+-         14.         3.+-         5.         3.+-         5.
+    60. 6.8077E+01+- 1.1499E+02          12.+-         20.           15.+-         25.         4.+-         6.         4.+-         6.
+    80. 1.2983E+02+- 1.8799E+02          21.+-         30.           27.+-         39.         5.+-         6.         5.+-         6.
+   100. 2.1627E+02+- 2.7483E+02          33.+-         41.           44.+-         54.         7.+-         7.         7.+-         7.
+   120. 3.2622E+02+- 3.6816E+02          48.+-         51.           63.+-         69.         8.+-         7.         8.+-         7.
+   140. 4.5671E+02+- 4.6192E+02          64.+-         60.           85.+-         82.         9.+-         7.         9.+-         7.
+   160. 6.0195E+02+- 5.4951E+02          80.+-         68.          108.+-         94.        10.+-         7.        10.+-         7.
+   180. 7.5576E+02+- 6.2623E+02          95.+-         74.          131.+-        103.        11.+-         8.        11.+-         7.
+   200. 9.0935E+02+- 6.8788E+02         110.+-         77.          152.+-        109.        12.+-         8.        12.+-         7.
+   220. 1.0568E+03+- 7.3276E+02         122.+-         79.          171.+-        113.        13.+-         8.        12.+-         7.
+   240. 1.1910E+03+- 7.6025E+02         133.+-         79.          188.+-        114.        13.+-         7.        13.+-         7.
+   260. 1.3068E+03+- 7.7145E+02         140.+-         78.          200.+-        112.        14.+-         7.        14.+-         7.
+   280. 1.4014E+03+- 7.7037E+02         145.+-         76.          208.+-        110.        15.+-         7.        14.+-         7.
+   300. 1.4709E+03+- 7.5848E+02         148.+-         74.          214.+-        108.        15.+-         7.        14.+-         7.
+   320. 1.5173E+03+- 7.4030E+02         148.+-         72.          215.+-        104.        15.+-         7.        15.+-         7.
+   340. 1.5394E+03+- 7.1959E+02         146.+-         70.          214.+-        101.        15.+-         7.        15.+-         7.
+   360. 1.5389E+03+- 6.9909E+02         142.+-         68.          209.+-         98.        16.+-         7.        15.+-         7.
+   380. 1.5178E+03+- 6.7981E+02         136.+-         66.          202.+-         96.        16.+-         7.        15.+-         7.
+   400. 1.4794E+03+- 6.6283E+02         129.+-         65.          193.+-         94.        16.+-         7.        15.+-         7.
+   420. 1.4268E+03+- 6.4940E+02         122.+-         64.          183.+-         92.        16.+-         7.        15.+-         7.
+   440. 1.3637E+03+- 6.3922E+02         114.+-         63.          172.+-         91.        16.+-         6.        15.+-         6.
+   460. 1.2917E+03+- 6.3122E+02         106.+-         62.          161.+-         90.        16.+-         6.        15.+-         6.
+   480. 1.2136E+03+- 6.2337E+02          98.+-         61.          149.+-         88.        16.+-         6.        15.+-         6.
+   500. 1.1325E+03+- 6.1543E+02          90.+-         60.          137.+-         87.        15.+-         6.        15.+-         6.
+   520. 1.0503E+03+- 6.0645E+02          82.+-         58.          126.+-         85.        15.+-         6.        15.+-         6.
+   540. 9.6826E+02+- 5.9546E+02          74.+-         57.          114.+-         82.        15.+-         6.        14.+-         6.
+   560. 8.8780E+02+- 5.8225E+02          67.+-         55.          104.+-         80.        15.+-         6.        14.+-         6.
+   580. 8.1039E+02+- 5.6712E+02          61.+-         53.           94.+-         77.        15.+-         6.        14.+-         6.
+   600. 7.3640E+02+- 5.5018E+02          54.+-         50.           85.+-         74.        14.+-         6.        14.+-         6.
+   620. 6.6628E+02+- 5.3127E+02          49.+-         48.           76.+-         71.        14.+-         6.        14.+-         6.
+   640. 6.0068E+02+- 5.1088E+02          43.+-         46.           68.+-         68.        14.+-         6.        13.+-         6.
+   660. 5.3961E+02+- 4.8945E+02          38.+-         43.           60.+-         64.        14.+-         6.        13.+-         6.
+   680. 4.8371E+02+- 4.6687E+02          34.+-         41.           54.+-         61.        14.+-         6.        13.+-         5.
+   700. 4.3238E+02+- 4.4440E+02          30.+-         39.           48.+-         57.        13.+-         5.        13.+-         5.
+   720. 3.8540E+02+- 4.2126E+02          27.+-         36.           43.+-         54.        13.+-         5.        13.+-         5.
+   740. 3.4313E+02+- 3.9831E+02          24.+-         34.           38.+-         51.        13.+-         5.        12.+-         5.
+   760. 3.0455E+02+- 3.7529E+02          21.+-         32.           33.+-         47.        13.+-         5.        12.+-         5.
+   780. 2.6988E+02+- 3.5196E+02          19.+-         29.           29.+-         44.        13.+-         5.        12.+-         5.
+   800. 2.3889E+02+- 3.2916E+02          16.+-         27.           26.+-         41.        12.+-         5.        12.+-         5.
+   820. 2.1140E+02+- 3.0688E+02          14.+-         25.           23.+-         38.        12.+-         5.        12.+-         5.
+   840. 1.8682E+02+- 2.8512E+02          13.+-         23.           20.+-         35.        12.+-         5.        11.+-         5.
+   860. 1.6494E+02+- 2.6338E+02          11.+-         21.           18.+-         32.        12.+-         5.        11.+-         5.
+   880. 1.4578E+02+- 2.4285E+02          10.+-         19.           16.+-         30.        12.+-         5.        11.+-         5.
+   900. 1.2897E+02+- 2.2399E+02           9.+-         18.           14.+-         27.        11.+-         5.        11.+-         4.
+   920. 1.1435E+02+- 2.0682E+02           8.+-         17.           12.+-         26.        11.+-         4.        11.+-         4.
+   940. 1.0164E+02+- 1.9189E+02           7.+-         16.           11.+-         24.        11.+-         4.        11.+-         4.
+   960. 9.0460E+01+- 1.7893E+02           6.+-         15.           10.+-         22.        11.+-         4.        10.+-         4.
+   980. 8.0781E+01+- 1.6762E+02           6.+-         14.            9.+-         21.        11.+-         4.        10.+-         4.
+  1000. 7.2183E+01+- 1.5742E+02           5.+-         13.            8.+-         20.        11.+-         4.        10.+-         4.
+  1020. 6.4623E+01+- 1.4735E+02           5.+-         13.            7.+-         19.        10.+-         4.        10.+-         4.
+  1040. 5.7707E+01+- 1.3831E+02           4.+-         12.            6.+-         17.        10.+-         4.        10.+-         4.
+  1060. 5.1343E+01+- 1.2935E+02           4.+-         11.            6.+-         16.        10.+-         4.         9.+-         4.
+  1080. 4.4137E+01+- 1.2106E+02           3.+-         10.            5.+-         15.         7.+-         3.         7.+-         3.
+  2160. 6.3403E+00+- 1.0088E+01           0.+-          0.            0.+-          0.         1.+-         1.         1.+-         1.
+
+ AVERAGE LONGITUDINAL PARTICLE DISTRIBUTION IN SLANT STEPS OF   20. G/CM**2 
+ =======================================================================================================================
+  DEPTH          HADRONS                    CHARGED                    NUCLEI                     CHERENKOV
+
+     0.         0.0+-        0.0            0.+-           0.         0.0+-       0.0     0.000000E+00+-    0.000000E+00
+    20.         1.9+-        2.6            8.+-          17.         0.0+-       0.0     0.000000E+00+-    0.000000E+00
+    40.         2.8+-        3.6           19.+-          33.         0.0+-       0.0     0.000000E+00+-    0.000000E+00
+    60.         3.6+-        4.2           38.+-          54.         0.0+-       0.0     0.000000E+00+-    0.000000E+00
+    80.         4.4+-        4.6           63.+-          78.         0.0+-       0.0     0.000000E+00+-    0.000000E+00
+   100.         5.1+-        5.1           94.+-         103.         0.0+-       0.0     0.000000E+00+-    0.000000E+00
+   120.         5.6+-        5.1          131.+-         128.         0.0+-       0.0     0.000000E+00+-    0.000000E+00
+   140.         6.0+-        5.2          171.+-         150.         0.0+-       0.0     0.000000E+00+-    0.000000E+00
+   160.         6.3+-        5.3          212.+-         169.         0.0+-       0.0     0.000000E+00+-    0.000000E+00
+   180.         6.7+-        5.4          252.+-         183.         0.0+-       0.0     0.000000E+00+-    0.000000E+00
+   200.         6.8+-        5.4          290.+-         192.         0.0+-       0.0     0.000000E+00+-    0.000000E+00
+   220.         7.0+-        5.4          323.+-         197.         0.0+-       0.0     0.000000E+00+-    0.000000E+00
+   240.         6.9+-        5.3          351.+-         197.         0.0+-       0.0     0.000000E+00+-    0.000000E+00
+   260.         6.9+-        5.3          371.+-         195.         0.0+-       0.0     0.000000E+00+-    0.000000E+00
+   280.         6.8+-        5.1          386.+-         190.         0.0+-       0.0     0.000000E+00+-    0.000000E+00
+   300.         6.6+-        5.1          394.+-         185.         0.0+-       0.0     0.000000E+00+-    0.000000E+00
+   320.         6.4+-        5.0          396.+-         178.         0.0+-       0.0     0.000000E+00+-    0.000000E+00
+   340.         6.2+-        4.9          393.+-         173.         0.0+-       0.0     0.000000E+00+-    0.000000E+00
+   360.         6.0+-        4.8          384.+-         169.         0.0+-       0.0     0.000000E+00+-    0.000000E+00
+   380.         5.7+-        4.8          372.+-         165.         0.0+-       0.0     0.000000E+00+-    0.000000E+00
+   400.         5.4+-        4.6          356.+-         162.         0.0+-       0.0     0.000000E+00+-    0.000000E+00
+   420.         5.1+-        4.5          339.+-         160.         0.0+-       0.0     0.000000E+00+-    0.000000E+00
+   440.         4.9+-        4.4          319.+-         158.         0.0+-       0.0     0.000000E+00+-    0.000000E+00
+   460.         4.6+-        4.3          299.+-         156.         0.0+-       0.0     0.000000E+00+-    0.000000E+00
+   480.         4.3+-        4.1          279.+-         154.         0.0+-       0.0     0.000000E+00+-    0.000000E+00
+   500.         4.0+-        4.0          259.+-         151.         0.0+-       0.0     0.000000E+00+-    0.000000E+00
+   520.         3.7+-        3.9          239.+-         148.         0.0+-       0.0     0.000000E+00+-    0.000000E+00
+   540.         3.5+-        3.8          220.+-         144.         0.0+-       0.0     0.000000E+00+-    0.000000E+00
+   560.         3.2+-        3.6          202.+-         140.         0.0+-       0.0     0.000000E+00+-    0.000000E+00
+   580.         3.0+-        3.5          185.+-         135.         0.0+-       0.0     0.000000E+00+-    0.000000E+00
+   600.         2.7+-        3.3          168.+-         130.         0.0+-       0.0     0.000000E+00+-    0.000000E+00
+   620.         2.5+-        3.2          154.+-         125.         0.0+-       0.0     0.000000E+00+-    0.000000E+00
+   640.         2.3+-        3.0          140.+-         119.         0.0+-       0.0     0.000000E+00+-    0.000000E+00
+   660.         2.1+-        3.0          127.+-         113.         0.0+-       0.0     0.000000E+00+-    0.000000E+00
+   680.         2.0+-        2.9          116.+-         108.         0.0+-       0.0     0.000000E+00+-    0.000000E+00
+   700.         1.8+-        2.7          105.+-         102.         0.0+-       0.0     0.000000E+00+-    0.000000E+00
+   720.         1.7+-        2.6           96.+-          96.         0.0+-       0.0     0.000000E+00+-    0.000000E+00
+   740.         1.5+-        2.4           88.+-          90.         0.0+-       0.0     0.000000E+00+-    0.000000E+00
+   760.         1.4+-        2.2           80.+-          85.         0.0+-       0.0     0.000000E+00+-    0.000000E+00
+   780.         1.2+-        2.1           73.+-          79.         0.0+-       0.0     0.000000E+00+-    0.000000E+00
+   800.         1.1+-        2.0           67.+-          74.         0.0+-       0.0     0.000000E+00+-    0.000000E+00
+   820.         1.0+-        1.9           62.+-          69.         0.0+-       0.0     0.000000E+00+-    0.000000E+00
+   840.         0.9+-        1.8           57.+-          63.         0.0+-       0.0     0.000000E+00+-    0.000000E+00
+   860.         0.8+-        1.7           53.+-          58.         0.0+-       0.0     0.000000E+00+-    0.000000E+00
+   880.         0.8+-        1.7           49.+-          54.         0.0+-       0.0     0.000000E+00+-    0.000000E+00
+   900.         0.7+-        1.5           45.+-          50.         0.0+-       0.0     0.000000E+00+-    0.000000E+00
+   920.         0.6+-        1.4           43.+-          47.         0.0+-       0.0     0.000000E+00+-    0.000000E+00
+   940.         0.6+-        1.3           40.+-          44.         0.0+-       0.0     0.000000E+00+-    0.000000E+00
+   960.         0.5+-        1.3           38.+-          41.         0.0+-       0.0     0.000000E+00+-    0.000000E+00
+   980.         0.5+-        1.2           36.+-          39.         0.0+-       0.0     0.000000E+00+-    0.000000E+00
+  1000.         0.4+-        1.1           34.+-          37.         0.0+-       0.0     0.000000E+00+-    0.000000E+00
+  1020.         0.4+-        1.0           32.+-          35.         0.0+-       0.0     0.000000E+00+-    0.000000E+00
+  1040.         0.3+-        1.0           31.+-          32.         0.0+-       0.0     0.000000E+00+-    0.000000E+00
+  1060.         0.3+-        0.9           29.+-          30.         0.0+-       0.0     0.000000E+00+-    0.000000E+00
+  1080.         0.3+-        0.9           22.+-          27.         0.0+-       0.0     0.000000E+00+-    0.000000E+00
+  2160.         0.0+-        0.2            2.+-           1.         0.0+-       0.0     0.000000E+00+-    0.000000E+00
+
+ AVERAGE LONGITUDINAL ENERGY DISTRIBUTION [GEV] IN SLANT STEPS OF   20. G/CM**2 
+ ====================================================================================================================================
+  DEPTH        GAMMAS                 POSITRONS                ELECTRONS                    MU+                      MU-  
+
+     0.   0.0000E+00+- 0.0000E+00  0.0000E+00+- 0.0000E+00  0.0000E+00+- 0.0000E+00  0.0000E+00+- 0.0000E+00  0.0000E+00+- 0.0000E+00
+    20.   3.9912E+01+- 9.9641E+01  4.2957E+00+- 1.6276E+01  4.4568E+00+- 1.7029E+01  2.0919E+01+- 5.6117E+01  1.8094E+01+- 4.8870E+01
+    40.   6.6959E+01+- 1.1478E+02  1.1796E+01+- 2.7466E+01  1.2050E+01+- 2.8489E+01  3.8755E+01+- 7.1428E+01  3.4043E+01+- 6.4140E+01
+    60.   8.8876E+01+- 1.2194E+02  1.9570E+01+- 3.3844E+01  2.0045E+01+- 3.5282E+01  5.4890E+01+- 8.0166E+01  4.9057E+01+- 7.3750E+01
+    80.   1.0743E+02+- 1.2269E+02  2.6780E+01+- 3.8266E+01  2.7351E+01+- 3.9785E+01  6.9545E+01+- 8.5835E+01  6.2296E+01+- 7.8921E+01
+   100.   1.2167E+02+- 1.2027E+02  3.2811E+01+- 4.0444E+01  3.3654E+01+- 4.1478E+01  8.2081E+01+- 8.8430E+01  7.4369E+01+- 8.2296E+01
+   120.   1.3472E+02+- 1.1767E+02  3.7990E+01+- 4.1079E+01  3.8529E+01+- 4.1232E+01  9.3707E+01+- 8.9832E+01  8.5255E+01+- 8.4105E+01
+   140.   1.4504E+02+- 1.1374E+02  4.1669E+01+- 4.0169E+01  4.2381E+01+- 4.0918E+01  1.0378E+02+- 9.0103E+01  9.4661E+01+- 8.4733E+01
+   160.   1.5171E+02+- 1.0885E+02  4.4052E+01+- 3.9040E+01  4.5056E+01+- 3.9268E+01  1.1296E+02+- 8.9866E+01  1.0280E+02+- 8.4353E+01
+   180.   1.5769E+02+- 1.0464E+02  4.5010E+01+- 3.7063E+01  4.6363E+01+- 3.7733E+01  1.2033E+02+- 8.8867E+01  1.0998E+02+- 8.3729E+01
+   200.   1.6114E+02+- 9.9527E+01  4.5652E+01+- 3.5329E+01  4.7071E+01+- 3.5555E+01  1.2719E+02+- 8.7618E+01  1.1638E+02+- 8.2597E+01
+   220.   1.6149E+02+- 9.4358E+01  4.5492E+01+- 3.4446E+01  4.6838E+01+- 3.3585E+01  1.3283E+02+- 8.6453E+01  1.2171E+02+- 8.1343E+01
+   240.   1.5969E+02+- 9.0182E+01  4.3986E+01+- 3.1716E+01  4.5974E+01+- 3.2446E+01  1.3799E+02+- 8.4911E+01  1.2649E+02+- 8.0277E+01
+   260.   1.5646E+02+- 8.6566E+01  4.2334E+01+- 3.0271E+01  4.4305E+01+- 3.0918E+01  1.4208E+02+- 8.3681E+01  1.3050E+02+- 7.8943E+01
+   280.   1.5197E+02+- 8.2524E+01  4.0486E+01+- 2.9464E+01  4.2179E+01+- 2.9414E+01  1.4583E+02+- 8.2235E+01  1.3379E+02+- 7.7563E+01
+   300.   1.4606E+02+- 7.9349E+01  3.8159E+01+- 2.7976E+01  4.0093E+01+- 2.8614E+01  1.4890E+02+- 8.0827E+01  1.3652E+02+- 7.6353E+01
+   320.   1.3864E+02+- 7.6246E+01  3.5708E+01+- 2.6864E+01  3.7478E+01+- 2.7231E+01  1.5134E+02+- 7.9389E+01  1.3873E+02+- 7.5158E+01
+   340.   1.3093E+02+- 7.3783E+01  3.3069E+01+- 2.5473E+01  3.4554E+01+- 2.5654E+01  1.5349E+02+- 7.8103E+01  1.4062E+02+- 7.4017E+01
+   360.   1.2275E+02+- 7.2441E+01  3.0293E+01+- 2.4218E+01  3.1910E+01+- 2.4571E+01  1.5499E+02+- 7.7143E+01  1.4231E+02+- 7.3081E+01
+   380.   1.1445E+02+- 6.9958E+01  2.7722E+01+- 2.3864E+01  2.9088E+01+- 2.3268E+01  1.5625E+02+- 7.6010E+01  1.4349E+02+- 7.2164E+01
+   400.   1.0593E+02+- 6.7948E+01  2.5234E+01+- 2.2996E+01  2.6678E+01+- 2.2660E+01  1.5730E+02+- 7.4926E+01  1.4436E+02+- 7.1299E+01
+   420.   9.7658E+01+- 6.5804E+01  2.2761E+01+- 2.1414E+01  2.4177E+01+- 2.1850E+01  1.5810E+02+- 7.4047E+01  1.4512E+02+- 7.0364E+01
+   440.   8.9528E+01+- 6.4271E+01  2.0401E+01+- 2.0005E+01  2.1769E+01+- 2.0469E+01  1.5858E+02+- 7.3283E+01  1.4540E+02+- 6.9552E+01
+   460.   8.1165E+01+- 6.1409E+01  1.8355E+01+- 1.9288E+01  1.9708E+01+- 1.9740E+01  1.5875E+02+- 7.2739E+01  1.4551E+02+- 6.8834E+01
+   480.   7.3618E+01+- 5.9270E+01  1.6435E+01+- 1.8091E+01  1.7634E+01+- 1.8767E+01  1.5881E+02+- 7.2148E+01  1.4557E+02+- 6.8341E+01
+   500.   6.6599E+01+- 5.6980E+01  1.4579E+01+- 1.6971E+01  1.5751E+01+- 1.8368E+01  1.5861E+02+- 7.1685E+01  1.4546E+02+- 6.7851E+01
+   520.   6.0069E+01+- 5.4443E+01  1.2987E+01+- 1.6022E+01  1.3957E+01+- 1.6975E+01  1.5830E+02+- 7.1365E+01  1.4521E+02+- 6.7470E+01
+   540.   5.3653E+01+- 5.1419E+01  1.1509E+01+- 1.5321E+01  1.2495E+01+- 1.6054E+01  1.5794E+02+- 7.0979E+01  1.4476E+02+- 6.7097E+01
+   560.   4.8053E+01+- 4.9176E+01  1.0131E+01+- 1.4056E+01  1.0997E+01+- 1.4714E+01  1.5736E+02+- 7.0733E+01  1.4421E+02+- 6.6754E+01
+   580.   4.2740E+01+- 4.6200E+01  8.8854E+00+- 1.3102E+01  9.6996E+00+- 1.3807E+01  1.5677E+02+- 7.0536E+01  1.4368E+02+- 6.6513E+01
+   600.   3.7951E+01+- 4.3369E+01  7.7363E+00+- 1.2069E+01  8.5337E+00+- 1.3018E+01  1.5617E+02+- 7.0362E+01  1.4304E+02+- 6.6373E+01
+   620.   3.3656E+01+- 4.1125E+01  6.8381E+00+- 1.1372E+01  7.4617E+00+- 1.1823E+01  1.5551E+02+- 7.0249E+01  1.4230E+02+- 6.6210E+01
+   640.   2.9783E+01+- 3.8886E+01  5.9898E+00+- 1.0511E+01  6.5238E+00+- 1.0675E+01  1.5478E+02+- 7.0102E+01  1.4156E+02+- 6.6084E+01
+   660.   2.6342E+01+- 3.6255E+01  5.2547E+00+- 9.8052E+00  5.7313E+00+- 1.0149E+01  1.5404E+02+- 6.9954E+01  1.4078E+02+- 6.5903E+01
+   680.   2.3270E+01+- 3.4069E+01  4.6031E+00+- 8.9899E+00  5.0803E+00+- 9.6509E+00  1.5318E+02+- 6.9845E+01  1.3995E+02+- 6.5790E+01
+   700.   2.0483E+01+- 3.1472E+01  3.9938E+00+- 8.1600E+00  4.4257E+00+- 8.9644E+00  1.5231E+02+- 6.9711E+01  1.3914E+02+- 6.5723E+01
+   720.   1.8089E+01+- 2.9387E+01  3.5465E+00+- 7.8159E+00  3.8537E+00+- 8.1224E+00  1.5146E+02+- 6.9601E+01  1.3830E+02+- 6.5628E+01
+   740.   1.5900E+01+- 2.7274E+01  3.0823E+00+- 7.0594E+00  3.3551E+00+- 7.3364E+00  1.5057E+02+- 6.9557E+01  1.3744E+02+- 6.5544E+01
+   760.   1.3986E+01+- 2.5303E+01  2.6729E+00+- 6.1978E+00  2.9284E+00+- 6.7071E+00  1.4972E+02+- 6.9508E+01  1.3658E+02+- 6.5437E+01
+   780.   1.2307E+01+- 2.3750E+01  2.3665E+00+- 5.7598E+00  2.6116E+00+- 6.5149E+00  1.4880E+02+- 6.9474E+01  1.3573E+02+- 6.5365E+01
+   800.   1.0903E+01+- 2.2636E+01  2.1006E+00+- 5.4447E+00  2.3085E+00+- 5.8599E+00  1.4793E+02+- 6.9459E+01  1.3491E+02+- 6.5323E+01
+   820.   9.5761E+00+- 2.0253E+01  1.8766E+00+- 5.7068E+00  2.0558E+00+- 5.9155E+00  1.4705E+02+- 6.9377E+01  1.3409E+02+- 6.5225E+01
+   840.   8.4326E+00+- 1.8788E+01  1.6774E+00+- 5.0395E+00  1.8238E+00+- 5.4687E+00  1.4618E+02+- 6.9378E+01  1.3333E+02+- 6.5157E+01
+   860.   7.4521E+00+- 1.7365E+01  1.5152E+00+- 4.9089E+00  1.6106E+00+- 5.0162E+00  1.4530E+02+- 6.9389E+01  1.3252E+02+- 6.5109E+01
+   880.   6.5789E+00+- 1.6122E+01  1.3607E+00+- 4.6648E+00  1.4723E+00+- 4.9624E+00  1.4443E+02+- 6.9346E+01  1.3164E+02+- 6.5069E+01
+   900.   5.8353E+00+- 1.5217E+01  1.2332E+00+- 4.4702E+00  1.3151E+00+- 4.4535E+00  1.4354E+02+- 6.9316E+01  1.3080E+02+- 6.4974E+01
+   920.   5.1687E+00+- 1.4261E+01  1.0971E+00+- 3.9123E+00  1.1834E+00+- 3.9963E+00  1.4268E+02+- 6.9322E+01  1.3000E+02+- 6.4985E+01
+   940.   4.5950E+00+- 1.3089E+01  9.7964E-01+- 3.6834E+00  1.0555E+00+- 3.8449E+00  1.4184E+02+- 6.9286E+01  1.2918E+02+- 6.4976E+01
+   960.   4.0762E+00+- 1.1898E+01  8.8540E-01+- 3.4534E+00  9.6198E-01+- 3.6287E+00  1.4100E+02+- 6.9269E+01  1.2837E+02+- 6.4843E+01
+   980.   3.6290E+00+- 1.0824E+01  8.1518E-01+- 3.3570E+00  8.7634E-01+- 3.4863E+00  1.4013E+02+- 6.9241E+01  1.2753E+02+- 6.4796E+01
+  1000.   3.2267E+00+- 9.8973E+00  7.6688E-01+- 3.2528E+00  7.9211E-01+- 3.1274E+00  1.3927E+02+- 6.9249E+01  1.2676E+02+- 6.4768E+01
+  1020.   2.9002E+00+- 9.0494E+00  6.7892E-01+- 2.8014E+00  7.0395E-01+- 2.8234E+00  1.3836E+02+- 6.9251E+01  1.2595E+02+- 6.4750E+01
+  1040.   2.6050E+00+- 8.1644E+00  6.0231E-01+- 2.4913E+00  6.1808E-01+- 2.5278E+00  1.3731E+02+- 6.9253E+01  1.2502E+02+- 6.4741E+01
+  1060.   2.3396E+00+- 7.5962E+00  5.3750E-01+- 2.1790E+00  5.5702E-01+- 2.1325E+00  1.3559E+02+- 6.9343E+01  1.2344E+02+- 6.4742E+01
+  1080.   2.0554E+00+- 7.2408E+00  5.0528E-01+- 2.0285E+00  5.4336E-01+- 1.9378E+00  1.2401E+02+- 6.9574E+01  1.1278E+02+- 6.4901E+01
+  2160.   2.3433E-01+- 5.4793E-01  0.0000E+00+- 0.0000E+00  0.0000E+00+- 0.0000E+00  9.4732E+00+- 1.4864E+01  8.2547E+00+- 1.3266E+01
+
+ AVERAGE LONGITUDINAL ENERGY DISTRIBUTION [GEV] IN SLANT STEPS OF   20. G/CM**2 
+ ==================================================================================================================
+  DEPTH        HADRONS                   CHARGED                    NUCLEI                     ENERGYSUM
+
+     0.  0.00000E+00+- 0.00000E+00 0.00000E+00+- 0.00000E+00 0.00000E+00+- 0.00000E+00 0.0000000E+00+- 0.0000000E+00
+    20.  8.96453E+02+- 2.34567E+02 9.10740E+02+- 2.04936E+02 0.00000E+00+- 0.00000E+00 9.8413077E+02+- 4.1424435E+01
+    40.  8.05717E+02+- 2.98930E+02 8.44782E+02+- 2.43254E+02 5.24570E-04+- 5.24570E-02 9.6931967E+02+- 5.5508681E+01
+    60.  7.22021E+02+- 3.33556E+02 7.92869E+02+- 2.55387E+02 1.42792E-03+- 8.33999E-02 9.5445986E+02+- 6.5054503E+01
+    80.  6.45923E+02+- 3.50477E+02 7.49925E+02+- 2.56044E+02 1.35800E-03+- 7.93878E-02 9.3932909E+02+- 7.2949539E+01
+   100.  5.78982E+02+- 3.57014E+02 7.15052E+02+- 2.49987E+02 1.83039E-03+- 9.27069E-02 9.2357199E+02+- 8.0194033E+01
+   120.  5.16213E+02+- 3.55770E+02 6.83546E+02+- 2.41432E+02 1.45662E-03+- 8.41235E-02 9.0641007E+02+- 8.7230915E+01
+   140.  4.60538E+02+- 3.49775E+02 6.56098E+02+- 2.31119E+02 1.81721E-03+- 9.15596E-02 8.8807697E+02+- 9.4302210E+01
+   160.  4.11634E+02+- 3.41423E+02 6.31371E+02+- 2.21032E+02 1.97173E-03+- 9.89016E-02 8.6822250E+02+- 1.0149059E+02
+   180.  3.67393E+02+- 3.29863E+02 6.08092E+02+- 2.10665E+02 2.36387E-03+- 1.06034E-01 8.4675864E+02+- 1.0901613E+02
+   200.  3.25956E+02+- 3.15256E+02 5.85258E+02+- 2.00086E+02 1.64904E-03+- 8.44193E-02 8.2338600E+02+- 1.1619895E+02
+   220.  2.90288E+02+- 3.00969E+02 5.67501E+02+- 1.90246E+02 1.81749E-03+- 9.10323E-02 7.9864940E+02+- 1.2338971E+02
+   240.  2.58619E+02+- 2.86405E+02 5.48535E+02+- 1.82238E+02 1.87202E-03+- 9.42361E-02 7.7275188E+02+- 1.3003062E+02
+   260.  2.30382E+02+- 2.72083E+02 5.29727E+02+- 1.74777E+02 1.38053E-03+- 8.07126E-02 7.4606083E+02+- 1.3623534E+02
+   280.  2.04480E+02+- 2.55820E+02 5.11080E+02+- 1.65875E+02 9.83931E-04+- 6.96182E-02 7.1873669E+02+- 1.4162092E+02
+   300.  1.81185E+02+- 2.40228E+02 4.93804E+02+- 1.58990E+02 9.34186E-04+- 6.61170E-02 6.9092183E+02+- 1.4602385E+02
+   320.  1.61423E+02+- 2.26750E+02 4.79240E+02+- 1.53594E+02 1.87137E-03+- 9.37749E-02 6.6333157E+02+- 1.4960114E+02
+   340.  1.43329E+02+- 2.12636E+02 4.63192E+02+- 1.47753E+02 1.47189E-03+- 8.52507E-02 6.3599489E+02+- 1.5208335E+02
+   360.  1.27124E+02+- 2.00017E+02 4.48769E+02+- 1.42867E+02 9.38636E-04+- 6.67352E-02 6.0937106E+02+- 1.5370017E+02
+   380.  1.12505E+02+- 1.86217E+02 4.35185E+02+- 1.37806E+02 0.00000E+00+- 0.00000E+00 5.8350333E+02+- 1.5425336E+02
+   400.  9.91404E+01+- 1.72145E+02 4.22092E+02+- 1.32453E+02 5.21178E-04+- 5.21178E-02 5.5864722E+02+- 1.5394257E+02
+   420.  8.71699E+01+- 1.58234E+02 4.09601E+02+- 1.27874E+02 5.01524E-04+- 5.01524E-02 5.3498584E+02+- 1.5269076E+02
+   440.  7.69397E+01+- 1.46110E+02 3.98112E+02+- 1.23870E+02 4.97491E-04+- 4.97491E-02 5.1262462E+02+- 1.5079929E+02
+   460.  6.81771E+01+- 1.35694E+02 3.88016E+02+- 1.21079E+02 1.00073E-03+- 7.08579E-02 4.9166851E+02+- 1.4848160E+02
+   480.  5.99697E+01+- 1.25010E+02 3.78514E+02+- 1.17554E+02 9.55800E-04+- 6.76955E-02 4.7203779E+02+- 1.4554811E+02
+   500.  5.28112E+01+- 1.14916E+02 3.69468E+02+- 1.14441E+02 0.00000E+00+- 0.00000E+00 4.5381072E+02+- 1.4231737E+02
+   520.  4.64420E+01+- 1.05382E+02 3.61369E+02+- 1.11646E+02 4.99744E-04+- 4.99744E-02 4.3695665E+02+- 1.3904459E+02
+   540.  4.10373E+01+- 9.71234E+01 3.53778E+02+- 1.09344E+02 5.15096E-04+- 5.15096E-02 4.2139320E+02+- 1.3561544E+02
+   560.  3.63366E+01+- 9.00410E+01 3.46588E+02+- 1.07429E+02 0.00000E+00+- 0.00000E+00 4.0708754E+02+- 1.3213249E+02
+   580.  3.21615E+01+- 8.38531E+01 3.40308E+02+- 1.06443E+02 0.00000E+00+- 0.00000E+00 3.9393624E+02+- 1.2866745E+02
+   600.  2.84685E+01+- 7.84705E+01 3.34077E+02+- 1.04836E+02 0.00000E+00+- 0.00000E+00 3.8190452E+02+- 1.2525700E+02
+   620.  2.51488E+01+- 7.22065E+01 3.28616E+02+- 1.02972E+02 0.00000E+00+- 0.00000E+00 3.7091403E+02+- 1.2206685E+02
+   640.  2.21592E+01+- 6.63825E+01 3.23492E+02+- 1.01879E+02 5.41129E-04+- 5.41129E-02 3.6079841E+02+- 1.1886448E+02
+   660.  1.94684E+01+- 6.06238E+01 3.18623E+02+- 1.00443E+02 5.19587E-04+- 5.19587E-02 3.5160848E+02+- 1.1586186E+02
+   680.  1.71527E+01+- 5.61365E+01 3.14077E+02+- 9.92933E+01 4.98045E-04+- 4.98045E-02 3.4323923E+02+- 1.1311748E+02
+   700.  1.52013E+01+- 5.24850E+01 3.09830E+02+- 9.85823E+01 4.76503E-04+- 4.76503E-02 3.3554996E+02+- 1.1053789E+02
+   720.  1.33112E+01+- 4.84755E+01 3.05908E+02+- 9.79392E+01 0.00000E+00+- 0.00000E+00 3.2855478E+02+- 1.0823631E+02
+   740.  1.17772E+01+- 4.54605E+01 3.02144E+02+- 9.72067E+01 0.00000E+00+- 0.00000E+00 3.2213044E+02+- 1.0614082E+02
+   760.  1.04001E+01+- 4.25763E+01 2.98573E+02+- 9.65863E+01 0.00000E+00+- 0.00000E+00 3.1628676E+02+- 1.0435492E+02
+   780.  9.07919E+00+- 3.91983E+01 2.95280E+02+- 9.59907E+01 0.00000E+00+- 0.00000E+00 3.1088536E+02+- 1.0275003E+02
+   800.  7.84532E+00+- 3.49430E+01 2.92033E+02+- 9.50125E+01 0.00000E+00+- 0.00000E+00 3.0600169E+02+- 1.0136565E+02
+   820.  6.84405E+00+- 3.16934E+01 2.89191E+02+- 9.44897E+01 0.00000E+00+- 0.00000E+00 3.0149682E+02+- 1.0013019E+02
+   840.  5.92326E+00+- 2.87243E+01 2.86609E+02+- 9.43867E+01 0.00000E+00+- 0.00000E+00 2.9736656E+02+- 9.9099834E+01
+   860.  5.14257E+00+- 2.59499E+01 2.84113E+02+- 9.41792E+01 5.08560E-04+- 5.08560E-02 2.9354040E+02+- 9.8225984E+01
+   880.  4.48083E+00+- 2.31126E+01 2.81661E+02+- 9.38582E+01 4.85043E-04+- 4.85043E-02 2.8996609E+02+- 9.7416756E+01
+   900.  3.91556E+00+- 2.12340E+01 2.79220E+02+- 9.36109E+01 4.61526E-04+- 4.61526E-02 2.8663922E+02+- 9.6710642E+01
+   920.  3.42968E+00+- 1.85684E+01 2.76956E+02+- 9.33747E+01 0.00000E+00+- 0.00000E+00 2.8356184E+02+- 9.6123565E+01
+   940.  3.01085E+00+- 1.70573E+01 2.74796E+02+- 9.32906E+01 0.00000E+00+- 0.00000E+00 2.8066433E+02+- 9.5594161E+01
+   960.  2.63878E+00+- 1.51319E+01 2.72811E+02+- 9.33415E+01 0.00000E+00+- 0.00000E+00 2.7792982E+02+- 9.5065495E+01
+   980.  2.33230E+00+- 1.39465E+01 2.70779E+02+- 9.32931E+01 0.00000E+00+- 0.00000E+00 2.7531932E+02+- 9.4679381E+01
+  1000.  1.99394E+00+- 1.20471E+01 2.68800E+02+- 9.32292E+01 0.00000E+00+- 0.00000E+00 2.7280911E+02+- 9.4323031E+01
+  1020.  1.75664E+00+- 1.10348E+01 2.66751E+02+- 9.31827E+01 0.00000E+00+- 0.00000E+00 2.7035196E+02+- 9.4071228E+01
+  1040.  1.55601E+00+- 1.03731E+01 2.64511E+02+- 9.31737E+01 0.00000E+00+- 0.00000E+00 2.6771115E+02+- 9.3886396E+01
+  1060.  1.38137E+00+- 9.80127E+00 2.60976E+02+- 9.32009E+01 0.00000E+00+- 0.00000E+00 2.6384513E+02+- 9.3796494E+01
+  1080.  1.19850E+00+- 8.91714E+00 2.38595E+02+- 9.33155E+01 0.00000E+00+- 0.00000E+00 2.4109167E+02+- 9.3865234E+01
+  2160.  7.63177E-02+- 6.95874E-01 1.78042E+01+- 2.00370E+01 0.00000E+00+- 0.00000E+00 1.8038551E+01+- 2.0026936E+01
+
+ AVERAGE LONGITUDINAL ENERGY DEPOSIT [GEV] IN SLANT STEPS OF   20. G/CM**2 
+ =====================================================================================================================================
+  DEPTH      GAMMA E_CUT                EM IONIZ                   EM E-CUT                  MU IONIZ                 MU E-CUT
+
+    10.0        0.+-        0.            0.+-          0.            0.+-          0.         0.+-         0.         0.+-         0.
+    30.0        0.+-        0.            0.+-          1.            0.+-          0.         0.+-         0.         0.+-         0.
+    50.0        0.+-        0.            1.+-          2.            0.+-          0.         0.+-         0.         0.+-         0.
+    70.0        0.+-        0.            2.+-          3.            0.+-          0.         0.+-         1.         0.+-         0.
+    90.0        0.+-        0.            3.+-          4.            0.+-          0.         1.+-         1.         0.+-         0.
+   110.0        0.+-        0.            5.+-          5.            0.+-          1.         1.+-         1.         0.+-         0.
+   130.0        0.+-        0.            6.+-          6.            1.+-          1.         1.+-         1.         0.+-         0.
+   150.0        0.+-        0.            8.+-          7.            1.+-          1.         1.+-         1.         0.+-         0.
+   170.0        0.+-        0.           10.+-          8.            1.+-          1.         1.+-         1.         0.+-         0.
+   190.0        0.+-        0.           12.+-          9.            1.+-          1.         1.+-         1.         0.+-         0.
+   210.0        0.+-        0.           13.+-          9.            2.+-          1.         1.+-         1.         0.+-         0.
+   230.0        0.+-        0.           15.+-          9.            2.+-          1.         1.+-         1.         0.+-         0.
+   250.0        0.+-        0.           16.+-          9.            2.+-          1.         1.+-         1.         0.+-         0.
+   270.0        0.+-        0.           16.+-          9.            2.+-          1.         1.+-         1.         0.+-         0.
+   290.0        1.+-        0.           17.+-          9.            3.+-          1.         1.+-         1.         0.+-         0.
+   310.0        1.+-        0.           17.+-          8.            3.+-          1.         1.+-         1.         0.+-         0.
+   330.0        1.+-        0.           17.+-          8.            3.+-          1.         1.+-         1.         0.+-         0.
+   350.0        1.+-        0.           17.+-          8.            3.+-          1.         1.+-         1.         0.+-         0.
+   370.0        1.+-        0.           16.+-          8.            3.+-          1.         1.+-         1.         0.+-         0.
+   390.0        1.+-        0.           16.+-          7.            3.+-          1.         1.+-         1.         0.+-         0.
+   410.0        1.+-        0.           15.+-          7.            3.+-          1.         1.+-         1.         0.+-         0.
+   430.0        1.+-        0.           14.+-          7.            2.+-          1.         1.+-         1.         0.+-         0.
+   450.0        0.+-        0.           13.+-          7.            2.+-          1.         1.+-         1.         0.+-         0.
+   470.0        0.+-        0.           12.+-          7.            2.+-          1.         1.+-         1.         0.+-         0.
+   490.0        0.+-        0.           11.+-          7.            2.+-          1.         1.+-         1.         0.+-         0.
+   510.0        0.+-        0.           10.+-          7.            2.+-          1.         1.+-         1.         0.+-         0.
+   530.0        0.+-        0.            9.+-          7.            2.+-          1.         1.+-         1.         0.+-         0.
+   550.0        0.+-        0.            8.+-          6.            2.+-          1.         1.+-         1.         0.+-         0.
+   570.0        0.+-        0.            8.+-          6.            1.+-          1.         1.+-         1.         0.+-         0.
+   590.0        0.+-        0.            7.+-          6.            1.+-          1.         1.+-         0.         0.+-         0.
+   610.0        0.+-        0.            6.+-          6.            1.+-          1.         1.+-         0.         0.+-         0.
+   630.0        0.+-        0.            5.+-          5.            1.+-          1.         1.+-         0.         0.+-         0.
+   650.0        0.+-        0.            5.+-          5.            1.+-          1.         1.+-         0.         0.+-         0.
+   670.0        0.+-        0.            4.+-          5.            1.+-          1.         1.+-         0.         0.+-         0.
+   690.0        0.+-        0.            4.+-          5.            1.+-          1.         1.+-         0.         0.+-         0.
+   710.0        0.+-        0.            3.+-          4.            1.+-          1.         1.+-         0.         0.+-         0.
+   730.0        0.+-        0.            3.+-          4.            1.+-          1.         1.+-         0.         0.+-         0.
+   750.0        0.+-        0.            3.+-          4.            1.+-          1.         1.+-         0.         0.+-         0.
+   770.0        0.+-        0.            2.+-          4.            0.+-          1.         1.+-         0.         0.+-         0.
+   790.0        0.+-        0.            2.+-          3.            0.+-          1.         1.+-         0.         0.+-         0.
+   810.0        0.+-        0.            2.+-          3.            0.+-          1.         1.+-         0.         0.+-         0.
+   830.0        0.+-        0.            2.+-          3.            0.+-          1.         1.+-         0.         0.+-         0.
+   850.0        0.+-        0.            1.+-          3.            0.+-          0.         1.+-         0.         0.+-         0.
+   870.0        0.+-        0.            1.+-          2.            0.+-          0.         1.+-         0.         0.+-         0.
+   890.0        0.+-        0.            1.+-          2.            0.+-          0.         1.+-         0.         0.+-         0.
+   910.0        0.+-        0.            1.+-          2.            0.+-          0.         1.+-         0.         0.+-         0.
+   930.0        0.+-        0.            1.+-          2.            0.+-          0.         1.+-         0.         0.+-         0.
+   950.0        0.+-        0.            1.+-          2.            0.+-          0.         1.+-         0.         0.+-         0.
+   970.0        0.+-        0.            1.+-          2.            0.+-          0.         1.+-         0.         0.+-         0.
+   990.0        0.+-        0.            1.+-          2.            0.+-          0.         1.+-         0.         0.+-         0.
+  1010.0        0.+-        0.            1.+-          1.            0.+-          0.         1.+-         0.         0.+-         0.
+  1030.0        0.+-        0.            1.+-          1.            0.+-          0.         1.+-         0.         0.+-         0.
+  1050.0        0.+-        0.            0.+-          1.            0.+-          0.         1.+-         0.         0.+-         0.
+  1070.0        2.+-        7.            0.+-          1.            1.+-          4.         1.+-         0.       260.+-        93.
+  1090.0        0.+-        0.            0.+-          0.            0.+-          0.         0.+-         0.  3.425E-05+-         0.
+                     AVERAGE LONGITUDINAL ENERGY SUM [GEV] 
+               14.4                     365.5                        60.0                     61.2                   264.2
+
+ AVERAGE LONGITUDINAL ENERGY DEPOSIT [GEV] IN SLANT STEPS OF   20. G/CM**2 
+ =====================================================================================================================================
+  DEPTH      GAMMA A-CUT                 (DUMMY)                   EM A-CUT                  (DUMMY)                  MU A-CUT
+
+    10.0        0.+-        0.            0.+-          0.            0.+-          0.         0.+-         0.         0.+-         0.
+    30.0        0.+-        0.            0.+-          0.            0.+-          0.         0.+-         0.         0.+-         0.
+    50.0        0.+-        0.            0.+-          0.            0.+-          0.         0.+-         0.         0.+-         0.
+    70.0        0.+-        0.            0.+-          0.            0.+-          0.         0.+-         0.         0.+-         0.
+    90.0        0.+-        0.            0.+-          0.            0.+-          0.         0.+-         0.         0.+-         0.
+   110.0        0.+-        0.            0.+-          0.            0.+-          0.         0.+-         0.         0.+-         0.
+   130.0        0.+-        0.            0.+-          0.            0.+-          0.         0.+-         0.         0.+-         0.
+   150.0        0.+-        0.            0.+-          0.            0.+-          0.         0.+-         0.         0.+-         0.
+   170.0        0.+-        0.            0.+-          0.            0.+-          0.         0.+-         0.         0.+-         0.
+   190.0        0.+-        0.            0.+-          0.            0.+-          0.         0.+-         0.         0.+-         0.
+   210.0        0.+-        0.            0.+-          0.            0.+-          0.         0.+-         0.         0.+-         0.
+   230.0        0.+-        0.            0.+-          0.            0.+-          0.         0.+-         0.         0.+-         0.
+   250.0        0.+-        0.            0.+-          0.            0.+-          0.         0.+-         0.         0.+-         0.
+   270.0        0.+-        0.            0.+-          0.            0.+-          0.         0.+-         0.         0.+-         0.
+   290.0        0.+-        0.            0.+-          0.            0.+-          0.         0.+-         0.         0.+-         0.
+   310.0        0.+-        0.            0.+-          0.            0.+-          0.         0.+-         0.         0.+-         0.
+   330.0        0.+-        0.            0.+-          0.            0.+-          0.         0.+-         0.         0.+-         0.
+   350.0        0.+-        0.            0.+-          0.            0.+-          0.         0.+-         0.         0.+-         0.
+   370.0        0.+-        0.            0.+-          0.            0.+-          0.         0.+-         0.         0.+-         0.
+   390.0        0.+-        0.            0.+-          0.            0.+-          0.         0.+-         0.         0.+-         0.
+   410.0        0.+-        0.            0.+-          0.            0.+-          0.         0.+-         0.         0.+-         0.
+   430.0        0.+-        0.            0.+-          0.            0.+-          0.         0.+-         0.         0.+-         0.
+   450.0        0.+-        0.            0.+-          0.            0.+-          0.         0.+-         0.         0.+-         0.
+   470.0        0.+-        0.            0.+-          0.            0.+-          0.         0.+-         0.         0.+-         0.
+   490.0        0.+-        0.            0.+-          0.            0.+-          0.         0.+-         0.         0.+-         0.
+   510.0        0.+-        0.            0.+-          0.            0.+-          0.         0.+-         0.         0.+-         0.
+   530.0        0.+-        0.            0.+-          0.            0.+-          0.         0.+-         0.         0.+-         0.
+   550.0        0.+-        0.            0.+-          0.            0.+-          0.         0.+-         0.         0.+-         0.
+   570.0        0.+-        0.            0.+-          0.            0.+-          0.         0.+-         0.         0.+-         0.
+   590.0        0.+-        0.            0.+-          0.            0.+-          0.         0.+-         0.         0.+-         0.
+   610.0        0.+-        0.            0.+-          0.            0.+-          0.         0.+-         0.         0.+-         0.
+   630.0        0.+-        0.            0.+-          0.            0.+-          0.         0.+-         0.         0.+-         0.
+   650.0        0.+-        0.            0.+-          0.            0.+-          0.         0.+-         0.         0.+-         0.
+   670.0        0.+-        0.            0.+-          0.            0.+-          0.         0.+-         0.         0.+-         0.
+   690.0        0.+-        0.            0.+-          0.            0.+-          0.         0.+-         0.         0.+-         0.
+   710.0        0.+-        0.            0.+-          0.            0.+-          0.         0.+-         0.         0.+-         0.
+   730.0        0.+-        0.            0.+-          0.            0.+-          0.         0.+-         0.         0.+-         0.
+   750.0        0.+-        0.            0.+-          0.            0.+-          0.         0.+-         0.         0.+-         0.
+   770.0        0.+-        0.            0.+-          0.            0.+-          0.         0.+-         0.         0.+-         0.
+   790.0        0.+-        0.            0.+-          0.            0.+-          0.         0.+-         0.         0.+-         0.
+   810.0        0.+-        0.            0.+-          0.            0.+-          0.         0.+-         0.         0.+-         0.
+   830.0        0.+-        0.            0.+-          0.            0.+-          0.         0.+-         0.         0.+-         0.
+   850.0        0.+-        0.            0.+-          0.            0.+-          0.         0.+-         0.         0.+-         0.
+   870.0        0.+-        0.            0.+-          0.            0.+-          0.         0.+-         0.         0.+-         0.
+   890.0        0.+-        0.            0.+-          0.            0.+-          0.         0.+-         0.         0.+-         0.
+   910.0        0.+-        0.            0.+-          0.            0.+-          0.         0.+-         0.         0.+-         0.
+   930.0        0.+-        0.            0.+-          0.            0.+-          0.         0.+-         0.         0.+-         0.
+   950.0        0.+-        0.            0.+-          0.            0.+-          0.         0.+-         0.         0.+-         0.
+   970.0        0.+-        0.            0.+-          0.            0.+-          0.         0.+-         0.         0.+-         0.
+   990.0        0.+-        0.            0.+-          0.            0.+-          0.         0.+-         0.         0.+-         0.
+  1010.0        0.+-        0.            0.+-          0.            0.+-          0.         0.+-         0.         0.+-         0.
+  1030.0        0.+-        0.            0.+-          0.            0.+-          0.         0.+-         0.         0.+-         0.
+  1050.0        0.+-        0.            0.+-          0.            0.+-          0.         0.+-         0.         0.+-         0.
+  1070.0        0.+-        0.            0.+-          0.            0.+-          0.         0.+-         0.         0.+-         0.
+  1620.0        0.+-        0.            0.+-          0.            0.+-          0.         0.+-         0.         0.+-         0.
+                     AVERAGE LONGITUDINAL ENERGY SUM [GEV] 
+                1.2                       0.0                         4.6                      0.0                     0.0
+
+ AVERAGE LONGITUDINAL ENERGY DEPOSIT [GEV] IN SLANT STEPS OF   20. G/CM**2 
+ ====================================================================================================================
+  DEPTH       HADR IONIZ                HADR E-CUT                     NEUTRINO                       SUM
+
+    10.0        0.1+-        0.0            0.+-           0.         15.6+-        41.0          16.0+-         41.7
+    30.0        0.1+-        0.1            0.+-           0.         14.0+-        30.5          15.0+-         31.4
+    50.0        0.1+-        0.1            0.+-           0.         13.1+-        26.0          15.0+-         27.1
+    70.0        0.2+-        0.1            0.+-           0.         12.0+-        23.1          15.3+-         24.2
+    90.0        0.2+-        0.2            0.+-           1.         11.0+-        20.3          15.8+-         21.6
+   110.0        0.2+-        0.2            0.+-           1.         10.4+-        18.6          17.2+-         20.1
+   130.0        0.2+-        0.2            0.+-           1.          9.3+-        16.2          18.3+-         18.1
+   150.0        0.2+-        0.2            0.+-           1.          8.5+-        14.8          19.8+-         17.0
+   170.0        0.2+-        0.2            0.+-           1.          7.8+-        13.7          21.3+-         16.4
+   190.0        0.2+-        0.2            0.+-           1.          7.4+-        12.9          23.2+-         15.7
+   210.0        0.2+-        0.2            0.+-           1.          6.7+-        11.8          24.5+-         15.2
+   230.0        0.2+-        0.2            0.+-           1.          6.0+-        10.4          25.6+-         14.1
+   250.0        0.2+-        0.2            0.+-           1.          5.4+-         9.4          26.3+-         13.5
+   270.0        0.2+-        0.2            0.+-           1.          5.0+-         9.1          26.9+-         13.1
+   290.0        0.2+-        0.2            0.+-           1.          4.7+-         8.6          27.3+-         12.6
+   310.0        0.2+-        0.2            0.+-           1.          4.2+-         7.7          27.1+-         12.0
+   330.0        0.2+-        0.2            0.+-           1.          4.0+-         7.6          26.9+-         11.8
+   350.0        0.2+-        0.2            0.+-           1.          3.5+-         7.1          26.1+-         11.6
+   370.0        0.2+-        0.2            0.+-           1.          3.4+-         6.7          25.4+-         11.3
+   390.0        0.1+-        0.2            0.+-           1.          3.1+-         6.0          24.4+-         10.9
+   410.0        0.1+-        0.2            0.+-           1.          2.9+-         5.9          23.1+-         10.8
+   430.0        0.1+-        0.2            0.+-           1.          2.7+-         6.2          21.9+-         11.1
+   450.0        0.1+-        0.1            0.+-           0.          2.4+-         4.9          20.5+-         10.5
+   470.0        0.1+-        0.1            0.+-           0.          2.2+-         4.8          19.2+-         10.5
+   490.0        0.1+-        0.1            0.+-           0.          2.0+-         4.7          17.8+-         10.4
+   510.0        0.1+-        0.1            0.+-           0.          1.8+-         4.1          16.4+-         10.0
+   530.0        0.1+-        0.1            0.+-           0.          1.7+-         3.9          15.1+-          9.7
+   550.0        0.1+-        0.1            0.+-           0.          1.5+-         3.9          13.9+-          9.5
+   570.0        0.1+-        0.1            0.+-           0.          1.4+-         3.6          12.8+-          9.3
+   590.0        0.1+-        0.1            0.+-           0.          1.3+-         3.4          11.7+-          8.9
+   610.0        0.1+-        0.1            0.+-           0.          1.2+-         3.4          10.7+-          8.6
+   630.0        0.1+-        0.1            0.+-           0.          1.2+-         3.6           9.8+-          8.4
+   650.0        0.1+-        0.1            0.+-           0.          1.1+-         2.9           8.9+-          7.9
+   670.0        0.0+-        0.1            0.+-           0.          1.0+-         2.9           8.1+-          7.5
+   690.0        0.0+-        0.1            0.+-           0.          1.0+-         2.7           7.4+-          7.1
+   710.0        0.0+-        0.1            0.+-           0.          0.9+-         2.6           6.8+-          6.8
+   730.0        0.0+-        0.1            0.+-           0.          0.8+-         2.6           6.2+-          6.5
+   750.0        0.0+-        0.1            0.+-           0.          0.8+-         2.6           5.6+-          6.1
+   770.0        0.0+-        0.1            0.+-           0.          0.8+-         2.6           5.2+-          5.9
+   790.0        0.0+-        0.1            0.+-           0.          0.7+-         2.0           4.7+-          5.2
+   810.0        0.0+-        0.1            0.+-           0.          0.7+-         2.3           4.3+-          5.1
+   830.0        0.0+-        0.1            0.+-           0.          0.6+-         2.4           4.0+-          4.8
+   850.0        0.0+-        0.1            0.+-           0.          0.6+-         2.4           3.7+-          4.6
+   870.0        0.0+-        0.1            0.+-           0.          0.6+-         2.4           3.4+-          4.2
+   890.0        0.0+-        0.0            0.+-           0.          0.6+-         2.1           3.2+-          3.9
+   910.0        0.0+-        0.0            0.+-           0.          0.5+-         2.1           3.0+-          3.7
+   930.0        0.0+-        0.0            0.+-           0.          0.5+-         2.6           2.8+-          3.8
+   950.0        0.0+-        0.0            0.+-           0.          0.5+-         2.5           2.6+-          3.7
+   970.0        0.0+-        0.0            0.+-           0.          0.5+-         2.9           2.5+-          3.9
+   990.0        0.0+-        0.0            0.+-           0.          0.5+-         2.0           2.3+-          3.2
+  1010.0        0.0+-        0.0            0.+-           0.          0.4+-         1.8           2.1+-          2.9
+  1030.0        0.0+-        0.0            0.+-           0.          0.4+-         1.6           2.0+-          2.7
+  1050.0        0.0+-        0.0            0.+-           0.          0.3+-         1.7           1.7+-          2.5
+  1070.0        0.0+-        0.0            1.+-           6.          0.5+-         4.8         265.8+-         93.3
+  1620.0        0.0+-        0.0            0.+-           0.          0.1+-         0.5           0.2+-          0.5
+                     AVERAGE LONGITUDINAL ENERGY SUM [GEV] 
+                5.1                        13.3                       191.5
+
+ AVERAGE LONGITUDINAL ENERGY DEPOSIT [GEV] IN SLANT STEPS OF   20. G/CM**2 
+ ====================================================================================================================
+  DEPTH          (DUMMY)                HADR A-CUT                 NTRINO A-CUT                   (DUMMY)
+
+    10.0        0.0+-        0.0            0.+-           0.          0.0+-         0.1           0.0+-          0.0
+    30.0        0.0+-        0.0            0.+-           0.          0.0+-         0.1           0.0+-          0.0
+    50.0        0.0+-        0.0            0.+-           0.          0.0+-         0.1           0.0+-          0.0
+    70.0        0.0+-        0.0            0.+-           0.          0.0+-         0.1           0.0+-          0.0
+    90.0        0.0+-        0.0            0.+-           0.          0.0+-         0.1           0.0+-          0.0
+   110.0        0.0+-        0.0            0.+-           0.          0.1+-         0.1           0.0+-          0.0
+   130.0        0.0+-        0.0            0.+-           0.          0.1+-         0.1           0.0+-          0.0
+   150.0        0.0+-        0.0            0.+-           0.          0.1+-         0.2           0.0+-          0.0
+   170.0        0.0+-        0.0            0.+-           0.          0.1+-         0.2           0.0+-          0.0
+   190.0        0.0+-        0.0            0.+-           0.          0.1+-         0.2           0.0+-          0.0
+   210.0        0.0+-        0.0            0.+-           0.          0.1+-         0.2           0.0+-          0.0
+   230.0        0.0+-        0.0            0.+-           0.          0.1+-         0.2           0.0+-          0.0
+   250.0        0.0+-        0.0            0.+-           0.          0.1+-         0.2           0.0+-          0.0
+   270.0        0.0+-        0.0            0.+-           0.          0.1+-         0.2           0.0+-          0.0
+   290.0        0.0+-        0.0            0.+-           0.          0.1+-         0.1           0.0+-          0.0
+   310.0        0.0+-        0.0            0.+-           0.          0.1+-         0.1           0.0+-          0.0
+   330.0        0.0+-        0.0            0.+-           0.          0.1+-         0.1           0.0+-          0.0
+   350.0        0.0+-        0.0            0.+-           0.          0.0+-         0.1           0.0+-          0.0
+   370.0        0.0+-        0.0            0.+-           0.          0.0+-         0.1           0.0+-          0.0
+   390.0        0.0+-        0.0            0.+-           0.          0.0+-         0.1           0.0+-          0.0
+   410.0        0.0+-        0.0            0.+-           0.          0.0+-         0.1           0.0+-          0.0
+   430.0        0.0+-        0.0            0.+-           0.          0.0+-         0.1           0.0+-          0.0
+   450.0        0.0+-        0.0            0.+-           0.          0.0+-         0.1           0.0+-          0.0
+   470.0        0.0+-        0.0            0.+-           0.          0.0+-         0.1           0.0+-          0.0
+Note: The following floating-point exceptions are signalling: IEEE_UNDERFLOW_FLAG IEEE_DENORMAL
+   490.0        0.0+-        0.0            0.+-           0.          0.0+-         0.1           0.0+-          0.0
+   510.0        0.0+-        0.0            0.+-           0.          0.0+-         0.1           0.0+-          0.0
+   530.0        0.0+-        0.0            0.+-           0.          0.0+-         0.1           0.0+-          0.0
+   550.0        0.0+-        0.0            0.+-           0.          0.0+-         0.1           0.0+-          0.0
+   570.0        0.0+-        0.0            0.+-           0.          0.0+-         0.1           0.0+-          0.0
+   590.0        0.0+-        0.0            0.+-           0.          0.0+-         0.1           0.0+-          0.0
+   610.0        0.0+-        0.0            0.+-           0.          0.0+-         0.1           0.0+-          0.0
+   630.0        0.0+-        0.0            0.+-           0.          0.0+-         0.1           0.0+-          0.0
+   650.0        0.0+-        0.0            0.+-           0.          0.0+-         0.1           0.0+-          0.0
+   670.0        0.0+-        0.0            0.+-           0.          0.0+-         0.1           0.0+-          0.0
+   690.0        0.0+-        0.0            0.+-           0.          0.0+-         0.1           0.0+-          0.0
+   710.0        0.0+-        0.0            0.+-           0.          0.0+-         0.1           0.0+-          0.0
+   730.0        0.0+-        0.0            0.+-           0.          0.0+-         0.1           0.0+-          0.0
+   750.0        0.0+-        0.0            0.+-           0.          0.0+-         0.1           0.0+-          0.0
+   770.0        0.0+-        0.0            0.+-           0.          0.0+-         0.1           0.0+-          0.0
+   790.0        0.0+-        0.0            0.+-           0.          0.0+-         0.0           0.0+-          0.0
+   810.0        0.0+-        0.0            0.+-           0.          0.0+-         0.0           0.0+-          0.0
+   830.0        0.0+-        0.0            0.+-           0.          0.0+-         0.0           0.0+-          0.0
+   850.0        0.0+-        0.0            0.+-           0.          0.0+-         0.0           0.0+-          0.0
+   870.0        0.0+-        0.0            0.+-           0.          0.0+-         0.0           0.0+-          0.0
+   890.0        0.0+-        0.0            0.+-           0.          0.0+-         0.0           0.0+-          0.0
+   910.0        0.0+-        0.0            0.+-           0.          0.0+-         0.0           0.0+-          0.0
+   930.0        0.0+-        0.0            0.+-           0.          0.0+-         0.0           0.0+-          0.0
+   950.0        0.0+-        0.0            0.+-           0.          0.0+-         0.0           0.0+-          0.0
+   970.0        0.0+-        0.0            0.+-           0.          0.0+-         0.0           0.0+-          0.0
+   990.0        0.0+-        0.0            0.+-           0.          0.0+-         0.0           0.0+-          0.0
+  1010.0        0.0+-        0.0            0.+-           0.          0.0+-         0.0           0.0+-          0.0
+  1030.0        0.0+-        0.0            0.+-           0.          0.0+-         0.0           0.0+-          0.0
+  1050.0        0.0+-        0.0            0.+-           0.          0.0+-         0.0           0.0+-          0.0
+  1070.0        0.0+-        0.0            0.+-           0.          0.0+-         0.0           0.0+-          0.0
+  1620.0        0.0+-        0.0            0.+-           0.          0.0+-         0.0           0.0+-          0.0
+                     AVERAGE LONGITUDINAL ENERGY SUM [GEV] 
+                0.0                         3.8                         1.5
+                      ENERGY SUM =   9.8645532E+02 GEV
+  
+ PRESENT TIME : 08.03.2021  23:38:22 UTC
+
+ ========== END OF RUN ================================================
