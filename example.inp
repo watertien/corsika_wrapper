@@ -1,6 +1,6 @@
 RUNNR  , 1                             
 EVTNR  , 1                             
-NSHOW  , 100
+NSHOW  , 10000
 PRMPAR , 14                            
 ESLOPE , -2.7                          
 ERANGE , 1.E3  1.E3                    
@@ -17,9 +17,9 @@ MUMULT , T
 ELMFLG , T   T                         
 STEPFC , 1.0                           
 RADNKG , 4410.E2                        
-LONGI  , T  10.  T  T                  
+LONGI  , T  20.  F  F                  
 MAXPRT , 1                             
-DIRECT , /mnt/f/Dropbox/corsika_out/                            
+DIRECT , /home/tian/corsika_wrapper/                           
 USER   , tian                           
 DEBUG  , F  6  F  1000000              
 EXIT   ,                                
