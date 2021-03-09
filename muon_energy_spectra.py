@@ -97,7 +97,7 @@ def iter_input_card(variables, runnum0):
     """
     run_number = runnum0
     cards_list = []
-    based_card = InputCard("/mnt/f/Dropbox/corsika_out/example.inp")
+    based_card = InputCard("/home/tian/corsika_wrapper/example.inp")
     for zenith in variables:
         theta_min, theta_max = zenith, zenith
         based_card.pars["RUNNR"] = " " + str(run_number)
@@ -117,7 +117,7 @@ def corsika_run_wrapper(primE, runnum0):
     for i, card in enumerate(cards):
         runnum = int(card.pars['RUNNR'])
         f = open(card.pars['DIRECT'].strip() + f"DAT{runnum:06d}.lst", "w")
-        subprocess.run("corsika77402Linux_QGSJET_gheisha",
+        subprocess.run("corsika76400Linux_QGSJET_gheisha",
                         input=card.get_card().encode('ascii'),
                         stdout=f,
                         stderr=subprocess.STDOUT)
@@ -165,5 +165,5 @@ class InputCard():
 
 
 if __name__ == "__main__":
-    corsika_run_wrapper(np.arange(0, 41, 5, dtype=int), runnum0=8000)
+    corsika_run_wrapper(np.arange(0, 41, 5, dtype=int), runnum0=9000)
 
