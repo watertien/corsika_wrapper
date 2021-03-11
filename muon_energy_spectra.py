@@ -75,7 +75,7 @@ def plot_spectra(energy, bins=30):
     return fig, ax
 
 
-def iter_input_card(variables, runnum0):
+def iter_input_card(variables, values, runnum0):
     """
     Generate different input card of CORSIKA
     according to given template input file or str.
@@ -83,36 +83,38 @@ def iter_input_card(variables, runnum0):
 
     Parameters
     ----------
-    template, str
-    The base template to be modified.
-
-    variables, dict
-    Dictionary containing key-value pairs.
-    Value can be list type.
+    variables, str
+    Name of the parameter to be varied.
+    
+    values, list
+    Values of the parameter.
+    
+    runnum0, int
+    The RUNNR of the first input card.
 
     Return
     ------
-    inter_cards, iter
-    Iterator containing all possible input cards.
+    inter_cards, iterator
+    Iterator containing all input cards.
     """
     run_number = runnum0
     cards_list = []
     based_card = InputCard("/home/tian/corsika_wrapper/example.inp")
-    for zenith in variables:
-        theta_min, theta_max = zenith, zenith
+    for value in values:
         based_card.pars["RUNNR"] = " " + str(run_number)
-        based_card.pars["THETAP"] = f" {zenith} {zenith}"
+        based_card.pars[variables] = f" {str(value).strip('[]')}"
+        # Use deepcopy to point to different objects in memory
         cards_list.append(deepcopy(based_card))
         run_number += 1
     inter_cards = iter(cards_list)
     return inter_cards
 
 
-def corsika_run_wrapper(primE, runnum0):
-    cards = iter_input_card(primE, runnum0)
-    muon_ratio = np.zeros(len(primE))
-    muonm = np.zeros(len(primE), dtype=int)
-    muonp = np.zeros(len(primE), dtype=int)
+def corsika_run_wrapper(name, values, runnum0):
+    cards = iter_input_card(name, values, runnum0)
+    muon_ratio = np.zeros(len(values))
+    muonm = np.zeros(len(values), dtype=int)
+    muonp = np.zeros(len(values), dtype=int)
     print("Running corsika...")
     for i, card in enumerate(cards):
         runnum = int(card.pars['RUNNR'])
@@ -122,16 +124,6 @@ def corsika_run_wrapper(primE, runnum0):
                         stdout=f,
                         stderr=subprocess.STDOUT)
         f.close()
-        # e / mu
-        muonp[i] = len(read_particle(card.pars['DIRECT'].strip()\
-                                    + f"DAT{runnum:06d}", pid=[2, 3])) # e+, e-
-        muonm[i] = len(read_particle(card.pars['DIRECT'].strip()\
-                                    + f"DAT{runnum:06d}", pid=[5, 6])) # mu+, mu-
-        muon_ratio[i] =  muonp[i] / muonm[i]
-        print(f"{primE[i]:.3f}, e/mu={muon_ratio[i]:.3f}, {muonp[i] + muonm[i]} particles total.")
-    # np.savetxt(card.pars['DIRECT'].strip() + "e_muon_ratio.csv", 
-    #         np.vstack((primE, muonp, muonm, muon_ratio)).T,
-    #         delimiter=',')
 
 
 class InputCard():
@@ -147,7 +139,7 @@ class InputCard():
         self.pars = b 
 
     def display(self):
-        # Print input card without SEED rows
+        # Print input card without SEED and EXIT rows
         for par, value in self.pars.items():
             print(par, value)
 
@@ -165,5 +157,6 @@ class InputCard():
 
 
 if __name__ == "__main__":
-    corsika_run_wrapper(np.arange(0, 41, 5, dtype=int), runnum0=9000)
-
+    par = "THETAP"
+    values = np.arange(0, 41, 5).reshape((9, 1)) * np.ones((9, 2))
+    corsika_run_wrapper(par, values, runnum0=11000)
