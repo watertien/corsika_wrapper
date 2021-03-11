@@ -117,7 +117,7 @@ def corsika_run_wrapper(primE, runnum0):
     for i, card in enumerate(cards):
         runnum = int(card.pars['RUNNR'])
         f = open(card.pars['DIRECT'].strip() + f"DAT{runnum:06d}.lst", "w")
-        subprocess.run("corsika76400Linux_QGSJET_gheisha",
+        subprocess.run("corsika76400Linux_QGSJET_gheisha_SLANT",
                         input=card.get_card().encode('ascii'),
                         stdout=f,
                         stderr=subprocess.STDOUT)
