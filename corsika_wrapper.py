@@ -4,6 +4,7 @@ import corsikaio as co
 from copy import deepcopy
 import subprocess
 from collections.abc import Iterable
+from multiprocessing import Pool
 
 __author__ = "Tian"
 
@@ -110,21 +111,23 @@ def iter_input_card(variables, values, runnum0):
     return inter_cards
 
 
-def corsika_run_wrapper(name, values, runnum0):
-    cards = iter_input_card(name, values, runnum0)
-    muon_ratio = np.zeros(len(values))
-    muonm = np.zeros(len(values), dtype=int)
-    muonp = np.zeros(len(values), dtype=int)
-    print("Running corsika...")
-    for i, card in enumerate(cards):
-        runnum = int(card.pars['RUNNR'])
-        f = open(card.pars['DIRECT'].strip() + f"DAT{runnum:06d}.lst", "w")
+def corsika_run_wrapper(card):
+    runnum = int(card.pars["RUNNR"])
+    with open(card.pars['DIRECT'].strip() + f"DAT{runnum:06d}.lst", "w") as f:
         subprocess.run("corsika76400Linux_QGSJET_gheisha_SLANT",
                         input=card.get_card().encode('ascii'),
                         stdout=f,
                         stderr=subprocess.STDOUT)
-        f.close()
 
+
+def corsika_run_parallel(name, values, runnum0):
+    cards = iter_input_card(name, values, runnum0)
+    print("Running corsika...")
+    with Pool(processes=len(values)) as p:
+        p.map(corsika_run_wrapper, cards)
+    print(f"{len(values)} files have been written "
+          + f"with RUNNR {runnum0:06d} to {runnum0 + len(values):06d}")
+    
 
 class InputCard():
     def __init__(self, fname):
@@ -159,4 +162,4 @@ class InputCard():
 if __name__ == "__main__":
     par = "THETAP"
     values = np.arange(0, 41, 5).reshape((9, 1)) * np.ones((9, 2))
-    corsika_run_wrapper(par, values, runnum0=11000)
+    corsika_run_parallel(par, values, runnum0=11000)
