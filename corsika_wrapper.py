@@ -101,14 +101,20 @@ def iter_input_card(variables, values, runnum0):
     run_number = runnum0
     cards_list = []
     based_card = InputCard("/home/tian/corsika_wrapper/example.inp")
-    for value in values:
+    if len(values) == 1:
+        # For single value input, return the input card, not the iterator
         based_card.pars["RUNNR"] = " " + str(run_number)
         based_card.pars[variables] = f" {str(value).strip('[]')}"
-        # Use deepcopy to point to different objects in memory
-        cards_list.append(deepcopy(based_card))
-        run_number += 1
-    inter_cards = iter(cards_list)
-    return inter_cards
+        return based_card
+    else:
+        for value in values:
+            based_card.pars["RUNNR"] = " " + str(run_number)
+            based_card.pars[variables] = f" {str(value).strip('[]')}"
+            # Use deepcopy to point to different objects in memory
+            cards_list.append(deepcopy(based_card))
+            run_number += 1
+        inter_cards = iter(cards_list)
+        return inter_cards
 
 
 def corsika_run_wrapper(card):
@@ -160,6 +166,6 @@ class InputCard():
 
 
 if __name__ == "__main__":
-    par = "THETAP"
-    values = np.arange(0, 41, 5).reshape((9, 1)) * np.ones((9, 2))
-    corsika_run_parallel(par, values, runnum0=11000)
+    par = "ERANGE"
+    values = np.logspace(5, 7, 3).reshape((3, 1)) * np.ones((3, 2))
+    corsika_run_parallel(par, values, runnum0=21000)
