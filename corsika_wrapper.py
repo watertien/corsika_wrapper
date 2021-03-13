@@ -166,6 +166,7 @@ class InputCard():
 
 
 if __name__ == "__main__":
-    par = "ERANGE"
-    values = np.logspace(5, 7, 3).reshape((3, 1)) * np.ones((3, 2))
-    corsika_run_parallel(par, values, runnum0=21000)
+    par = "PRMPAR"
+    values = np.array([14, 402, 5626], dtype=int)
+    corsika_run_parallel(par, values, runnum0=22000)
+

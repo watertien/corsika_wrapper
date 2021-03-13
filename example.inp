@@ -1,14 +1,14 @@
 RUNNR  , 1                             
 EVTNR  , 1                             
-NSHOW  , 10000
+NSHOW  , 10
 PRMPAR , 14                            
 ESLOPE , -2.7                          
-ERANGE , 1.E3  1.E3                    
-THETAP , 20.  20.                      
+ERANGE , 1.E6  1.E6                    
+THETAP , 0.  0.                      
 PHIP   , -180.  180.                   
 SEED   , 1   0   0                     
 SEED   , 2   0   0                     
-OBSLEV , 0                             
+OBSLEV , 4410.E2                       
 MAGNET , 20.0  42.8                    
 HADFLG , 0  0  0  0  0  2              
 ECUTS  , 0.3  0.3  0.003  0.003        
@@ -16,7 +16,7 @@ MUADDI , T
 MUMULT , T                             
 ELMFLG , T   T                         
 STEPFC , 1.0                           
-RADNKG , 4410.E2                        
+RADNKG , 200.E2                        
 LONGI  , T  20.  F  F                  
 MAXPRT , 1                             
 DIRECT , /home/tian/corsika_wrapper/                           
